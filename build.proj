@@ -1,0 +1,74 @@
+<Project DefaultTargets="Build">
+  <Import Project="Version.props" />
+  <Import Project="Settings.props" />
+
+  <PropertyGroup>
+    <CIBuild Condition="'$(CIBuild)' == ''">false</CIBuild>
+    <EngineBuild Condition="'$(EngineBuild)' == '' AND '$(CIBuild)' == 'false'">true</EngineBuild>
+    <TemplatesBuild Condition="'$(TemplatesBuild)' == '' AND '$(CIBuild)' == 'false'">true</TemplatesBuild>
+    <SkipTests Condition="'$(SkipTests)' == ''">false</SkipTests>
+    <PB_SkipTests Condition="'$(PB_SkipTests)' == ''">false</PB_SkipTests>
+    <New3TargetFramework>netcoreapp1.1</New3TargetFramework>
+    <InnerRingTargetFramework>netstandard1.3</InnerRingTargetFramework>
+    <OuterRingTargetFramework>netstandard1.5</OuterRingTargetFramework>
+    <FullFrameworkTargetFramework>net45</FullFrameworkTargetFramework>
+    <FullFrameworkTestTargetFramework>net452</FullFrameworkTestTargetFramework>
+
+    <InnerRingPackTargetFrameworks>$(InnerRingTargetFramework)</InnerRingPackTargetFrameworks>
+    <InnerRingPackTargetFrameworks Condition="'$(IsFullFrameworkBuildSupported)' == 'true'">$(InnerRingPackTargetFrameworks);$(FullFrameworkTargetFramework)</InnerRingPackTargetFrameworks>
+
+    <OuterRingPackTargetFrameworks>$(OuterRingTargetFramework)</OuterRingPackTargetFrameworks>
+    <OuterRingPackTargetFrameworks Condition="'$(IsFullFrameworkBuildSupported)' == 'true'">$(OuterRingPackTargetFrameworks);$(FullFrameworkTargetFramework)</OuterRingPackTargetFrameworks>
+
+    <SharedTestPackTargetFrameworks>$(OuterRingTargetFramework)</SharedTestPackTargetFrameworks>
+    <SharedTestPackTargetFrameworks Condition="'$(IsFullFrameworkBuildSupported)' == 'true'">$(SharedTestPackTargetFrameworks);$(FullFrameworkTestTargetFramework)</SharedTestPackTargetFrameworks>
+
+    <NetCoreAppPackTargets>$(New3TargetFramework)</NetCoreAppPackTargets>
+    <NetCoreAppPackTargets Condition="'$(IsFullFrameworkBuildSupported)' == 'true'">$(NetCoreAppPackTargets);$(FullFrameworkBuildTarget)</NetCoreAppPackTargets>
+  </PropertyGroup>
+
+  <Target Name="BuildForCli">
+    <MakeDir Directories="$(ArtifactsDir);$(PackageOutputPath);$(TemplatesOutputPath);$(DevPath)" />
+    <CallTarget Targets="CollectGitInfo" />
+
+    <!-- Build templates -->
+    <MSBuild Projects="template_feed/Template.proj" Targets="Build"
+             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
+  </Target>
+
+  <Target Name="Build">
+
+    <MakeDir Directories="$(ArtifactsDir);$(PackageOutputPath);$(TemplatesOutputPath);$(DevPath)" />
+    <CallTarget Targets="CollectGitInfo" />
+
+    <!-- Build templates -->
+    <MSBuild Projects="template_feed/Template.proj" Targets="Build"
+             Condition="'$(TemplatesBuild)' == 'true'"
+             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
+    
+    <!-- Sign the Assemblies before packing -->
+    
+    <MSBuild Condition="'$(PB_SignType)' == 'real' or '$(PB_SignType)' == 'test'"
+             Projects="build\Sign.csproj"
+             Targets="Restore"
+             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
+             
+    <MSBuild Condition="'$(PB_SignType)' == 'real' or '$(PB_SignType)' == 'test'"
+             Projects="sign.proj"
+             Targets="PostCompileSign"
+             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
+             
+  </Target>
+ 
+  <Target Name="SignPackages">
+    <!-- Sign the newly packed files -->
+    <MSBuild Condition="'$(PB_SignType)' == 'real' or '$(PB_SignType)' == 'test'"
+             Projects="sign.proj"
+             Targets="PostPackSign"
+             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
+  </Target>
+  
+  <Target Name="Test" Condition="'$(PB_SkipTests)' != 'true'">
+  </Target>
+    
+</Project>
