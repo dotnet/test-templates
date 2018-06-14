@@ -27,15 +27,6 @@
     <NetCoreAppPackTargets Condition="'$(IsFullFrameworkBuildSupported)' == 'true'">$(NetCoreAppPackTargets);$(FullFrameworkBuildTarget)</NetCoreAppPackTargets>
   </PropertyGroup>
 
-  <Target Name="BuildForCli">
-    <MakeDir Directories="$(ArtifactsDir);$(PackageOutputPath);$(TemplatesOutputPath);$(DevPath)" />
-    <CallTarget Targets="CollectGitInfo" />
-
-    <!-- Build templates -->
-    <MSBuild Projects="template_feed/Template.proj" Targets="Build"
-             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
-  </Target>
-
   <Target Name="Build">
 
     <MakeDir Directories="$(ArtifactsDir);$(PackageOutputPath);$(TemplatesOutputPath);$(DevPath)" />
