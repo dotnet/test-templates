@@ -34,11 +34,7 @@ else
 
 $RepoRoot = "$PSScriptRoot"
 $ArtifactsDir = "$RepoRoot\artifacts"
-$DevDir = "$RepoRoot\dev"
 $env:CONFIGURATION = $Configuration;
-
-rm "$DevDir" -Force -Recurse
-if(Test-Path "$DevDir") { throw "Failed to remove 'dev'" }
 
 # Use a repo-local install directory (but not the artifacts directory because that gets cleaned a lot
 if (!$env:DOTNET_INSTALL_DIR)
