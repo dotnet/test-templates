@@ -29,26 +29,13 @@
 
   <Target Name="Build">
 
-    <MakeDir Directories="$(ArtifactsDir);$(PackageOutputPath);$(TemplatesOutputPath);$(DevPath)" />
+    <MakeDir Directories="$(ArtifactsDir);$(PackageOutputPath);$(TemplatesOutputPath);" />
     <CallTarget Targets="CollectGitInfo" />
 
     <!-- Build templates -->
     <MSBuild Projects="template_feed/Template.proj" Targets="Build"
              Condition="'$(TemplatesBuild)' == 'true'"
-             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
-    
-    <!-- Sign the Assemblies before packing -->
-    
-    <MSBuild Condition="'$(PB_SignType)' == 'real' or '$(PB_SignType)' == 'test'"
-             Projects="build\Sign.csproj"
-             Targets="Restore"
-             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
-             
-    <MSBuild Condition="'$(PB_SignType)' == 'real' or '$(PB_SignType)' == 'test'"
-             Projects="sign.proj"
-             Targets="PostCompileSign"
-             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
-             
+             RunEachTargetSeparately="true" StopOnFirstFailure="true" />             
   </Target>
  
   <Target Name="SignPackages">
