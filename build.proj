@@ -35,14 +35,12 @@
     <!-- Build templates -->
     <MSBuild Projects="template_feed/Template.proj" Targets="Build"
              Condition="'$(TemplatesBuild)' == 'true'"
-             RunEachTargetSeparately="true" StopOnFirstFailure="true" />             
-  </Target>
- 
-  <Target Name="SignPackages">
+             RunEachTargetSeparately="true" StopOnFirstFailure="true" />
+    
     <!-- Sign the newly packed files -->
     <MSBuild Condition="'$(PB_SignType)' == 'real' or '$(PB_SignType)' == 'test'"
-             Projects="sign.proj"
-             Targets="PostPackSign"
+             Projects="Sign.csproj"
+             Targets="Restore"
              RunEachTargetSeparately="true" StopOnFirstFailure="true" />
   </Target>
   

@@ -34,6 +34,7 @@ else
 
 $RepoRoot = "$PSScriptRoot"
 $ArtifactsDir = "$RepoRoot\artifacts"
+$env:NUGET_PACKAGES = "$RepoRoot\packages"
 $env:CONFIGURATION = $Configuration;
 
 # Use a repo-local install directory (but not the artifacts directory because that gets cleaned a lot
