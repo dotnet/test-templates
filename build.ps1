@@ -86,40 +86,6 @@ function Locate-VsInstallPath
    return $vsInstallPath
 }
 
-$vsInstallPath = Locate-VsInstallPath
-$env:MSBuildDirectory =  Join-Path $vsInstallPath "msbuild"
-$env:MSBuildExePath = Locate-MSBuildPath 
-
-$TT_Solutions = @("Templates\MSTestTemplates.sln","WizardExtensions\WizardExtensions.sln")
-$TT_VSmanprojs =@("src\setup\Microsoft.VisualStudio.Templates.CS.MSTestv2.Desktop.UnitTest.vsmanproj",
-                   "src\setup\Microsoft.VisualStudio.Templates.CS.MSTestv2.UWP.UnitTest.vsmanproj", 
-				   "src\setup\Microsoft.VisualStudio.Templates.VB.MSTestv2.Desktop.UnitTest.vsmanproj",
-				   "src\setup\Microsoft.VisualStudio.Templates.VB.MSTestv2.UWP.UnitTest.vsmanproj",
-                   "src\setup\Microsoft.VisualStudio.TestTools.MSTestV2.WizardExtension.IntelliTest.vsmanproj", 
-                   "src\setup\Microsoft.VisualStudio.TestTools.MSTestV2.WizardExtension.UnitTest.vsmanproj")
-
- if (-not $env:BUILD_NUMBER)
-    {
-      $env:BUILD_NUMBER = 0
-    }
-
-    if (-not $env:PACKAGE_VERSION)
-    {
-      $env:PACKAGE_VERSION = "1.0.0"
-    }
-
-    $NoTimestampPackageVersion=$env:PACKAGE_VERSION
-
-    if (-not $env:BUILD_QUALITY)
-    {
-      $env:BUILD_QUALITY = "beta1"
-    }
-
-    $NoTimestampPackageVersion=$env:PACKAGE_VERSION + "-" + $env:BUILD_QUALITY
-
-    $TimestampPackageVersion=$NoTimestampPackageVersion + "-" + [System.DateTime]::Now.ToString("yyyyMMdd") + "-" + $env:BUILD_NUMBER
-
-
 function Download-Dotnet {
 
     # Use a repo-local install directory (but not the artifacts directory because that gets cleaned a lot
@@ -182,9 +148,44 @@ $nugetConfig = Join-Path $RepoRoot Nuget.config
   {
 	Write-Verbose "$nuget restore -verbosity quiet -nonInteractive -configFile $nugetConfig $solutionPath"
 	&  $nugetExe restore -verbosity quiet -nonInteractive -configFile $nugetConfig $solutionPath
-
   }
 }
+
+$TT_Solutions = @("Templates\MSTestTemplates.sln","WizardExtensions\WizardExtensions.sln")
+$TT_VSmanprojs =@("src\setup\Microsoft.VisualStudio.Templates.CS.MSTestv2.Desktop.UnitTest.vsmanproj",
+                   "src\setup\Microsoft.VisualStudio.Templates.CS.MSTestv2.UWP.UnitTest.vsmanproj", 
+				   "src\setup\Microsoft.VisualStudio.Templates.VB.MSTestv2.Desktop.UnitTest.vsmanproj",
+				   "src\setup\Microsoft.VisualStudio.Templates.VB.MSTestv2.UWP.UnitTest.vsmanproj",
+                   "src\setup\Microsoft.VisualStudio.TestTools.MSTestV2.WizardExtension.IntelliTest.vsmanproj", 
+                   "src\setup\Microsoft.VisualStudio.TestTools.MSTestV2.WizardExtension.UnitTest.vsmanproj")
+
+Download-Dotnet
+Perform-Restore
+$vsInstallPath = Locate-VsInstallPath
+$env:MSBuildDirectory =  Join-Path $vsInstallPath "msbuild"
+$env:MSBuildExePath = Locate-MSBuildPath 
+
+    if (-not $env:BUILD_NUMBER)
+    {
+      $env:BUILD_NUMBER = 0
+    }
+
+    if (-not $env:PACKAGE_VERSION)
+    {
+      $env:PACKAGE_VERSION = "1.0.0"
+    }
+
+    $NoTimestampPackageVersion=$env:PACKAGE_VERSION
+
+    if (-not $env:BUILD_QUALITY)
+    {
+      $env:BUILD_QUALITY = "beta1"
+    }
+
+    $NoTimestampPackageVersion=$env:PACKAGE_VERSION + "-" + $env:BUILD_QUALITY
+
+    $TimestampPackageVersion=$NoTimestampPackageVersion + "-" + [System.DateTime]::Now.ToString("yyyyMMdd") + "-" + $env:BUILD_NUMBER
+
 
 function Build-Templates 
 {
@@ -225,9 +226,5 @@ function Build-vsmanprojs
     }
 }
 
-Download-Dotnet
-Perform-Restore
 Build-Templates
-#Invoke-Build -solution "Templates\MSTestTemplates.sln"
-#Invoke-Build -solution "WizardExtensions\WizardExtensions.sln"
 Build-vsmanprojs
