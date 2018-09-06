@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestDesktopCSharp", "CSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestUWPCSharp", "CSharp\UWP\MSTestUWPCSharp.csproj", "{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestWinAppDriverCSharp", "CSharp\MSTestWinAppDriverCSharp\MSTestWinAppDriverCSharp.csproj", "{6E299C10-B3AD-4D9F-BA12-333BEE9CDCC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +35,15 @@ Global
 		{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E299C10-B3AD-4D9F-BA12-333BEE9CDCC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E299C10-B3AD-4D9F-BA12-333BEE9CDCC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E299C10-B3AD-4D9F-BA12-333BEE9CDCC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E299C10-B3AD-4D9F-BA12-333BEE9CDCC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5901A9E7-D68C-468D-BF1D-340CF0DAC465}
 	EndGlobalSection
 EndGlobal

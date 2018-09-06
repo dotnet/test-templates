@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Windows Application Test</Name>
+    <Description>Create an UI test for Windows Application</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>0</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WindowsAppUITest</DefaultName>
+    <TemplateID>Microsoft.CSharp.UnitTestProject.WinAppTest</TemplateID>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <Icon>icon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="WindowsAppUITest.csproj" ReplaceParameters="true">
+      <ProjectItem TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ScenarioTest.cs">ScenarioTest.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="TestSession.cs">TestSession.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="extension" repositoryId="Microsoft.CSharp.UnitTestProject.WinAppTest">
+      <package id="Appium.WebDriver" version="3.0.0.2" />
+      <package id="MSTest.TestAdapter" version="1.3.2" />
+      <package id="MSTest.TestFramework" version="1.3.2" />
+    </packages>
+  </WizardData>
+</VSTemplate>

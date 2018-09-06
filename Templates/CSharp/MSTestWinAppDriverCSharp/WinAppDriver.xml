@@ -1,0 +1,9 @@
+<Zips>
+  <Zip>
+  <File TargetFileName="AssemblyInfo.cs">ProjectTemplates\CSharp\WinAppDriver\AssemblyInfo.cs</File>
+  <File TargetFileName="WindowsAppUITest.vstemplate">ProjectTemplates\CSharp\WinAppDriver\WindowsAppUITest.vstemplate</File>
+  <File TargetFileName="ScenarioTest.cs">ProjectTemplates\CSharp\WinAppDriver\ScenarioTest.cs</File>
+  <File TargetFileName="TestSession.cs">ProjectTemplates\CSharp\WinAppDriver\TestSession.cs</File>
+  <File TargetFileName="WindowsAppUITest.csproj">ProjectTemplates\CSharp\WinAppDriver\WindowsAppUITest.csproj</File>
+  </Zip>
+</Zips>
