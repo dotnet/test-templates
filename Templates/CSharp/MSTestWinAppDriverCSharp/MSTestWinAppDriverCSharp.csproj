@@ -55,16 +55,28 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="packages\appium.webdriver.3.0.0.2.nupkg">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="packages\MSTest.TestAdapter.1.3.2.nupkg">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="packages\MSTest.TestFramework.1.3.2.nupkg">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="WinAppDriver.xml" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" />
-<PropertyGroup>
+  <PropertyGroup>
     <PreBuildEvent>
         IF EXIST "$(ProjectDir)ProjectTemplates\CSharp\WinAppDriver\WindowsAppUITest.zip" DEL /q /s "$(ProjectDir)ProjectTemplates\CSharp\WinAppDriver\WindowsAppUITest.zip"
         "$(ProjectDir)$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)WinAppDriver.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\CSharp\WinAppDriver\WindowsAppUITest.zip"
     </PreBuildEvent>
-</PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunCodeAnalysisOnThisProject>false</RunCodeAnalysisOnThisProject>
+  </PropertyGroup>
 </Project>
