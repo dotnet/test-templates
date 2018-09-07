@@ -25,7 +25,10 @@
   </WizardExtension>
   <WizardData>
     <packages repository="extension" repositoryId="Microsoft.CSharp.UnitTestProject.WinAppTest">
-      <package id="Appium.WebDriver" version="3.0.0.2" />
+      <package id="Appium.WebDriver" version="3.0.0.1" />
+      <package id="Castle.Core" version="4.3.1" />
+      <package id="Selenium.WebDriver" version="3.0.1" />
+      <package id="Selenium.Support" version="3.0.1" />
       <package id="MSTest.TestAdapter" version="1.3.2" />
       <package id="MSTest.TestFramework" version="1.3.2" />
     </packages>
