@@ -88,6 +88,9 @@
     <Compile Include="EdgeDriverTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+<<<<<<< HEAD
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+=======
+>>>>>>> Add edge template for .net framework
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
