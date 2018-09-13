@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<Zips>
+  <Zip>
+  <File TargetFileName="AssemblyInfo.cs">ProjectTemplates\CSharp\Test\AssemblyInfo.cs</File>
+  <File TargetFileName="EdgeDriverTemplate.vstemplate">ProjectTemplates\CSharp\Test\EdgeDriverTemplate.vstemplate</File>
+  <File TargetFileName="EdgeDriverTest.cs">ProjectTemplates\CSharp\Test\EdgeDriverTest.cs</File>
+  <File TargetFileName="EdgeDriverSample.csproj">ProjectTemplates\CSharp\Test\EdgeDriverSample.csproj</File>
+  </Zip>
+</Zips>
