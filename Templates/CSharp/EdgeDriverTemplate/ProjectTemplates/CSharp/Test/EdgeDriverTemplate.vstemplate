@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <TemplateID>Microsoft.CSharp.UnitTestProject.EdgeDriverTest</TemplateID>
+    <Name>Web Driver Test for Edge</Name>
+    <Description>Create an automatic UI test using Edge Driver.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>0</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>EdgeDriverTest</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <CreateInPlace>false</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="EdgeDriverSample.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="EdgeDriverTest.cs">EdgeDriverTest.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="extension" repositoryId="EdgeDriverTest.0b43ac6b-e6ff-4afc-a5f6-286d41c046a6">
+      <package id="MSTest.TestAdapter" version="1.3.2"/>
+      <package id="MSTest.TestFramework" version="1.3.2"/>
+      <package id="Selenium.WebDriver" version="3.14.0"/>
+    </packages>
+  </WizardData>
+</VSTemplate>
+
