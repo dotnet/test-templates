@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestDesktopCSharp", "CSha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestUWPCSharp", "CSharp\UWP\MSTestUWPCSharp.csproj", "{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdgeDriverTemplate", "CSharp\EdgeDriverTemplate\EdgeDriverTemplate.csproj", "{E423A334-5A2A-446D-867D-CE30BDEFB412}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +35,15 @@ Global
 		{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11207E9D-1AE5-41B2-A04A-5F2BC1DCD5E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E423A334-5A2A-446D-867D-CE30BDEFB412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E423A334-5A2A-446D-867D-CE30BDEFB412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E423A334-5A2A-446D-867D-CE30BDEFB412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E423A334-5A2A-446D-867D-CE30BDEFB412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25915A37-21DC-4A13-8A1D-A05332CA3D17}
 	EndGlobalSection
 EndGlobal
