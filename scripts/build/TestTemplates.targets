@@ -49,10 +49,9 @@
       <Authenticode>VsixSHA2</Authenticode>
     </FilesToSign>
     
-    <SignFilesDependsOn Include="GatherLocalizedOutputsForSigning">
-      <!-- Do not have this show up in Solution Explorer in VS -->
+    <!--SignFilesDependsOn Include="GatherLocalizedOutputsForSigning">
       <InProject>false</InProject>
-    </SignFilesDependsOn>
+    </SignFilesDependsOn-->
   </ItemGroup>
 
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -71,14 +70,14 @@
     <Error Condition="!Exists('$(TestTemplatesPackagesRoot)microsoft.vssdk.buildtools\15.8.3247\build\Microsoft.VSSDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(TestTemplatesPackagesRoot)microsoft.vssdk.buildtools.15.8.3247\build\Microsoft.VSSDK.BuildTools.targets'))" />
   </Target>
 
-  <Target Name="GatherLocalizedOutputsForSigning" DependsOnTargets="TestTemplatesLocalization">
+  <!--Target Name="GatherLocalizedOutputsForSigning" DependsOnTargets="TestTemplatesLocalization">
     <ItemGroup>
       <FilesToSign Include="$(OutDir)\**\$(AssemblyName).resources.dll">
         <Authenticode>Microsoft</Authenticode>
         <StrongName>StrongName</StrongName>
       </FilesToSign>
     </ItemGroup>
-  </Target>
+  </Target-->
 
   <!-- Generate AssemblyInfo.cs -->
   <PropertyGroup>
