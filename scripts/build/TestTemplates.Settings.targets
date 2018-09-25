@@ -4,7 +4,7 @@
     <TestTemplatesRoot Condition="$(TestTemplatesRoot) == ''">..\..\</TestTemplatesRoot>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props') and $(FrameworkIdentifier) != 'NetCore'" />
-  <!-- Import props/targets with $(RepoRoot) since msbuild takes the relative path based on settings.targets and not with respect to the project. -->
+  <!-- Import props/targets with $(TestTemplatesRoot) since msbuild takes the relative path based on settings.targets and not with respect to the project. -->
   <Import Project="$(TestTemplatesRoot)packages\MicroBuild.Core.0.2.0\build\MicroBuild.Core.props" Condition="Exists('$(TestTemplatesRoot)packages\MicroBuild.Core.0.2.0\build\MicroBuild.Core.props')" />
   <Import Project="$(TestTemplatesRoot)packages\microsoft.vssdk.buildtools.15.8.3247\build\Microsoft.VSSDK.BuildTools.props" Condition=" $(IsVsixProj) == 'true' and Exists('$(TestTemplatesRoot)packages\microsoft.vssdk.buildtools.15.8.3247\build\Microsoft.VSSDK.BuildTools.props')" />
 
