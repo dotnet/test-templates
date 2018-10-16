@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TestTemplatesRoot Condition="$(TestTemplatesRoot) == ''">..\..\..\</TestTemplatesRoot>
+    <TestTemplatesRoot Condition="$(TestTemplatesRoot) == ''">$(MSBuildThisFileDirectory)..\..\..\</TestTemplatesRoot>
   </PropertyGroup>
   <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.Settings.targets" />
   <PropertyGroup>
@@ -75,7 +75,7 @@
   <PropertyGroup>
     <PreBuildEvent>
       IF EXIST "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip" DEL /q /s "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
-      "$(ProjectDir)$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)DesktopVB.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
+      "$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)DesktopVB.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
