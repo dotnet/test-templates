@@ -75,7 +75,7 @@
   <PropertyGroup>
     <PreBuildEvent>
       IF EXIST "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip" DEL /q /s "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
-      "$(ProjectDir)$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)DesktopVB.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
+      "$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)DesktopVB.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>

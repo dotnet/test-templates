@@ -75,7 +75,7 @@
   <PropertyGroup>
     <PreBuildEvent>
       IF EXIST "$(ProjectDir)ProjectTemplates\CSharp\Windows UAP\UWP.zip" DEL /q /s "$(ProjectDir)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
-      "$(ProjectDir)$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)UWP.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
+      "$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)UWP.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
     </PreBuildEvent>
   </PropertyGroup>  
   <PropertyGroup>
