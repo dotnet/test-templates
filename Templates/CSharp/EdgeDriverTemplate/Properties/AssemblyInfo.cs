@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-
 using System.Reflection;
-=======
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
->>>>>>> Add edge template for .net framework
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -13,15 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("EdgeDriverTemplate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-<<<<<<< HEAD
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("EdgeDriverTemplate")]
 [assembly: AssemblyCopyright("")]
-=======
-[assembly: AssemblyCompany("Shen Chen")]
-[assembly: AssemblyProduct("EdgeDriverTemplate")]
-[assembly: AssemblyCopyright("Copyright © Shen Chen 2018")]
->>>>>>> Add edge template for .net framework
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -89,8 +89,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
 =======
 >>>>>>> Add edge template for .net framework
+=======
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+>>>>>>> Change target version, assembly information, and add property
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

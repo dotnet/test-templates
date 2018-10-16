@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-<<<<<<< HEAD
     <TestTemplatesRoot Condition="$(TestTemplatesRoot) == ''">$(MSBuildThisFileDirectory)..\..\..\</TestTemplatesRoot>
-=======
-    <TestTemplatesRoot Condition="$(TestTemplatesRoot) == ''">..\..\..\</TestTemplatesRoot>
->>>>>>> Add edge template for .net framework
   </PropertyGroup>
   <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.Settings.targets" />
   <PropertyGroup>

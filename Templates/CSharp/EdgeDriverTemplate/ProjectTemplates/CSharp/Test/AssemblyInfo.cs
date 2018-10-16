@@ -21,10 +21,14 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 <<<<<<< HEAD
+<<<<<<< HEAD
 // [assembly: Guid("$guid1$")]
 =======
 [assembly: Guid("$guid1$")]
 >>>>>>> Add edge template for .net framework
+=======
+// [assembly: Guid("$guid1$")]
+>>>>>>> Change target version, assembly information, and add property
 
 // Version information for an assembly consists of the following four values:
 //
@@ -37,9 +41,14 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 // [assembly: AssemblyVersion("1.0.0.0")]
 // [assembly: AssemblyFileVersion("1.0.0.0")]
 =======
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 >>>>>>> Add edge template for .net framework
+=======
+// [assembly: AssemblyVersion("1.0.0.0")]
+// [assembly: AssemblyFileVersion("1.0.0.0")]
+>>>>>>> Change target version, assembly information, and add property
