@@ -3,8 +3,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" Condition="($(TargetFrameworkProfile) == '' or $(TargetFrameworkProfile) != 'Profile259') and $(TargetPlatformIdentifier) != 'UAP' and $(FrameworkIdentifier) != 'NetCore'"/>
     
   <PropertyGroup>
-    <TestTemplatesRoot Condition="$(TestTemplatesRoot) == ''">..\..\</TestTemplatesRoot>
-    <RepoRoot Condition="$(RepoRoot) == ''">..\..\</RepoRoot>
+    <TestTemplatesRoot Condition="$(TestTemplatesRoot) == ''">$(MSBuildThisFileDirectory)..\..\</TestTemplatesRoot>
+    <RepoRoot Condition="$(RepoRoot) == ''">$(MSBuildThisFileDirectory)..\..\</RepoRoot>
     <TestTemplatesPackagesRoot>$(TestTemplatesRoot)packages\</TestTemplatesPackagesRoot>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildDirectory)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
