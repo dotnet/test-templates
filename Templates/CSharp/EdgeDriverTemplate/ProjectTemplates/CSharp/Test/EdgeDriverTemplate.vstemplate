@@ -2,7 +2,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <TemplateID>Microsoft.CSharp.UnitTestProject.EdgeDriverTest</TemplateID>
-    <Name>Web Driver Test for Edge</Name>
+    <Name>Web Driver Test for Edge (.NET Framework)</Name>
     <Description>Create an automatic UI test using Edge Driver.</Description>
     <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="531"/>
     <ProjectType>CSharp</ProjectType>

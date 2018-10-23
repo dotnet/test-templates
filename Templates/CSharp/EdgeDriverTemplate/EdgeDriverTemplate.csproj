@@ -87,9 +87,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-
 <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" />
-  
 <PropertyGroup>
   <PreBuildEvent>
       IF EXIST "$(ProjectDir)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip" DEL /q /s "$(ProjectDir)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip"
