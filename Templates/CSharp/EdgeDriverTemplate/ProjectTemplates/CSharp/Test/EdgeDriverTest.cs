@@ -9,8 +9,8 @@ namespace $safeprojectname$
         // In order to use web driver of Edge, it is required to download and install the Edge Web Driver from
         // https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
         // Then add it to your PATH enviroment variable and run it at the background.
-
         EdgeDriver _driver;
+        
         [TestInitialize]
         public void EdgeDriverInitialize()
         {
