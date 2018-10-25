@@ -22,6 +22,7 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // [assembly: Guid("$guid1$")]
 =======
 [assembly: Guid("$guid1$")]
@@ -29,6 +30,9 @@ using System.Runtime.InteropServices;
 =======
 // [assembly: Guid("$guid1$")]
 >>>>>>> Change target version, assembly information, and add property
+=======
+// [assembly: Guid("$guid1$")]
+>>>>>>> c9b3d3c97dce86802824435ce48141af48c79ef7
 
 // Version information for an assembly consists of the following four values:
 //
@@ -42,6 +46,7 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // [assembly: AssemblyVersion("1.0.0.0")]
 // [assembly: AssemblyFileVersion("1.0.0.0")]
 =======
@@ -52,3 +57,7 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.0.0")]
 // [assembly: AssemblyFileVersion("1.0.0.0")]
 >>>>>>> Change target version, assembly information, and add property
+=======
+// [assembly: AssemblyVersion("1.0.0.0")]
+// [assembly: AssemblyFileVersion("1.0.0.0")]
+>>>>>>> c9b3d3c97dce86802824435ce48141af48c79ef7

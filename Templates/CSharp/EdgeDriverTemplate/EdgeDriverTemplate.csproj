@@ -78,10 +78,14 @@
     <Content Include="packages\selenium.webdriver.3.14.0.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
 <<<<<<< HEAD
+<<<<<<< HEAD
     </Content>
 =======
     </Content>>
 >>>>>>> Add edge template for .net framework
+=======
+    </Content>
+>>>>>>> c9b3d3c97dce86802824435ce48141af48c79ef7
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="ProjectTemplates\CSharp\Test\EdgeDriverTemplate.vstemplate" />
@@ -93,15 +97,19 @@
   </ItemGroup>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> Fix the nuget package problem
+=======
+>>>>>>> c9b3d3c97dce86802824435ce48141af48c79ef7
 <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" />
 <PropertyGroup>
   <PreBuildEvent>
       IF EXIST "$(ProjectDir)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip" DEL /q /s "$(ProjectDir)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip"
       "$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)EdgeDriver.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip"
   </PreBuildEvent>
+<<<<<<< HEAD
 =======
   <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" />
   <PropertyGroup>
@@ -110,6 +118,8 @@
         "$(ProjectDir)$(TestTemplatesRoot)tools\ZipItems\ZipItems.exe" "$(ProjectDir)EdgeDriver.xml" "$(ProjectDir)\" "$(ProjectDir)ProjectTemplate\CSharp\Test\EdgeDriverTemplate.zip"
     </PreBuildEvent>
 >>>>>>> Add edge template for .net framework
+=======
+>>>>>>> c9b3d3c97dce86802824435ce48141af48c79ef7
   </PropertyGroup>
   <PropertyGroup>
     <RunCodeAnalysisOnThisProject>false</RunCodeAnalysisOnThisProject>

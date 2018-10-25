@@ -11,6 +11,7 @@ namespace $safeprojectname$
         // Then add it to your PATH enviroment variable and run it at the background.
 
         EdgeDriver _driver;
+
         [TestInitialize]
         public void EdgeDriverInitialize()
         {
