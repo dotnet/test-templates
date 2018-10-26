@@ -3,7 +3,7 @@
   <TemplateData>
     <TemplateID>Microsoft.CSharp.UnitTestProject.EdgeDriverTest</TemplateID>
     <Name>Web Driver Test for Edge (.NET Framework)</Name>
-    <Description>Create an automatic UI test using Edge Driver.</Description>
+    <Description>A project that contains unit tests that can automate UI testing of web sites within Edge browser (using Microsoft WebDriver)</Description>
     <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="531"/>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>100</SortOrder>
@@ -11,7 +11,7 @@
     <DefaultName>EdgeDriverTest</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <CreateInPlace>false</CreateInPlace>
-    <RequiredFrameworkVersion>4.6</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$safeprojectname$.csproj" File="EdgeDriverSample.csproj" ReplaceParameters="true">

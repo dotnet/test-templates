@@ -6,11 +6,12 @@ namespace $safeprojectname$
     [TestClass]
     public class EdgeDriverTest
     {
-        // In order to use web driver of Edge, it is required to download and install the Edge Web Driver from
-        // https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-        // Then add it to your PATH enviroment variable and run it at the background.
+        // In order to run the below test(s), 
+        // download and install Microsoft WebDriver from https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/,
+        // then add the folder containing the installed MircrosoftWebDriver.exe to your PATH enviornment variable 
+        // and launch MircrosoftWebDriver.exe from a command prompt
 
-        EdgeDriver _driver;
+        private EdgeDriver _driver;
 
         [TestInitialize]
         public void EdgeDriverInitialize()
@@ -22,9 +23,9 @@ namespace $safeprojectname$
         [TestMethod]
         public void VerifyPageTitle()
         {
-            // Add your own test logic
+           // Replace with your own test logic
             _driver.Url = "https://www.bing.com";
-            Assert.AreEqual("Bing", Driver.Title);
+            Assert.AreEqual("Bing", _driver.Title);
         }
 
         [TestCleanup]
