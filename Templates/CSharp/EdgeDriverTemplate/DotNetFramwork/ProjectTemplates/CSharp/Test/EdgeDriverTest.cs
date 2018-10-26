@@ -8,8 +8,8 @@ namespace $safeprojectname$
     {
         // In order to run the below test(s), 
         // download and install Microsoft WebDriver from https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/,
-        // then add the folder containing the installed MircrosoftWebDriver.exe to your PATH enviornment variable 
-        // and launch MircrosoftWebDriver.exe from a command prompt
+        // then add the folder containing the installed MicrosoftWebDriver.exe to your PATH enviornment variable 
+        // and launch MicrosoftWebDriver.exe from a command prompt
 
         private EdgeDriver _driver;
 

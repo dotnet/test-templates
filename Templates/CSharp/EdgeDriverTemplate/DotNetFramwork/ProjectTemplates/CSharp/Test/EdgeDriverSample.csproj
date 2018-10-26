@@ -25,9 +25,6 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
-  <!-- <PropertyGroup>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-  </PropertyGroup> -->
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
