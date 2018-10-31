@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 
 namespace $safeprojectname$
@@ -7,23 +8,26 @@ namespace $safeprojectname$
     public class EdgeDriverTest
     {
         // In order to run the below test(s), 
-        // download and install Microsoft WebDriver from https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/,
-        // then add the folder containing the installed MicrosoftWebDriver.exe to your PATH enviornment variable 
-        // and launch MicrosoftWebDriver.exe from a command prompt
+        // please follow the instructions from http://go.microsoft.com/fwlink/?LinkId=619687
+        // to install Microsoft WebDriver.
 
         private EdgeDriver _driver;
 
         [TestInitialize]
         public void EdgeDriverInitialize()
         {
-           // Initialize edge driver 
-            _driver = new EdgeDriver();
+            // Initialize edge driver 
+            var options = new EdgeOptions
+            {
+                PageLoadStrategy = PageLoadStrategy.Normal
+            };
+            _driver = new EdgeDriver(options);
         }
 
         [TestMethod]
         public void VerifyPageTitle()
         {
-           // Replace with your own test logic
+            // Replace with your own test logic
             _driver.Url = "https://www.bing.com";
             Assert.AreEqual("Bing", _driver.Title);
         }
