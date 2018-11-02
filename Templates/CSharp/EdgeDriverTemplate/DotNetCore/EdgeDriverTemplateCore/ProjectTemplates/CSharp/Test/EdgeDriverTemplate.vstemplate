@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <TemplateID>Microsoft.CSharp.UnitTestProject.EdgeDriverTestCore</TemplateID>
+    <Name>Web Driver Test for Edge (.NET Core)</Name>
+    <Description>A project that contains unit tests that can automate UI testing of web sites within Edge browser (using Microsoft WebDriver)</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="531"/>
+    <SortOrder>100</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>EdgeDriverTest</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="EdgeDriverSample.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="EdgeDriverTest.cs" OpenInEditor="true">EdgeDriverTest.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
