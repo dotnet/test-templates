@@ -36,13 +36,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
@@ -70,10 +68,10 @@
     </Content>
     <Content Include="EdgeDriver.xml" />
   </ItemGroup>
+  <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" />
   <ItemGroup>
     <VSTemplate Include="ProjectTemplates\CSharp\Test\EdgeDriverTemplate.vstemplate" />
   </ItemGroup>
-  <Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" />
   <PropertyGroup>
     <PreBuildEvent>
       IF EXIST "$(ProjectDir)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip" DEL /q /s "$(ProjectDir)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip"
