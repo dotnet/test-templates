@@ -7,8 +7,8 @@
     <FinalizeSkipLayout>true</FinalizeSkipLayout>
     <IsPackage>true</IsPackage>
     <OutputPath>$(TestTemplatesRoot)\artifacts\$(Configuration)\v3vsix</OutputPath>
-    <UseVisualStudioVersion>true</UseVisualStudioVersion>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseVisualStudioVersion>true</UseVisualStudioVersion>
     <ValidateManifest>false</ValidateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(RunningInMicroBuild)' != 'true'"> 
