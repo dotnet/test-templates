@@ -18,13 +18,13 @@
   <Import Project="$(TestTemplatesRoot)\packages\MicroBuild.Core.0.2.0\build\MicroBuild.Core.targets" />
   <Import Project="$(TestTemplatesRoot)\packages\MicroBuild.Core.0.2.0\build\MicroBuild.Core.props" />
   <ItemGroup>
-    <VsixFileToCopy Include="$(TestTemplatesRoot)\artifacts\$(Configuration)\EdgeDriverTemplateCore\Microsoft.VisualStudio.Templates.CS.MSTestv2.EdgeDriverTestCore.json" />
+    <VsixFileToCopy Include="$(TestTemplatesRoot)\artifacts\$(Configuration)\EdgeDriverTemplateCore\Microsoft.VisualStudio.Templates.CS.EdgeDriverTestCore.json" />
     <VsixFileToCopy Include="$(TestTemplatesRoot)\artifacts\$(Configuration)\EdgeDriverTemplateCore\EdgeDriverTemplateCore.vsix" />
   </ItemGroup>
   <Target Name="BeforeBuild"> 
     <Copy SourceFiles="@(VsixFileToCopy)" DestinationFolder="$(OutputPath)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
   </Target>
   <ItemGroup>
-    <MergeManifest Include="$(OutputPath)Microsoft.VisualStudio.Templates.CS.MSTestv2.EdgeDriverTestCore.json" />
+    <MergeManifest Include="$(OutputPath)Microsoft.VisualStudio.Templates.CS.EdgeDriverTestCore.json" />
   </ItemGroup>
 </Project>
