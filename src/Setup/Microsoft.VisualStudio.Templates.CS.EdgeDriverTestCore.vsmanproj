@@ -7,7 +7,6 @@
     <FinalizeSkipLayout>true</FinalizeSkipLayout>
     <IsPackage>true</IsPackage>
     <OutputPath>$(TestTemplatesRoot)\artifacts\$(Configuration)\v3vsix</OutputPath>
-    <TargetFrameworkVersion>netcoreapp2.1</TargetFrameworkVersion>
     <UseVisualStudioVersion>true</UseVisualStudioVersion>
     <ValidateManifest>false</ValidateManifest>
   </PropertyGroup>
