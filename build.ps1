@@ -157,7 +157,9 @@ $TT_VSmanprojs =@("src\setup\Microsoft.VisualStudio.Templates.CS.MSTestv2.Deskto
 				   "src\setup\Microsoft.VisualStudio.Templates.VB.MSTestv2.Desktop.UnitTest.vsmanproj",
 				   "src\setup\Microsoft.VisualStudio.Templates.VB.MSTestv2.UWP.UnitTest.vsmanproj",
                    "src\setup\Microsoft.VisualStudio.TestTools.MSTestV2.WizardExtension.IntelliTest.vsmanproj", 
-                   "src\setup\Microsoft.VisualStudio.TestTools.MSTestV2.WizardExtension.UnitTest.vsmanproj")
+                   "src\setup\Microsoft.VisualStudio.TestTools.MSTestV2.WizardExtension.UnitTest.vsmanproj",
+                   "src\setup\Microsoft.VisualStudio.Templates.CS.EdgeDriverTestCore.vsmanproj",
+                   "src\Setup\Microsoft.VisualStudio.Templates.CS.EdgeDriverTest.vsmanproj")
 
 Download-Dotnet
 Perform-Restore
