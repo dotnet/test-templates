@@ -75,9 +75,8 @@
     <Content Include="packages\MSTest.TestFramework.1.3.2.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="packages\selenium.webdriver.3.14.0.nupkg">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
+    <!-- selenium.webdriver is not included here because it is not owned by Microsoft.
+    Therefore we can't sign it to let it be included in VS.-->
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="ProjectTemplates\CSharp\Test\EdgeDriverTemplate.vstemplate" />
