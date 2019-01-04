@@ -2,14 +2,20 @@
   <Import Project="..\..\Version.props" />
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
-    <NuspecFile>$(MSBuildThisFileDirectory)\Templates.nuspec</NuspecFile>
-    <NuspecProperties>version=$(PackageVersion)</NuspecProperties>
-    <IncludeBuildOutput>False</IncludeBuildOutput>
     <IncludeBuildOutput>False</IncludeBuildOutput>
     <IncludeSource>False</IncludeSource>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <OutputPath>$(TemplatesFolder)</OutputPath>
     <EnableDefaultItems>False</EnableDefaultItems>
+    <IsPackable>true</IsPackable>
+    <NoWarn>true</NoWarn>
+
+    <PackageId>Microsoft.DotNet.Test.ProjectTemplates.1.x</PackageId>
+    <Authors>Microsoft</Authors>
+    <Description>Test Templates for Microsoft Template Engine</Description>
+    <language>en-US</language>
+    <PackageProjectUrl>https://github.com/dotnet/test-templates</PackageProjectUrl>
+    <PackageType>Template</PackageType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Remove="Microsoft.NETCore.App" />
