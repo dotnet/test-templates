@@ -9,7 +9,7 @@
         <EnableDefaultItems>False</EnableDefaultItems>
         <IsPackable>true</IsPackable>
         <NoPackageAnalysis>true</NoPackageAnalysis>
-        <NoWarn>true</NoWarn>
+        <NoWarn>2008;NU5125</NoWarn>
 
         <PackageId>Microsoft.DotNet.Test.ProjectTemplates.2.2</PackageId>
         <Authors>Microsoft</Authors>
