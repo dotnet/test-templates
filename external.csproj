@@ -9,5 +9,6 @@
         <PackageReference Include="vswhere" Version="2.0.2" />
         <PackageReference Include="NuGet.CommandLine" Version="3.4.3" />
         <PackageReference Include="StyleCop.Analyzers" Version="1.0.0" />
+        <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.8.3247" />
     </ItemGroup>
 </Project>
