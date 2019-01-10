@@ -8,6 +8,7 @@
 
    <PropertyGroup>
     <VersionPrefix>1.0.2</VersionPrefix>
+    <VsixVersionPrefix>16.0.28417</VsixVersionPrefix>
     <PreReleaseVersionLabel>beta4</PreReleaseVersionLabel>
   </PropertyGroup>
 
