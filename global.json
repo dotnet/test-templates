@@ -1,5 +1,8 @@
 {
   "tools": {
+    "vs": {
+       "version": "15.9"
+    },
     "dotnet": "2.1.300"
   },
   "msbuild-sdks": {
