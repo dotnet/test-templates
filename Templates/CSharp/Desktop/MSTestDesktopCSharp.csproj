@@ -1,5 +1,4 @@
 ﻿<Project  Sdk="Microsoft.NET.Sdk">
-  <!--Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.Settings.targets" /-->
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
     <RootNamespace>MSTestDesktopCSharp</RootNamespace>
@@ -9,9 +8,8 @@
     <EnableDefaultItems>false</EnableDefaultItems>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
     <!-- VS Insertion -->
-    <!--VisualStudioInsertionComponent>Microsoft.CodeAnalysis.SDK</VisualStudioInsertionComponent-->
+    <VisualStudioInsertionComponent>Microsoft.VisualStudio.Templates.CS.MSTestv2.Desktop.UnitTest</VisualStudioInsertionComponent>
 
-    <IsVsixProject>true</IsVsixProject>
     <CreateVsixContainer>true</CreateVsixContainer>
     <DeployExtension>False</DeployExtension>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -33,22 +31,22 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-    <!--Content Include="Desktop.xml" /-->
-    <!--Content Include="ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip">
+    <Content Include="Desktop.xml" />
+    <Content Include="ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip">
       <IncludeInVSIX>true</IncludeInVSIX>
-    </Content-->
+    </Content>
   </ItemGroup>
-  <ItemGroup>
+  <!--ItemGroup>
      <VSTemplate Include="ProjectTemplates\CSharp\Test\MSTestV2Desktop.vstemplate">
       <SubType>Designer</SubType>
     </VSTemplate>
-  </ItemGroup>
+  </ItemGroup-->
   <!--Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" /-->
-  <!--PropertyGroup>
+  <PropertyGroup>
     <PreBuildEvent>
       IF EXIST "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip" DEL /q /s "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip"
       "$(RepoRoot)tools\ZipItems\ZipItems.exe" "$(MSBuildThisFileDirectory)Desktop.xml" "$(MSBuildThisFileDirectory)\" "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip"
     </PreBuildEvent>
-  </PropertyGroup-->
-   <!--Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="Exists('$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets')" /-->
+  </PropertyGroup>
+   <Import Project="$(RepoRoot)eng\Loc.targets" />
 </Project>
