@@ -8,4 +8,4 @@ type TestClass () =
 
     [<TestMethod>]
     member this.TestMethodPassing () =
-        Assert.IsTrue(true);
+        Assert.IsTrue(true)
