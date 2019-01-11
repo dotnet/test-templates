@@ -13,7 +13,6 @@
     <Compile Include="MSTestv2TestFrameworkMetadata.cs" />
     <Compile Include="MSTestv2TestFrameworkPackage.cs" />
     <Compile Include="MSTestv2TestFrameworkPackageAttribute.cs" />
-    <!--None Include="Properties\AssemblyInfo.cs" /-->
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Internal.IntelliTest" Version="15.0.0"/>

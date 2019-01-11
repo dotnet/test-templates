@@ -33,6 +33,5 @@
     <Compile Include="MSTestv2SolutionManager.cs" />
     <Compile Include="MSTestv2UnitTestClassManager.cs" />
     <Compile Include="MSTestv2UnitTestProjectManager.cs" />
-    <!--Compile Include="Properties\AssemblyInfo.cs" /-->
   </ItemGroup>
 </Project>
