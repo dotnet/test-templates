@@ -1,6 +1,5 @@
 ﻿<Project  Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{AAB9F3CF-72D5-419B-B31E-209388BF3E7C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>MSTestv2IntelliTestExtension</RootNamespace>
     <AssemblyName>MSTestv2IntelliTestExtension</AssemblyName>
