@@ -36,12 +36,11 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
-  
-  <PropertyGroup>
-    <PreBuildEvent>
-      IF EXIST "$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip" DEL /q /s "$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
-      "$(RepoRoot)tools\ZipItems\ZipItems.exe" "$(MSBuildThisFileDirectory)DesktopVB.xml" "$(MSBuildThisFileDirectory)\" "$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
-    </PreBuildEvent>
-  </PropertyGroup>
-   <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Target Name="ZipTemplate" BeforeTargets="BeforeBuild">
+        <ZipDirectory
+            SourceDirectory="$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate"
+            DestinationFile="$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
+            Overwrite="true" />
+  </Target>
 </Project>

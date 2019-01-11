@@ -15,6 +15,6 @@
     <Compile Include="MSTestv2TestFrameworkPackageAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Internal.IntelliTest" Version="$(MicrosoftInternalIntelliTest)"/>
+    <PackageReference Include="Microsoft.Internal.IntelliTest" Version="$(MicrosoftInternalIntelliTestVersion)"/>
   </ItemGroup>
 </Project>

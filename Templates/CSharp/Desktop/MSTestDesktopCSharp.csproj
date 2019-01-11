@@ -36,17 +36,11 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
-  <!--ItemGroup>
-     <VSTemplate Include="ProjectTemplates\CSharp\Test\MSTestV2Desktop.vstemplate">
-      <SubType>Designer</SubType>
-    </VSTemplate>
-  </ItemGroup-->
-  <!--Import Project="$(TestTemplatesRoot)scripts\build\TestTemplates.targets" /-->
-  <PropertyGroup>
-    <PreBuildEvent>
-      IF EXIST "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip" DEL /q /s "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip"
-      "$(RepoRoot)tools\ZipItems\ZipItems.exe" "$(MSBuildThisFileDirectory)Desktop.xml" "$(MSBuildThisFileDirectory)\" "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip"
-    </PreBuildEvent>
-  </PropertyGroup>
-   <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Target Name="ZipTemplate" BeforeTargets="BeforeBuild">
+        <ZipDirectory
+            SourceDirectory="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate"
+            DestinationFile="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\DesktopUnitTestTemplate.zip"
+            Overwrite="true" />
+  </Target>
 </Project>

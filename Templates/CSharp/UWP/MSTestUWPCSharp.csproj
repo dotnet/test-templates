@@ -38,11 +38,11 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <PropertyGroup>
-    <PreBuildEvent>
-      IF EXIST "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip" DEL /q /s "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
-      "$(RepoRoot)tools\ZipItems\ZipItems.exe" "$(MSBuildThisFileDirectory)UWP.xml" "$(MSBuildThisFileDirectory)\" "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
-    </PreBuildEvent>
-  </PropertyGroup>
-   <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Target Name="ZipTemplate" BeforeTargets="BeforeBuild">
+        <ZipDirectory
+            SourceDirectory="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP"
+            DestinationFile="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
+            Overwrite="true" />
+  </Target>
 </Project>
