@@ -1,7 +1,6 @@
 ﻿<Project  Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <ProjectGuid>{88308F8C-9B6A-4FC1-BA78-F7106987CE56}</ProjectGuid>
     <RootNamespace>MSTestv2IntelliTestExtensionPackage</RootNamespace>
     <AssemblyName>MSTestv2IntelliTestExtensionPackage</AssemblyName>
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
@@ -30,7 +29,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MSTestv2IntelliTestExtension\MSTestv2IntelliTestExtension.csproj">
-      <Project>{aab9f3cf-72d5-419b-b31e-209388bf3e7c}</Project>
       <Name>MSTestv2IntelliTestExtension</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup</IncludeOutputGroupsInVSIX>
     </ProjectReference>
