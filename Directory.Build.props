@@ -15,6 +15,5 @@
     <NoWarn>$(NoWarn);NU5125</NoWarn>
   </PropertyGroup>
 
-    <!--Import Project="Version.props" /-->
   <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
 </Project>
