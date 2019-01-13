@@ -10,7 +10,6 @@
     <!-- VS Insertion -->
     <VisualStudioInsertionComponent>Microsoft.VisualStudio.Templates.CS.MSTestv2.UWP.UnitTest</VisualStudioInsertionComponent>
 
-    <IsVsixProject>true</IsVsixProject>
     <CreateVsixContainer>true</CreateVsixContainer>
     <DeployExtension>False</DeployExtension>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -25,7 +24,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\CSharp\Windows UAP\UWP.zip">
+    <Content Include="ProjectTemplates\**">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="UWP.xml" />
@@ -39,11 +38,5 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <PropertyGroup>
-    <PreBuildEvent>
-      IF EXIST "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip" DEL /q /s "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
-      "$(RepoRoot)tools\ZipItems\ZipItems.exe" "$(MSBuildThisFileDirectory)UWP.xml" "$(MSBuildThisFileDirectory)\" "$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
-    </PreBuildEvent>
-  </PropertyGroup>
-   <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Import Project="$(RepoRoot)eng\Loc.targets" />
 </Project>

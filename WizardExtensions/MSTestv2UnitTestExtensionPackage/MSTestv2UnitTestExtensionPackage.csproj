@@ -1,7 +1,6 @@
 ﻿<Project  Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
-    <ProjectGuid>{4348D191-1028-4031-8FCB-B0EF7329271D}</ProjectGuid>
     <RootNamespace>MSTestv2UnitTestExtensionPackage</RootNamespace>
     <AssemblyName>MSTestv2UnitTestExtensionPackage</AssemblyName>
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
@@ -30,7 +29,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MSTestv2UnitTestExtension\MSTestv2UnitTestExtension.csproj">
-      <Project>{25bface8-5009-498e-9b18-3e417c312f26}</Project>
       <Name>MSTestv2UnitTestExtension</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup</IncludeOutputGroupsInVSIX>
     </ProjectReference>

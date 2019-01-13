@@ -1,6 +1,5 @@
 ﻿<Project  Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{AAB9F3CF-72D5-419B-B31E-209388BF3E7C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>MSTestv2IntelliTestExtension</RootNamespace>
     <AssemblyName>MSTestv2IntelliTestExtension</AssemblyName>
@@ -15,6 +14,6 @@
     <Compile Include="MSTestv2TestFrameworkPackageAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Internal.IntelliTest" Version="15.0.0"/>
+    <PackageReference Include="Microsoft.Internal.IntelliTest" Version="$(MicrosoftInternalIntelliTestVersion)"/>
   </ItemGroup>
 </Project>

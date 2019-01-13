@@ -10,7 +10,6 @@
     <!-- VS Insertion -->
     <!--VisualStudioInsertionComponent>Microsoft.VisualStudio.Templates.VB.MSTestv2.Desktop.UnitTest</VisualStudioInsertionComponent-->
 
-    <IsVsixProject>true</IsVsixProject>
     <CreateVsixContainer>true</CreateVsixContainer>
     <DeployExtension>False</DeployExtension>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -32,17 +31,9 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="DesktopVB.xml" />
-    <Content Include="ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip">
+    <Content Include="ProjectTemplates\**">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
-  
-  <PropertyGroup>
-    <PreBuildEvent>
-      IF EXIST "$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip" DEL /q /s "$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
-      "$(RepoRoot)tools\ZipItems\ZipItems.exe" "$(MSBuildThisFileDirectory)DesktopVB.xml" "$(MSBuildThisFileDirectory)\" "$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Test\VBDesktopUnitTestTemplate.zip"
-    </PreBuildEvent>
-  </PropertyGroup>
-   <Import Project="$(RepoRoot)eng\Loc.targets" />
+  <Import Project="$(RepoRoot)eng\Loc.targets" />
 </Project>
