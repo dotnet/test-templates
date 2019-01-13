@@ -12,6 +12,7 @@
     <PreReleaseVersionLabel>beta4</PreReleaseVersionLabel>
 
     <!-- Dependencies -->
+    <MicrosoftVisualStudioCoreUtilityVersion>15.0.26201</MicrosoftVisualStudioCoreUtilityVersion>
     <MicrosoftInternalIntelliTestVersion>15.0.0</MicrosoftInternalIntelliTestVersion>
     <MicrosoftInternalCreateUnitTestVersion>15.0.0</MicrosoftInternalCreateUnitTestVersion>
     <NuGetVisualStudioVersion>3.5.0</NuGetVisualStudioVersion>
