@@ -6,7 +6,7 @@
         <Description xml:space="preserve">Create an automatic UI test using Edge Driver.</Description>
         <PackageId>Microsoft.VisualStudio.Templates.CS.EdgeDriverTest</PackageId>
     </Metadata>
-    <Installation Experimental="true">
+    <Installation AllUsers="true" Experimental="true">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
     </Installation>
     <Dependencies>
