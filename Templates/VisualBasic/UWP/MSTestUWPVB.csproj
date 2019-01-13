@@ -20,7 +20,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\VisualBasic\Windows UAP\UWP_VB.zip">
+    <Content Include="ProjectTemplates\**">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="UniversalTemplateLicense.rtf">
@@ -37,10 +37,4 @@
     </None>
   </ItemGroup>
    <Import Project="$(RepoRoot)eng\Loc.targets" />
-  <Target Name="ZipTemplate" BeforeTargets="BeforeBuild">
-        <ZipDirectory
-            SourceDirectory="$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Windows UAP\UWP_VB"
-            DestinationFile="$(MSBuildThisFileDirectory)ProjectTemplates\VisualBasic\Windows UAP\UWP_VB.zip"
-            Overwrite="true" />
-  </Target>
 </Project>

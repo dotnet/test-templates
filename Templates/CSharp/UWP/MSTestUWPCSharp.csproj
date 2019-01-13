@@ -24,7 +24,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ProjectTemplates\CSharp\Windows UAP\UWP.zip">
+    <Content Include="ProjectTemplates\**">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="UWP.xml" />
@@ -39,10 +39,4 @@
     </None>
   </ItemGroup>
   <Import Project="$(RepoRoot)eng\Loc.targets" />
-  <Target Name="ZipTemplate" BeforeTargets="BeforeBuild">
-        <ZipDirectory
-            SourceDirectory="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP"
-            DestinationFile="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Windows UAP\UWP.zip"
-            Overwrite="true" />
-  </Target>
 </Project>

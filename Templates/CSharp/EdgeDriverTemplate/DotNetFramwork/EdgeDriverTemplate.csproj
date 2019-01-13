@@ -24,8 +24,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="ProjectTemplates\**">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="EdgeDriver.xml">
@@ -49,10 +48,4 @@
     </None>
   </ItemGroup>
   <Import Project="$(RepoRoot)eng\Loc.targets" />
-  <Target Name="ZipTemplate" BeforeTargets="BeforeBuild">
-    <ZipDirectory
-        SourceDirectory="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\EdgeDriverTemplate"
-        DestinationFile="$(MSBuildThisFileDirectory)ProjectTemplates\CSharp\Test\EdgeDriverTemplate.zip"
-        Overwrite="true" />
-  </Target>
 </Project>
