@@ -1,0 +1,35 @@
+variables:
+- name: Build.Repository.Clean
+  value: true
+
+# CI and PR triggers
+trigger:
+- master
+
+pr:
+- master
+
+jobs:
+- template: /eng/common/templates/job/job.yml
+  parameters:
+    name: Windows_NT
+    enableTelemetry: true
+    enablePublishBuildArtifacts: true
+    helixRepo: dotnet/test-templates
+    pool:
+      name: NetCorePublic-Int-Pool
+      queue: Windows.10.Amd64.Open
+    strategy:
+      matrix:
+        debug_configuration:
+          _BuildConfig: Debug
+        release_configuration:
+          _BuildConfig: Release
+    steps:
+    - script: eng\common\cibuild.cmd
+        -configuration $(_BuildConfig)
+        -prepareMachine
+      name: Build
+      displayName: Build
+      condition: succeeded()
+
