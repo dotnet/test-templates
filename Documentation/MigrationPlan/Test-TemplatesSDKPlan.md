@@ -4,8 +4,8 @@ Given the list from the main migration status page:
 3.	Engineering dependency flow
 4.	Internal builds from dnceng
 
-Estimated timeline
-1.	November
-2.	End of November / Early December
-3.	End of November / Early December
-4.	End of December
+[Edited] Estimated timeline
+1.	Early January
+2.	Mid January
+3.	Mid January
+4.	End of January
