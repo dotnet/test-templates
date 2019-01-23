@@ -1,7 +1,8 @@
 variables:
 - name: Build.Repository.Clean
   value: true
-
+- name: _TeamName
+  value: Unit Testing
 # CI and PR triggers
 trigger:
 - master
