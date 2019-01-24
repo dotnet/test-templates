@@ -1,8 +1,7 @@
 variables:
-- name: Build.Repository.Clean
-  value: true
 - name: _TeamName
-  value: Unit Testing
+  value: UnitTesting
+
 # CI and PR triggers
 trigger:
 - master
@@ -30,23 +29,25 @@ jobs:
         ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
           name: dotnet-internal-temp
       variables:
+      - _OfficialBuildArgs: ''
       # Only enable publishing in official builds.
       - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
         # DotNet-Blob-Feed provides: dotnetfeed-storage-access-key-1
         # Publish-Build-Assets provides: MaestroAccessToken, BotAccount-dotnet-maestro-bot-PAT
         - group: DotNet-Blob-Feed
+        - group: DotNet-Symbol-Server-Pats
         - group: Publish-Build-Assets
-        - name: _OfficialBuildArgs
-          value: /p:DotNetSignType=$(_SignType) 
+        - group: DotNet-VSTS-Infra-Access
+        - _VisualStudioDropName: Products/$(System.TeamProject)/$(Build.Repository.Name)/$(Build.SourceBranchName)/$(Build.BuildNumber)
+        - _OfficialBuildArgs: /p:DotNetSignType=$(_SignType) 
                  /p:TeamName=$(_TeamName)
+                 /p:VisualStudioDropName=$(_VisualStudioDropName)
+                 /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
+                 /p:DotNetSymbolServerTokenSymWeb=$(symweb-symbol-server-pat)
                  /p:DotNetPublishBlobFeedKey=$(dotnetfeed-storage-access-key-1)
                  /p:DotNetPublishBlobFeedUrl=https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json
                  /p:DotNetPublishToBlobFeed=$(_DotNetPublishToBlobFeed)
                  /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
-      # else
-      - ${{ if or(eq(variables['System.TeamProject'], 'public'), in(variables['Build.Reason'], 'PullRequest')) }}:
-        - name: _OfficialBuildArgs
-          value: ''
       strategy:
         matrix:
           Debug:
@@ -73,3 +74,12 @@ jobs:
           -prepareMachine
           $(_BuildArgs)
         displayName: Build and Publish
+        
+      - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+        - task: ms-vseng.MicroBuildTasks.4305a8de-ba66-4d8b-b2d1-0dc4ecbbf5e8.MicroBuildUploadVstsDropFolder@1
+          displayName: Upload Azure DevOps Drop
+          inputs:
+            DropName: $(_VisualStudioDropName)
+            DropFolder: 'artifacts\VSSetup\$(_BuildConfig)\Insertion'
+            AccessToken: $(dn-bot-devdiv-build-rw-code-rw)
+          condition: and(succeeded(), eq(variables['_DotNetPublishToBlobFeed'], 'true'))
