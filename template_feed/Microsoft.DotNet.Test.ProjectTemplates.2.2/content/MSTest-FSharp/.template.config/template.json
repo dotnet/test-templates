@@ -6,7 +6,7 @@
   "generatorVersions": "[1.0.0.0-*)",
   "description": "A project that contains unit tests that can run on .NET Core on Windows, Linux and macOS",
   "groupIdentity": "Microsoft.Test.MSTest",
-  "precedence": "3000",
+  "precedence": "4000",
   "identity": "Microsoft.Test.MSTest.FSharp.2.2",
   "shortName": "mstest",
   "tags": {
