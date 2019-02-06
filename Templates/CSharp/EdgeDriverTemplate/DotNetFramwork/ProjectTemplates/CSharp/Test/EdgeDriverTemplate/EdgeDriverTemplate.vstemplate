@@ -2,8 +2,8 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <TemplateID>Microsoft.CSharp.Web.EdgeDriverTest</TemplateID>
-    <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="704"/>
-    <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="706"/>
+    <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="706"/>
+    <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="708"/>
     <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="531"/>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>100</SortOrder>
