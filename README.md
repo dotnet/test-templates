@@ -1,6 +1,6 @@
 # Overview
 
-This repository is the home for the .NET Core Test Templates. It also contains Classic .Net Framework and Universal Test templates for C# and VB. 
+This repository is home for the .NET Core Test Templates. It also contains Classic .Net Framework and Universal Test templates for C# and VB. 
 
 # Creating new projects
 
