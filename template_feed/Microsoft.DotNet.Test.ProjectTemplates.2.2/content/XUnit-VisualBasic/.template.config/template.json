@@ -6,7 +6,7 @@
   "generatorVersions": "[1.0.0.0-*)",
   "description": "A project that contains xUnit.net tests that can run on .NET Core on Windows, Linux and macOS",
   "groupIdentity": "Microsoft.Test.xUnit",
-  "precedence": "3000",
+  "precedence": "4000",
   "identity": "Microsoft.Test.xUnit.VisualBasic.2.2",
   "shortName": "xunit",
   "tags": {
