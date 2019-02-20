@@ -6,6 +6,8 @@ namespace Microsoft.TestTemplates.AcceptanceTests
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Diagnostics;
+    using System.IO;
+    using System.Reflection;
     using System.Text;
     using System.Text.RegularExpressions;
 
@@ -25,10 +27,12 @@ namespace Microsoft.TestTemplates.AcceptanceTests
         {
         }
 
+        public object PathEnvironment { get; private set; }
+
         /// <summary>
-        /// Invokes <c>vstest.console</c> with specified arguments.
+        /// Invokes <c>dotnet</c> with specified arguments.
         /// </summary>
-        /// <param name="arguments">Arguments provided to <c>vstest.console</c>.exe</param>
+        /// <param name="arguments">Arguments provided to <c>dotnet</c>.exe</param>
         public void InvokeDotnetTest(string arguments)
         {
             this.Execute(arguments, out this.standardTestOutput, out this.standardTestError, out this.runnerExitCode);
@@ -82,6 +86,20 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             }
         }
 
+        private string GetDotnetExePath()
+        {
+            var currentDllPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(IntegrationTestBase)).Location);
+            string[] paths = currentDllPath.Split("\\artifacts");
+            if (paths.Length == 2)
+            {
+                var dotnetPath = Path.Combine(paths[0], ".dotnet", "dotnet.exe");
+                if (File.Exists(dotnetPath))
+                    return dotnetPath;
+            }
+
+            return "dotnet";
+        }
+
         private void Execute(string args, out string stdOut, out string stdError, out int exitCode)
         {
             this.arguments = args;
@@ -89,7 +107,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             using (Process dotnet = new Process())
             {
                 Console.WriteLine("IntegrationTestBase.Execute: Starting dotnet.exe");
-                dotnet.StartInfo.FileName = "dotnet.exe";
+                dotnet.StartInfo.FileName = GetDotnetExePath();
                 dotnet.StartInfo.Arguments = "test " + args;
                 dotnet.StartInfo.UseShellExecute = false;
                 dotnet.StartInfo.RedirectStandardError = true;
@@ -112,7 +130,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
                 dotnet.BeginErrorReadLine();
                 if (!dotnet.WaitForExit(80 * 1000))
                 {
-                    Console.WriteLine("IntegrationTestBase.Execute: Timed out waiting for vstest.console.exe. Terminating the process.");
+                    Console.WriteLine("IntegrationTestBase.Execute: Timed out waiting for dotnet.exe. Terminating the process.");
                     dotnet.Kill();
                 }
                 else
@@ -131,7 +149,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
 
                 Console.WriteLine("IntegrationTestBase.Execute: stdError = {0}", stdError);
                 Console.WriteLine("IntegrationTestBase.Execute: stdOut = {0}", stdOut);
-                Console.WriteLine("IntegrationTestBase.Execute: Stopped vstest.console.exe. Exit code = {0}", exitCode);
+                Console.WriteLine("IntegrationTestBase.Execute: Stopped dotnet.exe. Exit code = {0}", exitCode);
             }
         }
 
