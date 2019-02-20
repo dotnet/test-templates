@@ -80,7 +80,6 @@ jobs:
         inputs:
           command: test
           projects: 'test\Microsoft.TestTemplates.AcceptanceTests.sln'
-          arguments: '--logger:trx'
 
       - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
         - task: ms-vseng.MicroBuildTasks.4305a8de-ba66-4d8b-b2d1-0dc4ecbbf5e8.MicroBuildUploadVstsDropFolder@1
