@@ -12,9 +12,9 @@ namespace Microsoft.TestTemplates.AcceptanceTests
     using System.Text.RegularExpressions;
 
     /// <summary>
-    /// Base class for integration tests.
+    /// Base class for Acceptance tests.
     /// </summary>
-    public class IntegrationTestBase
+    public class AcceptanceTestBase
     {
         private const string TestSummaryStatusMessageFormat = "Total tests: {0}. Passed: {1}. Failed: {2}. Skipped: {3}";
         private string standardTestOutput = string.Empty;
@@ -22,12 +22,6 @@ namespace Microsoft.TestTemplates.AcceptanceTests
         private int runnerExitCode = -1;
 
         private string arguments = string.Empty;
-        
-        public IntegrationTestBase()
-        {
-        }
-
-        public object PathEnvironment { get; private set; }
 
         /// <summary>
         /// Invokes <c>dotnet</c> with specified arguments.
@@ -36,7 +30,8 @@ namespace Microsoft.TestTemplates.AcceptanceTests
         public void InvokeDotnetTest(string arguments)
         {
             this.Execute(arguments, out this.standardTestOutput, out this.standardTestError, out this.runnerExitCode);
-            this.FormatStandardOutCome();
+            this.standardTestError = Regex.Replace(this.standardTestError, @"\s+", " ");
+            this.standardTestOutput = Regex.Replace(this.standardTestOutput, @"\s+", " ");
         }
 
         /// <summary>
@@ -51,12 +46,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             if (totalTestCount == 0)
             {
                 // No test should be found/run
-                var summaryStatus = string.Format(
-                    TestSummaryStatusMessageFormat,
-                    @"\d+",
-                    @"\d+",
-                    @"\d+",
-                    @"\d+");
+                var summaryStatus = string.Format(TestSummaryStatusMessageFormat, @"\d+", @"\d+", @"\d+", @"\d+");
                 StringAssert.DoesNotMatch(
                     this.standardTestOutput,
                     new Regex(summaryStatus),
@@ -68,12 +58,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             }
             else
             {
-                var summaryStatus = string.Format(
-                    TestSummaryStatusMessageFormat,
-                    totalTestCount,
-                    passedTestsCount,
-                    failedTestsCount,
-                    skippedTestsCount);
+                var summaryStatus = string.Format(TestSummaryStatusMessageFormat, totalTestCount, passedTestsCount, failedTestsCount, skippedTestsCount);
 
                 Assert.IsTrue(
                     this.standardTestOutput.Contains(summaryStatus),
@@ -88,7 +73,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
 
         private string GetDotnetExePath()
         {
-            var currentDllPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(IntegrationTestBase)).Location);
+            var currentDllPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(AcceptanceTestBase)).Location);
             string[] paths = currentDllPath.Split("\\artifacts");
             if (paths.Length == 2)
             {
@@ -106,7 +91,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
 
             using (Process dotnet = new Process())
             {
-                Console.WriteLine("IntegrationTestBase.Execute: Starting dotnet.exe");
+                Console.WriteLine("AcceptanceTestBase.Execute: Starting dotnet.exe");
                 dotnet.StartInfo.FileName = GetDotnetExePath();
                 dotnet.StartInfo.Arguments = "test " + args;
                 dotnet.StartInfo.UseShellExecute = false;
@@ -119,8 +104,8 @@ namespace Microsoft.TestTemplates.AcceptanceTests
                 dotnet.OutputDataReceived += (sender, eventArgs) => stdoutBuffer.Append(eventArgs.Data).Append(Environment.NewLine);
                 dotnet.ErrorDataReceived += (sender, eventArgs) => stderrBuffer.Append(eventArgs.Data).Append(Environment.NewLine);
 
-                Console.WriteLine("IntegrationTestBase.Execute: Path = {0}", dotnet.StartInfo.FileName);
-                Console.WriteLine("IntegrationTestBase.Execute: Arguments = {0}", dotnet.StartInfo.Arguments);
+                Console.WriteLine("AcceptanceTestBase.Execute: Path = {0}", dotnet.StartInfo.FileName);
+                Console.WriteLine("AcceptanceTestBase.Execute: Arguments = {0}", dotnet.StartInfo.Arguments);
 
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
@@ -130,7 +115,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
                 dotnet.BeginErrorReadLine();
                 if (!dotnet.WaitForExit(80 * 1000))
                 {
-                    Console.WriteLine("IntegrationTestBase.Execute: Timed out waiting for dotnet.exe. Terminating the process.");
+                    Console.WriteLine("AcceptanceTestBase.Execute: Timed out waiting for dotnet.exe. Terminating the process.");
                     dotnet.Kill();
                 }
                 else
@@ -141,22 +126,16 @@ namespace Microsoft.TestTemplates.AcceptanceTests
 
                 stopwatch.Stop();
 
-                Console.WriteLine($"IntegrationTestBase.Execute: Total execution time: {stopwatch.Elapsed.Duration()}");
+                Console.WriteLine($"AcceptanceTestBase.Execute: Total execution time: {stopwatch.Elapsed.Duration()}");
 
                 stdError = stderrBuffer.ToString();
                 stdOut = stdoutBuffer.ToString();
                 exitCode = dotnet.ExitCode;
 
-                Console.WriteLine("IntegrationTestBase.Execute: stdError = {0}", stdError);
-                Console.WriteLine("IntegrationTestBase.Execute: stdOut = {0}", stdOut);
-                Console.WriteLine("IntegrationTestBase.Execute: Stopped dotnet.exe. Exit code = {0}", exitCode);
+                Console.WriteLine("AcceptanceTestBase.Execute: stdError = {0}", stdError);
+                Console.WriteLine("AcceptanceTestBase.Execute: stdOut = {0}", stdOut);
+                Console.WriteLine("AcceptanceTestBase.Execute: Stopped dotnet.exe. Exit code = {0}", exitCode);
             }
-        }
-
-        private void FormatStandardOutCome()
-        {
-            this.standardTestError = Regex.Replace(this.standardTestError, @"\s+", " ");
-            this.standardTestOutput = Regex.Replace(this.standardTestOutput, @"\s+", " ");
         }
     }
 }
