@@ -5,5 +5,6 @@
     <ProjectToBuild Include="$(MSBuildThisFileDirectory)..\template_feed\NetCoreTestTemplates.sln" />
     <ProjectToBuild Include="$(MSBuildThisFileDirectory)..\Templates\MSTestTemplates.sln" />
     <ProjectToBuild Include="$(MSBuildThisFileDirectory)..\WizardExtensions\WizardExtensions.sln" />
+    <ProjectToBuild Include="$(MSBuildThisFileDirectory)..\test\Microsoft.TestTemplates.AcceptanceTests.sln" />
   </ItemGroup>
 </Project>
