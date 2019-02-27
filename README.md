@@ -36,7 +36,11 @@ The steps required are outlined below.
 - Open up a command prompt and navigation to the root of your source code.
 - Run the build script appropriate your environment.
      - **Windows:** [build.cmd](https://github.com/dotnet/test-templates/blob/master/build.cmd)
-     - **Mac/Linux**: [build.sh](https://github.com/dotnet/test-templates/blob/master/build.sh)
 - When running the build script creates the nuget packages for net core test templates and vsix for classic test templates.
 - The build produces the template NuGet packages currently has a dependency on **nuget.exe**. 
 - Because of this, those that wish to `install` using the **template NuGet packages** will need to be on Windows in order to produce the appropriate assets. 
+
+## Test
+
+- Users can test the dotnet core templates that reside in the templates_feed folder by running the test script [test.cmd](https://github.com/dotnet/test-templates/blob/master/test.cmd)
+- Note: Please make sure you have run the build script before you run the test script.
