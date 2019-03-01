@@ -11,16 +11,13 @@
     <Page.Resources>
         <Style x:Key="CustomStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="Height" Value="80"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </Page.Resources>
 
-    <Grid>
-        <StackPanel Height="100" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Unit Test App" Style="{StaticResource CustomStyle}"/>
-        </StackPanel>
-    </Grid>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="Unit Test App" Style="{StaticResource CustomStyle}"/>
+    </StackPanel>
+
 </Page>

@@ -8,6 +8,5 @@ namespace $safeprojectname$
         {
             this.InitializeComponent();
         }
-
     }
 }
