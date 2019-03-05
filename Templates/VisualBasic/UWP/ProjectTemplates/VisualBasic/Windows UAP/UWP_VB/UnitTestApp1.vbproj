@@ -144,6 +144,9 @@ $endif$
     </Compile>
     <Compile Include="UnitTest1.vb" />
     <Compile Include="Properties\AssemblyInfo.vb"/>
+    <Compile Include="UnitTestAppMainPage.xaml.vb">
+      <DependentUpon>UnitTestAppMainPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -168,6 +171,12 @@ $endif$
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UnitTestAppMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
