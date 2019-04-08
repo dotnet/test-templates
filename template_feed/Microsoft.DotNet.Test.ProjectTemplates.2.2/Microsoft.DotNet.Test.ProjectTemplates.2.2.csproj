@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard1.0</TargetFramework>
         <IncludeBuildOutput>False</IncludeBuildOutput>
@@ -15,7 +15,9 @@
         <Description>Test Templates for Microsoft Template Engine</Description>
         <language>en-US</language>
         <PackageProjectUrl>https://github.com/dotnet/test-templates</PackageProjectUrl>
-        <PackageLicenseUrl>https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</PackageLicenseUrl>
+        <CopyrightMicrosoft>© Microsoft Corporation. All rights reserved.</CopyrightMicrosoft>
+        <CopyrightNetFoundation>© .NET Foundation and Contributors</CopyrightNetFoundation>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageType>Template</PackageType>
     </PropertyGroup>
     <ItemGroup>
