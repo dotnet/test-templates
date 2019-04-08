@@ -5,12 +5,10 @@
     <UsingToolVSSDK>true</UsingToolVSSDK>
     <UsingToolNetFrameworkReferenceAssemblies>true</UsingToolNetFrameworkReferenceAssemblies>
   </PropertyGroup>
-
-   <PropertyGroup>
+  <PropertyGroup>
     <VersionPrefix>1.0.2</VersionPrefix>
     <VsixVersionPrefix>16.0.28417</VsixVersionPrefix>
     <PreReleaseVersionLabel>beta4</PreReleaseVersionLabel>
-
     <!-- Dependencies -->
     <MicrosoftVisualStudioCoreUtilityVersion>15.0.26201</MicrosoftVisualStudioCoreUtilityVersion>
     <MicrosoftInternalIntelliTestVersion>15.0.0</MicrosoftInternalIntelliTestVersion>
@@ -22,7 +20,6 @@
     <VSLangProj80Version>8.0.50728</VSLangProj80Version>
     <MicrosoftVisualStudioComponentModelHostVersion>16.0.342-g758a0a97e0</MicrosoftVisualStudioComponentModelHostVersion>
   </PropertyGroup>
-
   <PropertyGroup>
     <RestoreSources>
       $(RestoreSources);
