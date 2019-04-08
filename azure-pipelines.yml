@@ -1,10 +1,10 @@
 variables:
 - name: _TeamName
   value: UnitTesting
-  - name: _PublishUsingPipelines
-    value: true
-  - name: _DotNetArtifactsCategory
-    value: .NETCore
+- name: _PublishUsingPipelines
+  value: true
+- name: _DotNetArtifactsCategory
+  value: .NETCore
 
 # CI and PR triggers
 trigger:
