@@ -3,9 +3,9 @@
     "vs": {
       "version": "15.9"
     },
-    "dotnet": "2.1.504"
+    "dotnet": "3.0.100-preview6-012264"
   },
   "msbuild-sdks": {
-    "Microsoft.DotNet.Arcade.Sdk": "1.0.0-beta.19380.2"
+    "Microsoft.DotNet.Arcade.Sdk": "1.0.0-beta.19460.3"
   }
 }
