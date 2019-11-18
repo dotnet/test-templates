@@ -30,10 +30,10 @@
     <Content Include="EdgeDriver.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="packages\MSTest.TestAdapter.2.0.0.nupkg">
+    <Content Include="$(RepoRoot)\Templates\Resources\MSTest.TestAdapter.2.0.0.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="packages\MSTest.TestFramework.2.0.0.nupkg">
+    <Content Include="$(RepoRoot)\Templates\Resources\MSTest.TestFramework.2.0.0.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <!-- selenium.webdriver is not included here because it is not owned by Microsoft.
