@@ -16,7 +16,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
     /// </summary>
     public class AcceptanceTestBase
     {
-        private const string TestSummaryStatusMessageFormat = "Total tests: {0}. Passed: {1}. Failed: {2}. Skipped: {3}";
+        private const string TestSummaryStatusMessageFormat = "Total tests: {0} Passed: {1} Total time:";
         private string standardTestOutput = string.Empty;
         private string standardTestError = string.Empty;
         private int runnerExitCode = -1;
