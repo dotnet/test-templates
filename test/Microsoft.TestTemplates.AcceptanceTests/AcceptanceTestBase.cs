@@ -16,7 +16,9 @@ namespace Microsoft.TestTemplates.AcceptanceTests
     /// </summary>
     public class AcceptanceTestBase
     {
-        private const string TestSummaryStatusMessageFormat = "Total tests: {0} Passed: {1} Total time:";
+        // this output is specific to the version of TP included with the runtime you are using to run the tests
+        // if you see all tests failed, chances are that the output changed after you upgraded to latest version of dotnet
+        private const string TestSummaryStatusMessageFormat = "Test Run Successful. Total tests: {0} Passed: {1} Total time:";
         private string standardTestOutput = string.Empty;
         private string standardTestError = string.Empty;
         private int runnerExitCode = -1;
@@ -46,7 +48,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             if (totalTestCount == 0)
             {
                 // No test should be found/run
-                var summaryStatus = string.Format(TestSummaryStatusMessageFormat, @"\d+", @"\d+", @"\d+", @"\d+");
+                var summaryStatus = string.Format(TestSummaryStatusMessageFormat3_1, @"\d+", @"\d+", @"\d+", @"\d+");
                 StringAssert.DoesNotMatch(
                     this.standardTestOutput,
                     new Regex(summaryStatus),
@@ -58,7 +60,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             }
             else
             {
-                var summaryStatus = string.Format(TestSummaryStatusMessageFormat, totalTestCount, passedTestsCount, failedTestsCount, skippedTestsCount);
+                var summaryStatus = string.Format(TestSummaryStatusMessageFormat3_1, totalTestCount, passedTestsCount, failedTestsCount, skippedTestsCount);
 
                 Assert.IsTrue(
                     this.standardTestOutput.Contains(summaryStatus),
