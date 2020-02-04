@@ -48,7 +48,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             if (totalTestCount == 0)
             {
                 // No test should be found/run
-                var summaryStatus = string.Format(TestSummaryStatusMessageFormat, @"\d+", @"\d+", @"\d+", @"\d+");
+                var summaryStatus = string.Format(TestSummaryStatusMessageFormat3_1, @"\d+", @"\d+", @"\d+", @"\d+");
                 StringAssert.DoesNotMatch(
                     this.standardTestOutput,
                     new Regex(summaryStatus),
@@ -60,7 +60,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             }
             else
             {
-                var summaryStatus = string.Format(TestSummaryStatusMessageFormat, totalTestCount, passedTestsCount, failedTestsCount, skippedTestsCount);
+                var summaryStatus = string.Format(TestSummaryStatusMessageFormat3_1, totalTestCount, passedTestsCount, failedTestsCount, skippedTestsCount);
 
                 Assert.IsTrue(
                     this.standardTestOutput.Contains(summaryStatus),
