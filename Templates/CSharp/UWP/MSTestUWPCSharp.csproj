@@ -28,10 +28,10 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="UWP.xml" />
-    <Content Include="packages\MSTest.TestFramework.2.0.0.nupkg">
+    <Content Include="packages\MSTest.TestFramework.2.1.0.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="packages\MSTest.TestAdapter.2.0.0.nupkg">
+    <Content Include="packages\MSTest.TestAdapter.2.1.0.nupkg">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="source.extension.vsixmanifest">
