@@ -13,12 +13,26 @@ namespace Microsoft.TestTemplates.AcceptanceTests
         /// <summary>
         /// The net core versions for which templates are present
         /// </summary>
-        private static string[] netCoreVersions = { "1.x", "2.0", "2.1", "2.2", "3.0" };
+        private static string[] netCoreVersions = {
+            // refer to https://dotnet.microsoft.com/download/dotnet-core
+            // for a list of supported dotnet versions and only include the ones
+            // that are not end-of-life
+            "2.1", 
+            "3.0",
+            "3.1",
+        };
 
         /// <summary>
         /// The type of the test template, combination of the test framework and language
         /// </summary>
-        private static string[] templateTypes = { "MSTest-CSharp", "MSTest-FSharp", "MSTest-VisualBasic", "XUnit-CSharp", "XUnit-FSharp", "XUnit-VisualBasic" };
+        private static string[] templateTypes = {
+            "MSTest-CSharp",
+            "MSTest-FSharp",
+            "MSTest-VisualBasic",
+            "XUnit-CSharp",
+            "XUnit-FSharp",
+            "XUnit-VisualBasic"
+        };
 
         [DataTestMethod]
         [DynamicData(nameof(GetTestTemplatesPath), DynamicDataSourceType.Method)]

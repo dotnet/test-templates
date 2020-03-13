@@ -16,7 +16,9 @@ namespace Microsoft.TestTemplates.AcceptanceTests
     /// </summary>
     public class AcceptanceTestBase
     {
-        private const string TestSummaryStatusMessageFormat = "Total tests: {0}. Passed: {1}. Failed: {2}. Skipped: {3}";
+        // this output is specific to the version of TP included with the runtime you are using to run the tests
+        // if you see all tests failed, chances are that the output changed after you upgraded to latest version of dotnet
+        private const string TestSummaryStatusMessageFormat = "Test Run Successful. Total tests: {0} Passed: {1} Total time:";
         private string standardTestOutput = string.Empty;
         private string standardTestError = string.Empty;
         private int runnerExitCode = -1;
