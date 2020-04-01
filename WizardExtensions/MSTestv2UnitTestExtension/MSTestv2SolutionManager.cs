@@ -51,8 +51,8 @@ namespace MSTestv2UnitTestExtension
 
             base.OnUnitTestProjectCreated(unitTestProject, sourceMethod);
 
-            this.EnsureNuGetReference(unitTestProject, "MSTest.TestAdapter", "2.0.0");
-            this.EnsureNuGetReference(unitTestProject, "MSTest.TestFramework", "2.0.0");
+            this.EnsureNuGetReference(unitTestProject, "MSTest.TestAdapter", "2.1.1");
+            this.EnsureNuGetReference(unitTestProject, "MSTest.TestFramework", "2.1.1");
 
             VSProject2 vsp = unitTestProject.Object as VSProject2;
             if (vsp != null)
