@@ -19,5 +19,8 @@
     <VSLangProjVersion>7.0.3301.0</VSLangProjVersion>
     <VSLangProj80Version>8.0.50728</VSLangProj80Version>
     <MicrosoftVisualStudioComponentModelHostVersion>16.0.342-g758a0a97e0</MicrosoftVisualStudioComponentModelHostVersion>
+    <MicrosoftVSSDKEmbedInteropTypesVersion>15.0.29</MicrosoftVSSDKEmbedInteropTypesVersion>
+    <!-- Arcade tooling dependencies-->
+    <MicrosoftVSSDKBuildToolsVersion>16.7.2</MicrosoftVSSDKBuildToolsVersion>
   </PropertyGroup>
 </Project>

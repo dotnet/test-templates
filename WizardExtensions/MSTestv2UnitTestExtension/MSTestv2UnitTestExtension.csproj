@@ -14,6 +14,7 @@
     <PackageReference Include="VSLangProj" Version="$(VSLangProjVersion)"/>
     <PackageReference Include="VSLangProj80" Version="$(VSLangProj80Version)"/>
     <PackageReference Include="Microsoft.VisualStudio.ComponentModelHost" Version="$(MicrosoftVisualStudioComponentModelHostVersion)"/>
+    <PackageReference Include="Microsoft.VisualStudio.SDK.EmbedInteropTypes" Version="$(MicrosoftVSSDKEmbedInteropTypesVersion)" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="envdte">

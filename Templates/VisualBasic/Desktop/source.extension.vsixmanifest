@@ -6,6 +6,7 @@
     <Description xml:space="preserve">Provides Visual Studio project template for MSTest V2(Visual Basic).</Description>
     <License>DesktopTemplateLicense.rtf</License>
     <PackageId>Microsoft.VisualStudio.Templates.VB.MSTestv2.Desktop.UnitTest</PackageId>
+    <AllowClientRole>true</AllowClientRole>
   </Metadata>
   <Installation AllUsers="true" Experimental="true">
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0]" />

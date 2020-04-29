@@ -5,6 +5,7 @@
         <DisplayName>Web Driver Test Template For Edge (.NET Framework)</DisplayName>
         <Description xml:space="preserve">Create an automatic UI test using Edge Driver.</Description>
         <PackageId>Microsoft.VisualStudio.Templates.CS.EdgeDriverTest</PackageId>
+        <AllowClientRole>true</AllowClientRole>
     </Metadata>
     <Installation AllUsers="true" Experimental="true">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
