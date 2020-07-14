@@ -29,6 +29,9 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             "MSTest-CSharp",
             "MSTest-FSharp",
             "MSTest-VisualBasic",
+            "NUnit-CSharp",
+            "NUnit-FSharp",
+            "NUnit-VisualBasic",
             "XUnit-CSharp",
             "XUnit-FSharp",
             "XUnit-VisualBasic"
