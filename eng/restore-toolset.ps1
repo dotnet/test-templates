@@ -15,8 +15,11 @@ function InitializeCustomSDKToolset {
   $installScript = GetDotNetInstallScript $dotnetRoot
   & $installScript -InstallDir $env:DOTNET_INSTALL_DIR -Version "5.0.100-preview.6.20318.15"
 
-
+  InstallDotNetSharedFramework "1.0.5"
+  InstallDotNetSharedFramework "1.1.2"
   InstallDotNetSharedFramework "2.1.0"
+  InstallDotNetSharedFramework "2.2.1"
+  InstallDotNetSharedFramework "2.2.2"
   InstallDotNetSharedFramework "3.1.0"
 }
 
