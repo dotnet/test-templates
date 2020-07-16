@@ -20,6 +20,7 @@ namespace Microsoft.TestTemplates.AcceptanceTests
             "2.1", 
             "3.0",
             "3.1",
+            "5.0"
         };
 
         /// <summary>
