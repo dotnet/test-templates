@@ -6,8 +6,8 @@
   "defaultName": "NUnitTestItem",
   "generatorVersions": "[1.0.0.0-*)",
   "description": "A item that contains NUnit tests",
-  "groupIdentity": "Microsoft.Test.NUnit.ItemTemplate",
-  "identity": "Microsoft.Test.NUnit.ItemTemplate.VisualBasic",
+  "groupIdentity": "NUnit3.DotNetNew.ItemTemplate",
+  "identity": "NUnit3.DotNetNew.ItemTemplate.VisualBasic",
   "shortName": "nunit-test",
   "tags": {
     "language": "VB",

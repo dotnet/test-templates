@@ -6,9 +6,9 @@
   "defaultName": "NUnitTestProject",
   "generatorVersions": "[1.0.0.0-*)",
   "description": "A project that contains NUnit tests that can run on .NET Core on Windows, Linux and macOS",
-  "groupIdentity": "Microsoft.Test.NUnit",
+  "groupIdentity": "NUnit3.DotNetNew.Template",
   "precedence": "5000",
-  "identity": "Microsoft.Test.NUnit.FSharp.3.0",
+  "identity": "NUnit3.DotNetNew.Template.FSharp.3.0",
   "shortName": "nunit",
   "tags": {
     "language": "F#",
