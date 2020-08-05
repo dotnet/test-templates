@@ -14,6 +14,7 @@
     <MicrosoftInternalIntelliTestVersion>15.0.0</MicrosoftInternalIntelliTestVersion>
     <MicrosoftInternalCreateUnitTestVersion>15.0.0</MicrosoftInternalCreateUnitTestVersion>
     <NuGetVisualStudioVersion>3.5.0</NuGetVisualStudioVersion>
+    <MicrosoftNETTestSdkVersion>16.6.1</MicrosoftNETTestSdkVersion>
     <EnvDteVersion>8.0.2</EnvDteVersion>
     <EnvDte80Version>8.0.2</EnvDte80Version>
     <VSLangProjVersion>7.0.3301.0</VSLangProjVersion>
