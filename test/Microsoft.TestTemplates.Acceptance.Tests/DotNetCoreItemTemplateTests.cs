@@ -2,14 +2,14 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 
-using System;
-using System.Globalization;
-
 namespace Microsoft.TestTemplates.Acceptance.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
+    using System.Linq;
 
     [TestClass]
     public class DotNetCoreItemTemplateTests : AcceptanceTestBase
@@ -49,12 +49,23 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         [DynamicData(nameof(GetTemplateItemsToTest), DynamicDataSourceType.Method)]
         public void TemplateItemTest(string targetFramework, string projectTemplate, string itemTemplate, string language)
         {
-            var testProjectName = Guid.NewGuid().ToString();
+            // Avoiding VB errors because root namespace must not start with number or contain dashes
+            var testProjectName = "_" + Guid.NewGuid().ToString("N");
+
             // Create new test project: dotnet new <projectTemplate> -n <testProjectName> -f <targetFramework> -lang <language>
             InvokeDotnetNew(projectTemplate, testProjectName, targetFramework, language);
 
             // Add test item to test project: dotnet new <itemTemplate> -n <test> -lang <language> -o <testProjectName>
-            InvokeDotnetNew(itemTemplate, "test", language: language, outputDirectory: testProjectName);
+            var itemName = "test";
+            InvokeDotnetNew(itemTemplate, itemName, language: language, outputDirectory: testProjectName);
+
+            if (language == "f#")
+            {
+                // f# projects don't include all files by default, so the file is created
+                // but the project ignores it until you manually add it into the project
+                // in the right order
+                AddItemToFsproj(itemName, outputDirectory: testProjectName);
+            }
 
             // Run tests: dotnet test <path>
             InvokeDotnetTest(testProjectName);
@@ -76,6 +87,15 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
                     yield return new object[] { targetFramework, projectTemplate, itemTemplate, language};
                 }
             }
+        }
+
+        private void AddItemToFsproj(string itemName, string outputDirectory)
+        {
+            var fsproj = Path.Combine(outputDirectory, $"{outputDirectory}.fsproj");
+            var lines = File.ReadAllLines(fsproj).ToList();
+
+            lines.Insert(lines.IndexOf("  <ItemGroup>") + 1, $@"    <Compile Include=""{itemName}.fs""/>");
+            File.WriteAllLines(fsproj, lines);
         }
     }
 }
