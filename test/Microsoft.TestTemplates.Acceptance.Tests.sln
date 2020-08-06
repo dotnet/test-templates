@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30404.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.TestTemplates.AcceptanceTests", "Microsoft.TestTemplates.AcceptanceTests\Microsoft.TestTemplates.AcceptanceTests.csproj", "{369E063C-1823-4213-BF99-504002639ED1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.TestTemplates.Acceptance.Tests", "Microsoft.TestTemplates.Acceptance.Tests\Microsoft.TestTemplates.Acceptance.Tests.csproj", "{369E063C-1823-4213-BF99-504002639ED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
