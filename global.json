@@ -9,12 +9,6 @@
     "Microsoft.DotNet.Arcade.Sdk": "5.0.0-beta.20364.3"
   },
   "sdk": {
-<<<<<<< HEAD
-    "version": "5.0.100-preview.6.20318.15"
-||||||| 6865397
-    "version": "3.1.101"
-=======
     "version": "5.0.100-preview.6.20310.4"
->>>>>>> 2b8d1b41650e60a894057662f3da04442e70044c
   }
 }
