@@ -5,7 +5,7 @@
 using System;
 using System.Globalization;
 
-namespace Microsoft.TestTemplates.AcceptanceTests
+namespace Microsoft.TestTemplates.Acceptance.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
