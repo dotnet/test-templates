@@ -5,6 +5,7 @@ variables:
   value: true
 - name: _DotNetArtifactsCategory
   value: .NETCore
+- group: DotNet-DevDiv-Insertion-Workflow-Variables
 
 # CI and PR triggers
 trigger:
@@ -93,15 +94,14 @@ stages:
             command: test
             projects: 'test\Microsoft.TestTemplates.Acceptance.Tests.sln'
 
-        # temporarily skip this step because it fails and we should not need it for dotnet specific release
-        # - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
-        #   - task: ms-vseng.MicroBuildTasks.4305a8de-ba66-4d8b-b2d1-0dc4ecbbf5e8.MicroBuildUploadVstsDropFolder@1
-        #     displayName: Upload Azure DevOps Drop
-        #     inputs:
-        #       DropName: $(_VisualStudioDropName)
-        #       DropFolder: 'artifacts\VSSetup\$(_BuildConfig)\Insertion'
-        #       AccessToken: $(dn-bot-devdiv-build-rw-code-rw)
-        #     condition: and(succeeded(), eq(variables['_DotNetPublishToBlobFeed'], 'true'))
+        - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+          - task: ms-vseng.MicroBuildTasks.4305a8de-ba66-4d8b-b2d1-0dc4ecbbf5e8.MicroBuildUploadVstsDropFolder@1
+            displayName: Upload Azure DevOps Drop
+            inputs:
+              DropName: $(_VisualStudioDropName)
+              DropFolder: 'artifacts\VSSetup\$(_BuildConfig)\Insertion'
+              AccessToken: $(dn-bot-devdiv-build-rw-code-rw)
+            condition: and(succeeded(), eq(variables['_DotNetPublishToBlobFeed'], 'true'))
 
 - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
   - template: \eng\common\templates\post-build\post-build.yml
