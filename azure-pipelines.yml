@@ -5,7 +5,6 @@ variables:
   value: true
 - name: _DotNetArtifactsCategory
   value: .NETCore
-- group: DotNet-DevDiv-Insertion-Workflow-Variables
 
 # CI and PR triggers
 trigger:
@@ -48,6 +47,7 @@ stages:
           - group: DotNet-Symbol-Server-Pats
           - group: Publish-Build-Assets
           - group: DotNet-VSTS-Infra-Access
+          - group: DotNet-DevDiv-Insertion-Workflow-Variables
           - _VisualStudioDropName: Products/$(System.TeamProject)/$(Build.Repository.Name)/$(Build.SourceBranchName)/$(Build.BuildNumber)
           - _OfficialBuildArgs: /p:DotNetSignType=$(_SignType) 
                   /p:TeamName=$(_TeamName)
@@ -95,12 +95,13 @@ stages:
             projects: 'test\Microsoft.TestTemplates.Acceptance.Tests.sln'
 
         - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+          - script: dir /S artifacts\VSSetup\$(_BuildConfig)\Insertion
           - task: ms-vseng.MicroBuildTasks.4305a8de-ba66-4d8b-b2d1-0dc4ecbbf5e8.MicroBuildUploadVstsDropFolder@1
             displayName: Upload Azure DevOps Drop
             inputs:
               DropName: $(_VisualStudioDropName)
               DropFolder: 'artifacts\VSSetup\$(_BuildConfig)\Insertion'
-              AccessToken: $(dn-bot-devdiv-build-rw-code-rw)
+              AccessToken: $(dn-bot-devdiv-build-rw-code-rw-release-rw)
             condition: and(succeeded(), eq(variables['_DotNetPublishToBlobFeed'], 'true'))
 
 - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
