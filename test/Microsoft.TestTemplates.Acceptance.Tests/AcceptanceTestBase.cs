@@ -31,7 +31,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         /// <param name="arguments">Arguments provided to <c>dotnet</c>.exe</param>
         public void InvokeDotnetTest(string arguments)
         {
-            this.Execute("test " + arguments);
+            this.Execute("test " + "--logger:Console;Verbosity=Detailed " + arguments);
             this.standardTestError = Regex.Replace(this.standardTestError, @"\s+", " ");
             this.standardTestOutput = Regex.Replace(this.standardTestOutput, @"\s+", " ");
         }
