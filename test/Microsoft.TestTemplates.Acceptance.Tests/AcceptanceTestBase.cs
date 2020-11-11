@@ -26,12 +26,44 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         private string arguments = string.Empty;
 
         /// <summary>
-        /// Invokes <c>dotnet</c> with specified arguments.
+        /// Invokes <c>dotnet test</c> with specified arguments.
         /// </summary>
         /// <param name="arguments">Arguments provided to <c>dotnet</c>.exe</param>
         public void InvokeDotnetTest(string arguments)
         {
-            this.Execute(arguments, out this.standardTestOutput, out this.standardTestError, out this.runnerExitCode);
+            this.Execute("test " + "--logger:Console;Verbosity=Detailed " + arguments);
+            this.standardTestError = Regex.Replace(this.standardTestError, @"\s+", " ");
+            this.standardTestOutput = Regex.Replace(this.standardTestOutput, @"\s+", " ");
+        }
+
+        /// <summary>
+        /// Invokes <c>dotnet new -i</c> with specified arguments.
+        /// </summary>
+        /// <param name="arguments"></param>
+        public static void InvokeDotnetNewInstall(string arguments)
+        {
+            var command = "new -i " + arguments;
+            Execute(command, out var stdOut, out var stdErr, out var runnerExitCode);
+            if (runnerExitCode != 0)
+            {
+                Assert.AreEqual(0, runnerExitCode, "'dotnet {0}' command failed, exit code: {1}, stdOut: {2}, stdErr: {3}", command, runnerExitCode, stdOut, stdErr);
+            }
+        }
+
+        /// <summary>
+        /// Invokes <c>dotnet new</c> with specified arguments.
+        /// </summary>
+        /// <param name="templateName">Name of project or item template</param>
+        /// <param name="nameAs">The name for the output being created</param>
+        /// <param name="targetFramework">The target framework for the project</param>
+        /// <param name="language">Filters templates based on language and specifies the language of the template to create.</param>
+        /// <param name="outputDirectory">Location to place the generated output.</param>
+        public void InvokeDotnetNew(string templateName, string nameAs, string targetFramework = null, string language = null, string outputDirectory = null)
+        {
+            var targetArgs = string.IsNullOrEmpty(targetFramework) ? "" : $" -f {targetFramework}";
+            var languageArgs = string.IsNullOrEmpty(language) ? "" : $" -lang {language}";
+            var outputArgs = string.IsNullOrEmpty(outputDirectory) ? "" : $" -o {outputDirectory}";
+            this.Execute($"new {templateName} -n {nameAs}{targetArgs}{languageArgs}{outputArgs}");
             this.standardTestError = Regex.Replace(this.standardTestError, @"\s+", " ");
             this.standardTestOutput = Regex.Replace(this.standardTestOutput, @"\s+", " ");
         }
@@ -73,7 +105,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             }
         }
 
-        private string GetDotnetExePath()
+        private static string GetDotnetExePath()
         {
             var currentDllPath = Path.GetDirectoryName(Assembly.GetAssembly(typeof(AcceptanceTestBase)).Location);
             string[] paths = currentDllPath.Split("\\artifacts");
@@ -87,15 +119,20 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             return "dotnet";
         }
 
-        private void Execute(string args, out string stdOut, out string stdError, out int exitCode)
+        private void Execute(string args)
         {
             this.arguments = args;
+            Execute(args, out this.standardTestOutput, out this.standardTestError, out this.runnerExitCode);
+            Assert.AreEqual(0, this.runnerExitCode, "'dotnet {0}' command failed, exit code: {1}, stdOut: {2}, stdErr: {3}", args, runnerExitCode, this.standardTestOutput, this.standardTestError);
+        }
 
+        private static void Execute(string args, out string stdOut, out string stdError, out int exitCode)
+        {
             using (Process dotnet = new Process())
             {
                 Console.WriteLine("AcceptanceTestBase.Execute: Starting dotnet.exe");
                 dotnet.StartInfo.FileName = GetDotnetExePath();
-                dotnet.StartInfo.Arguments = "test " + args;
+                dotnet.StartInfo.Arguments = args;
                 dotnet.StartInfo.UseShellExecute = false;
                 dotnet.StartInfo.RedirectStandardError = true;
                 dotnet.StartInfo.RedirectStandardOutput = true;
