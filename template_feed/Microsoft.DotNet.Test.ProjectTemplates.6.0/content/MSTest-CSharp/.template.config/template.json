@@ -4,7 +4,7 @@
   "classifications": ["Test", "MSTest"],
   "name": "MSTest Test Project (.NET Core)",
   "generatorVersions": "[1.0.0.0-*)",
-  "description": "A project that contains unit tests that can run on .NET Core on Windows, Linux and macOS",
+  "description": "A project that contains MSTest unit tests that can run on .NET Core on Windows, Linux and MacOS.",
   "groupIdentity": "Microsoft.Test.MSTest",
   "precedence": "7000",
   "identity": "Microsoft.Test.MSTest.CSharp.6.0",
