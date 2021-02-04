@@ -11,7 +11,7 @@ Let's create a new test project named "NewMSTestProject" in the "src/MyTest" dir
 
 ```bash
 $ dotnet new mstest -n NewMSTestProject 
-The template "MSTest Test Project (.NET Core)" was created successfully.
+The template "MSTest Test Project" was created successfully.
 ```
 
 The project was successfully created on disk as expected in `src/MyTest`. From here, we can run normal `dotnet` commands like `dotnet restore` and `dotnet build`.
