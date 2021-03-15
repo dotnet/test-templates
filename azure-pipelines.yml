@@ -9,9 +9,11 @@ variables:
 # CI and PR triggers
 trigger:
 - master
+- main
 
 pr:
 - master
+- main
 
 stages:
 - stage: build
