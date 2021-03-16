@@ -24,7 +24,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             "2.1",
             "3.0",
             "3.1",
-            "5.0"
+            "5.0",
+            "6.0"
         };
 
         /// <summary>
@@ -58,6 +59,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
 
             // Add test item to test project: dotnet new <itemTemplate> -n <test> -lang <language> -o <testProjectName>
             var itemName = "test";
+
             InvokeDotnetNew(itemTemplate, itemName, language: language, outputDirectory: testProjectName);
 
             if (language == "f#")
