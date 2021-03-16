@@ -58,6 +58,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
 
             // Add test item to test project: dotnet new <itemTemplate> -n <test> -lang <language> -o <testProjectName>
             var itemName = "test";
+
             InvokeDotnetNew(itemTemplate, itemName, language: language, outputDirectory: testProjectName);
 
             if (language == "f#")
