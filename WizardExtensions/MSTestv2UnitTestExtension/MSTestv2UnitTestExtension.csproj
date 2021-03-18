@@ -9,23 +9,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Internal.CreateUnitTest" Version="$(MicrosoftInternalCreateUnitTestVersion)"/>
     <PackageReference Include="NuGet.VisualStudio" Version="$(NuGetVisualStudioVersion)"/>
-    <PackageReference Include="EnvDte" Version="$(EnvDteVersion)"/>
-    <PackageReference Include="EnvDte80" Version="$(EnvDte80Version)"/>
-    <PackageReference Include="VSLangProj" Version="$(VSLangProjVersion)"/>
-    <PackageReference Include="VSLangProj80" Version="$(VSLangProj80Version)"/>
+    <PackageReference Include="Microsoft.VisualStudio.Interop" Version="$(MicrosoftVisualStudioInteropVersion)"/>    
     <PackageReference Include="Microsoft.VisualStudio.ComponentModelHost" Version="$(MicrosoftVisualStudioComponentModelHostVersion)"/>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="envdte">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="envdte80">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MSTestv2FrameworkProvider.cs" />
