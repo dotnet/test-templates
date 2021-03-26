@@ -12,13 +12,10 @@
     <!-- Dependencies -->
     <MicrosoftVisualStudioCoreUtilityVersion>15.0.26201</MicrosoftVisualStudioCoreUtilityVersion>
     <MicrosoftInternalIntelliTestVersion>15.0.0</MicrosoftInternalIntelliTestVersion>
-    <MicrosoftInternalCreateUnitTestVersion>15.0.0</MicrosoftInternalCreateUnitTestVersion>
+    <MicrosoftInternalCreateUnitTestVersion>17.0.0-preview-1-30928-1112</MicrosoftInternalCreateUnitTestVersion>
     <NuGetVisualStudioVersion>3.5.0</NuGetVisualStudioVersion>
-    <EnvDteVersion>8.0.2</EnvDteVersion>
-    <EnvDte80Version>8.0.2</EnvDte80Version>
-    <VSLangProjVersion>7.0.3301.0</VSLangProjVersion>
-    <VSLangProj80Version>8.0.50728</VSLangProj80Version>
     <MicrosoftVisualStudioComponentModelHostVersion>16.0.342-g758a0a97e0</MicrosoftVisualStudioComponentModelHostVersion>
+    <MicrosoftVisualStudioInteropVersion>17.0.0-preview-1-30928-1112</MicrosoftVisualStudioInteropVersion>
     <MicrosoftVSSDKBuildToolsVersion Condition="'$(MicrosoftVSSDKBuildToolsVersion)' == ''">17.0.38-dev17-g08fcf558</MicrosoftVSSDKBuildToolsVersion>
   </PropertyGroup>
 </Project>
