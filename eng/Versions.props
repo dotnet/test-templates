@@ -13,9 +13,8 @@
     <MicrosoftVisualStudioCoreUtilityVersion>15.0.26201</MicrosoftVisualStudioCoreUtilityVersion>
     <MicrosoftInternalIntelliTestVersion>15.0.0</MicrosoftInternalIntelliTestVersion>
     <MicrosoftInternalCreateUnitTestVersion>17.0.0-preview-1-30928-1112</MicrosoftInternalCreateUnitTestVersion>
-    <NuGetVisualStudioVersion>3.5.0</NuGetVisualStudioVersion>
     <MicrosoftVisualStudioComponentModelHostVersion>16.0.342-g758a0a97e0</MicrosoftVisualStudioComponentModelHostVersion>
-    <MicrosoftVisualStudioInteropVersion>17.0.0-preview-1-30928-1112</MicrosoftVisualStudioInteropVersion>
+    <MicrosoftVisualStudioInteropVersion>17.0.0-preview-1-31207-1111</MicrosoftVisualStudioInteropVersion>
     <MicrosoftVSSDKBuildToolsVersion Condition="'$(MicrosoftVSSDKBuildToolsVersion)' == ''">17.0.38-dev17-g08fcf558</MicrosoftVSSDKBuildToolsVersion>
   </PropertyGroup>
 </Project>
