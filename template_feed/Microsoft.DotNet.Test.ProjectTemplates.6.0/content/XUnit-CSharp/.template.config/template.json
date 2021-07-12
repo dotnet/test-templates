@@ -36,19 +36,6 @@
       "replaces": "net6.0",
       "defaultValue": "net6.0"
     },
-    "langVersion": {
-      "type": "parameter",
-      "datatype": "text",
-      "description": "Sets the LangVersion property in the created project file",
-      "defaultValue": "",
-      "replaces": "$(ProjectLanguageVersion)"
-    },
-    "nullable": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "true",
-      "description": "Whether to enable nullable reference types for this project."
-    },
     "EnablePack": {
       "type": "parameter",
       "datatype": "bool",

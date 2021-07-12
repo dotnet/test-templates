@@ -1,17 +1,18 @@
 using NUnit.Framework;
 
-namespace Tests;
-
-public class UnitTest1
+namespace Tests
 {
-    [SetUp]
-    public void Setup()
+    public class UnitTest1
     {
-    }
+        [SetUp]
+        public void Setup()
+        {
+        }
 
-    [Test]
-    public void Test1()
-    {
-        Assert.Pass();
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
+        }
     }
 }
