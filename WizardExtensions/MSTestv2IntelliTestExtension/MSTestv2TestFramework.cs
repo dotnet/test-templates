@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 namespace MSTestv2IntelliTestExtension
@@ -10,9 +10,7 @@ namespace MSTestv2IntelliTestExtension
     using Microsoft.ExtendedReflection.Metadata;
     using Microsoft.ExtendedReflection.Metadata.Names;
     using Microsoft.ExtendedReflection.Monitoring;
-    using Microsoft.ExtendedReflection.Utilities.Safe;
     using Microsoft.ExtendedReflection.Utilities.Safe.Diagnostics;
-    using Microsoft.Pex.Engine;
     using Microsoft.Pex.Engine.ComponentModel;
     using Microsoft.Pex.Engine.TestFrameworks;
 
@@ -454,7 +452,7 @@ namespace MSTestv2IntelliTestExtension
         /// <returns>Attribute types.</returns>
         protected override IEnumerable<TypeName> GetSatelliteAttributeTypes()
         {
-            return Indexable.Array<TypeName>(
+            return Indexable.Array(
                     MSTestv2TestFrameworkMetadata.AttributeName("DeploymentItem"),
                     MSTestv2TestFrameworkMetadata.AttributeName("Owner"),
                     MSTestv2TestFrameworkMetadata.AttributeName("Priority"),

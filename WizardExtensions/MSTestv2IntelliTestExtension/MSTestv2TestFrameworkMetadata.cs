@@ -23,7 +23,7 @@ namespace MSTestv2IntelliTestExtension
             {
                 if (assertType == null)
                 {
-                    assertType = MSTestv2TestFrameworkMetadata.TypeName("Assert");
+                    assertType = TypeName("Assert");
                 }
 
                 return assertType.Definition;
@@ -36,7 +36,7 @@ namespace MSTestv2IntelliTestExtension
             {
                 if (collectionAssertType == null)
                 {
-                    collectionAssertType = MSTestv2TestFrameworkMetadata.TypeName("CollectionAssert");
+                    collectionAssertType = TypeName("CollectionAssert");
                 }
 
                 return collectionAssertType.Definition;
