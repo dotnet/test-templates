@@ -4,6 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <IsTestProject>true</IsTestProject>
     <IsPackable>false</IsPackable>
+    <LangVersion>preview</LangVersion>
+    <NoWarn>$(NoWarn);CS0105</NoWarn>
+    
+    <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
 
   <ItemGroup>
