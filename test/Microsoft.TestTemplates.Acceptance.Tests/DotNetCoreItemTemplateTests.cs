@@ -43,6 +43,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             foreach (var netcoreVersion in netCoreVersions)
             {
                 var template = Path.Combine("template_feed", "Microsoft.DotNet.Test.ProjectTemplates." + netcoreVersion, "content");
+                Console.WriteLine($"Path {template}");
                 InvokeDotnetNewInstall(template);
             }
         }
@@ -76,6 +77,17 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             // Verfiy the tests run as expected.
             ValidateSummaryStatus(2, 0, 0);
         }
+        /*
+        [ClassCleanup]
+        public static void UninstallTemplates()
+        {
+            Console.WriteLine("Unistalling");
+            foreach (var netcoreVersion in netCoreVersions)
+            {
+                var template = Path.Combine("template_feed", "Microsoft.DotNet.Test.ProjectTemplates." + netcoreVersion, "content");
+                InvokeDotnetNewUninstall(template);
+            }
+        }*/
 
         private static IEnumerable<object[]> GetTemplateItemsToTest()
         {

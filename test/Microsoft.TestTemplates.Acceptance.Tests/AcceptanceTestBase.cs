@@ -43,11 +43,17 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         public static void InvokeDotnetNewInstall(string arguments)
         {
             var command = "new -i " + arguments;
-            Execute(command, out var stdOut, out var stdErr, out var runnerExitCode);
-            if (runnerExitCode != 0)
-            {
-                Assert.AreEqual(0, runnerExitCode, "'dotnet {0}' command failed, exit code: {1}, stdOut: {2}, stdErr: {3}", command, runnerExitCode, stdOut, stdErr);
-            }
+            ExecuteDotnetNew(command);
+        }
+
+        /// <summary>
+        /// Invokes <c>dotnet new -i</c> with specified arguments.
+        /// </summary>
+        /// <param name="arguments"></param>
+        public static void InvokeDotnetNewUninstall(string arguments)
+        {
+            var command = "new -u " + arguments;
+            ExecuteDotnetNew(command);
         }
 
         /// <summary>
@@ -124,6 +130,19 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             this.arguments = args;
             Execute(args, out this.standardTestOutput, out this.standardTestError, out this.runnerExitCode);
             Assert.AreEqual(0, this.runnerExitCode, "'dotnet {0}' command failed, exit code: {1}, stdOut: {2}, stdErr: {3}", args, runnerExitCode, this.standardTestOutput, this.standardTestError);
+        }
+
+        /// <summary>
+        /// Executes
+        /// </summary>
+        /// <param name="command"></param>
+        private static void ExecuteDotnetNew(string command)
+        {
+            Execute(command, out var stdOut, out var stdErr, out var runnerExitCode);
+            if (runnerExitCode != 0)
+            {
+                Assert.AreEqual(0, runnerExitCode, "'dotnet {0}' command failed, exit code: {1}, stdOut: {2}, stdErr: {3}", command, runnerExitCode, stdOut, stdErr);
+            }
         }
 
         private static void Execute(string args, out string stdOut, out string stdError, out int exitCode)
