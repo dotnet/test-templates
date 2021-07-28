@@ -133,7 +133,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         }
 
         /// <summary>
-        /// Executes
+        /// Executes <c>dotnet new</c> with arguments
         /// </summary>
         /// <param name="command"></param>
         private static void ExecuteDotnetNew(string command)
