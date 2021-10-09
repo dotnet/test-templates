@@ -1,5 +1,3 @@
-using NUnit.Framework;
-
 namespace Company.TestProject1;
 
 public class Tests
