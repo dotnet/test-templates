@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace Company.TestProject1;
 
 public class UnitTest1
