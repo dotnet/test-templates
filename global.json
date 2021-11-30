@@ -3,6 +3,9 @@
     "vs": {
       "version": "15.9"
     },
+    "runtimes": {
+      "dotnet": [ "5.0" ]
+    },
     "dotnet": "6.0.100"
   },
   "msbuild-sdks": {
