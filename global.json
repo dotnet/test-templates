@@ -4,7 +4,7 @@
       "version": "15.9"
     },
     "runtimes": {
-      "dotnet": [ "5.0" ]
+      "dotnet/x64": [ "5.0.12" ]
     },
     "dotnet": "6.0.100"
   },
