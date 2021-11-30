@@ -29,7 +29,7 @@ stages:
       helixRepo: dotnet/test-templates
       jobs:
       - job: Windows
-        pool: `windows-latest`
+        pool: windows-latest
           ## For public or PR jobs, use the hosted pool.  For internal jobs use the internal pool.
           ## Will eventually change this to two BYOC pools.
           #${{ if or(eq(variables['System.TeamProject'], 'public'), in(variables['Build.Reason'], 'PullRequest')) }}:
