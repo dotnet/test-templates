@@ -21,13 +21,13 @@ namespace MSTestv2UnitTestExtension
         /// Unsupported testable project type guids.
         /// </summary>
         private readonly Guid[] unsupportedProjects =
-            {
-                Guid.Parse("BC8A1FFA-BEE3-4634-8014-F334798102B3"), // Windows Store
-                Guid.Parse("C089C8C0-30E0-4E22-80C0-CE093F111A43"), // Phone Silverlight
-                Guid.Parse("76F1466A-8B6D-4E39-A767-685A06062A39"), // Phone Appx
-                Guid.Parse("786C830F-07A1-408B-BD7F-6EE04809D6DB"), // Portable app
-                Guid.Parse("A1591282-1198-4647-A2B1-27E5FF5F6F3B"), // Silverlight
-            };
+        {
+            Guid.Parse("BC8A1FFA-BEE3-4634-8014-F334798102B3"), // Windows Store
+            Guid.Parse("C089C8C0-30E0-4E22-80C0-CE093F111A43"), // Phone Silverlight
+            Guid.Parse("76F1466A-8B6D-4E39-A767-685A06062A39"), // Phone Appx
+            Guid.Parse("786C830F-07A1-408B-BD7F-6EE04809D6DB"), // Portable app
+            Guid.Parse("A1591282-1198-4647-A2B1-27E5FF5F6F3B"), // Silverlight
+        };
 
         /// <summary>
         /// Service provider reference.
@@ -71,19 +71,18 @@ namespace MSTestv2UnitTestExtension
         /// <returns><c>True</c> if <paramref name="project"/> is a unit test project, <c>false</c> otherwise.</returns>
         public override bool IsTestProject(Project project)
         {
-            bool result = false;
-
             if (project == null)
             {
                 throw new ArgumentNullException("project");
             }
 
-            result = base.IsTestProject(project);
+            bool result = base.IsTestProject(project);
+
             if (!result)
             {
                 if (project.Kind == PrjKind.prjKindCSharpProject || project.Kind == PrjKind.prjKindVBProject)
                 {
-                    result = FrameworkProviderBase.ProjectHasReference(project, "MSTestv2Framework");
+                    result = ProjectHasReference(project, "MSTestv2Framework");
                 }
             }
 
