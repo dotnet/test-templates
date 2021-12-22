@@ -24,7 +24,7 @@ if you have any difficulties please file a new issue.
 If you're authoring templates, or interested in contributing to this repo, then you're likely interested in how to use the latest version of this experience.
 The steps required are outlined below.
 
-## Aquire
+## Acquire
 
 - Fork this repository.
 - Clone the forked repository to your local machine.
