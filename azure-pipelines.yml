@@ -9,9 +9,11 @@ variables:
 # CI and PR triggers
 trigger:
 - main
+- rel/*
 
 pr:
 - main
+- rel/*
 
 stages:
 - stage: build
