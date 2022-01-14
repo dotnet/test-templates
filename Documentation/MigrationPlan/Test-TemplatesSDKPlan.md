@@ -9,4 +9,3 @@ Given the list from the main migration status page:
 2.	Mid January
 3.	Mid January
 4.	End of January
-
