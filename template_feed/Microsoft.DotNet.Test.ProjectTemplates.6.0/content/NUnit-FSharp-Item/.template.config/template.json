@@ -24,6 +24,7 @@
       "description": "Opens created test fixture class in the editor",
       "manualInstructions": [ ],
       "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "id": "openInEditor",
       "args": {
         "files": "0"
       },
