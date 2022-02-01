@@ -4,6 +4,7 @@
         <IncludeBuildOutput>False</IncludeBuildOutput>
         <IncludeSource>False</IncludeSource>
         <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <UsingToolTemplateLocalizer>true</UsingToolTemplateLocalizer>
         <OutputPath>$(TemplatesFolder)</OutputPath>
         <EnableDefaultItems>False</EnableDefaultItems>
         <IsPackable>true</IsPackable>
