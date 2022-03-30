@@ -78,6 +78,16 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             ValidateSummaryStatus(2, 0, 0);
         }
 
+        [ClassCleanup]
+        public static void UninstallTemplates()
+        {
+            foreach (var netcoreVersion in netCoreVersions)
+            {
+                var template = Path.Combine("template_feed", "Microsoft.DotNet.Test.ProjectTemplates." + netcoreVersion, "content");
+                InvokeDotnetNewUninstall(template);
+            }
+        }
+
         private static IEnumerable<object[]> GetTemplateItemsToTest()
         {
             foreach (var netcoreVersion in netCoreVersions)
