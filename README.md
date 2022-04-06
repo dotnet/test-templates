@@ -21,7 +21,7 @@ There are 2 main areas in this repository:
 - Fork this repository.
 - Clone the forked repository to your local machine.
   - `main` is our default branch. It should be checked out for you automatically.
-  - Create topic branch to hold your change e.g. `git checkout -b"update-mstest"`.
+  - Create topic branch to hold your change e.g. `git checkout -b "update-mstest"`.
   - Make your changes, commit, and make PR that targets our `main` branch.
   
 ## Build & Run
