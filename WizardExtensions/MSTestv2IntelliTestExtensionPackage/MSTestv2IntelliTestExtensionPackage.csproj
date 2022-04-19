@@ -1,6 +1,6 @@
 ﻿<Project  Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>$(MSTestv2IntellitestFrameworkVersion)</TargetFramework>
     <RootNamespace>MSTestv2IntelliTestExtensionPackage</RootNamespace>
     <AssemblyName>MSTestv2IntelliTestExtensionPackage</AssemblyName>
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
