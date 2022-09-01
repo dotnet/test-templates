@@ -29,10 +29,10 @@ jobs:
   ${{ if eq(parameters.pool, '') }}:
     pool:
       ${{ if eq(variables['System.TeamProject'], 'public') }}:
-        name: $(DncEngPublicBuildPool)
+        name: NetCore-Public
         demands: ImageOverride -equals windows.vs2019.amd64.open
       ${{ if eq(variables['System.TeamProject'], 'internal') }}:
-        name: $(DncEngInternalBuildPool)
+        name: NetCore1ESPool-Internal
         demands: ImageOverride -equals windows.vs2019.amd64
 
   steps:
