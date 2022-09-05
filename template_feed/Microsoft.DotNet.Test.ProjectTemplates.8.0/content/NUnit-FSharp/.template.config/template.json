@@ -7,7 +7,7 @@
   "generatorVersions": "[1.0.0.0-*)",
   "description": "A project that contains NUnit tests that can run on .NET Core on Windows, Linux and macOS",
   "groupIdentity": "NUnit3.DotNetNew.Template",
-  "precedence": "9000",
+  "precedence": "10000",
   "identity": "NUnit3.DotNetNew.Template.FSharp.7.0",
   "shortName": "nunit",
   "tags": {
@@ -30,12 +30,12 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net7.0",
-          "description": "Target net7.0"
+          "choice": "net8.0",
+          "description": "Target net8.0"
         }
       ],
-      "replaces": "net7.0",
-      "defaultValue": "net7.0"
+      "replaces": "net8.0",
+      "defaultValue": "net8.0"
     },
     "EnablePack": {
       "type": "parameter",
