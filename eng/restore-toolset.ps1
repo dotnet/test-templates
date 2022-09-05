@@ -15,11 +15,6 @@ function InitializeCustomSDKToolset {
   $installScript = GetDotNetInstallScript $dotnetRoot
 
   $versions = @(
-    "1.0.5"
-    "1.1.2"
-    "2.1.0"
-    "2.2.1"
-    "2.2.2"
     "3.1.0"
     "5.0.1"
     "6.0.1"
