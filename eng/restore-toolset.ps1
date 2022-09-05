@@ -18,7 +18,7 @@ function InitializeCustomSDKToolset {
     "3.1.0"
     "5.0.1"
     "6.0.1"
-    "7.0.100-rc.2.22454.1"
+    "7.0.0-rc.1.22422.12"
     # version from global.json (8.0.0) will be installed automatically
   )
 
