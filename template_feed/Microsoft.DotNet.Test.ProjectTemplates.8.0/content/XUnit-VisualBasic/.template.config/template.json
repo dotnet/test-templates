@@ -44,7 +44,7 @@
     },
     "HostIdentifier": {
       "type": "bind",
-      "binding": "HostIdentifier"
+      "binding": "host:HostIdentifier"
     },
     "skipRestore": {
       "type": "parameter",

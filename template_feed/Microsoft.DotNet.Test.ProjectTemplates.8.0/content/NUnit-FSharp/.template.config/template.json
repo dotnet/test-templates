@@ -3,7 +3,7 @@
   "author": "Aleksei Kharlov aka halex2005 (codeofclimber.ru)",
   "classifications": [ "Test", "NUnit" ],
   "name": "NUnit 3 Test Project",
-  "defaultName": "NUnitTestProject",
+  "defaultName": "TestProject1",
   "generatorVersions": "[1.0.0.0-*)",
   "description": "A project that contains NUnit tests that can run on .NET Core on Windows, Linux and macOS",
   "groupIdentity": "NUnit3.DotNetNew.Template",
@@ -45,7 +45,7 @@
     },
     "HostIdentifier": {
       "type": "bind",
-      "binding": "HostIdentifier"
+      "binding": "host:HostIdentifier"
     },
     "skipRestore": {
       "type": "parameter",
@@ -61,7 +61,6 @@
       "path": "UnitTest1.fs"
     }
   ],
-  "defaultName": "TestProject1",
   "postActions": [
     {
       "condition": "(!skipRestore)",
