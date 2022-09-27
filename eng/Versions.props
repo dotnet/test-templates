@@ -11,6 +11,7 @@
     <VsixVersionPrefix>16.0.28417</VsixVersionPrefix>
     <PreReleaseVersionLabel>beta4</PreReleaseVersionLabel>
     <MSTestv2IntellitestFrameworkVersion>net472</MSTestv2IntellitestFrameworkVersion>
+    <MicrosoftNetTestSdkVersion>17.3.2</MicrosoftNetTestSdkVersion>
     <!-- Dependencies -->
     <MicrosoftVisualStudioCoreUtilityVersion>15.0.26201</MicrosoftVisualStudioCoreUtilityVersion>
     <MicrosoftInternalIntelliTestVersion>17.3.0-beta.22215.7</MicrosoftInternalIntelliTestVersion>
