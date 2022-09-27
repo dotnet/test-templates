@@ -20,7 +20,7 @@
     <PackageReference Include="NUnit" Version="$(NUnitVersion)" />
     <PackageReference Include="NUnit3TestAdapter" Version="$(NUnit3TestAdapterVersion)" />
     <PackageReference Include="NUnit.Analyzers" Version="$(NUnitAnalyzersVersion)" />
-    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="coverlet.collector" Version="$(CoverletCollectorVersion)" />
   </ItemGroup>
 
 </Project>
