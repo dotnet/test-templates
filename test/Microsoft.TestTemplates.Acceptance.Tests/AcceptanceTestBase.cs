@@ -37,22 +37,22 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         }
 
         /// <summary>
-        /// Invokes <c>dotnet new -i</c> with specified arguments.
+        /// Invokes <c>dotnet new install</c> with specified arguments.
         /// </summary>
         /// <param name="arguments"></param>
         public static void InvokeDotnetNewInstall(string arguments)
         {
-            var command = "new -i " + arguments;
+            var command = "new install " + arguments;
             ExecuteDotnetNew(command);
         }
 
         /// <summary>
-        /// Invokes <c>dotnet new -i</c> with specified arguments.
+        /// Invokes <c>dotnet new uninstall</c> with specified arguments.
         /// </summary>
         /// <param name="arguments"></param>
         public static void InvokeDotnetNewUninstall(string arguments)
         {
-            var command = "new -u " + arguments;
+            var command = "new uninstall " + arguments;
             ExecuteDotnetNew(command);
         }
 

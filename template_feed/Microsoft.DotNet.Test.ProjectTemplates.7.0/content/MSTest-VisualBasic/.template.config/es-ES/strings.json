@@ -2,6 +2,6 @@
   "version": "1.0.0.0",
   "strings": {
     "name": "Proyecto de prueba de MSTest",
-    "description": "Proyecto que contiene pruebas unitarias de MSTest que se pueden ejecutar en .NET Core en Windows, Linux y MacOS."
+    "description": "Proyecto que contiene pruebas unitarias de MSTest que se pueden ejecutar en .NET en Windows, Linux y MacOS."
   }
 }

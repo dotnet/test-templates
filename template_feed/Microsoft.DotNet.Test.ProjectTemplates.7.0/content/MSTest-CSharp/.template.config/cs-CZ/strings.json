@@ -2,6 +2,6 @@
   "version": "1.0.0.0",
   "strings": {
     "name": "Projekt testů MSTest",
-    "description": "Projekt obsahující testy jednotek MSTest, které je možné spustit na .NET Core ve Windows, Linuxu a MacOS."
+    "description": "Projekt obsahující testy jednotek MSTest, které je možné spustit na .NET ve Windows, Linuxu a MacOS."
   }
 }
