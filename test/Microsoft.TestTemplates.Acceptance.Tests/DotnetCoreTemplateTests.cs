@@ -21,7 +21,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             "5.0",
             "6.0",
             "7.0",
-            // "8.0", TODO: not yet, enable when net8.0 sdk can target net8.0
+            "8.0",
         };
 
         /// <summary>
@@ -65,6 +65,9 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
                     list.Add(new string[] { Path.Combine("template_feed", "Microsoft.DotNet.Test.ProjectTemplates." + netcoreVersion, "content", templateType) });
                 }
             }
+
+            list.Add(new string[] { Path.Combine("template_feed", "Microsoft.DotNet.Test.Playwright.ProjectTemplates.8.0", "content", "MSTest-CSharp") });
+            list.Add(new string[] { Path.Combine("template_feed", "Microsoft.DotNet.Test.Playwright.ProjectTemplates.8.0", "content", "NUnit-CSharp") });
 
             return list;
         }
