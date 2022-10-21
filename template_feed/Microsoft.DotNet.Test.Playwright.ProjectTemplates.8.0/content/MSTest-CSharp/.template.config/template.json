@@ -7,7 +7,7 @@
   "description": "A project that contains Playwright tests using MSTest test framwork, that can run on .NET on Windows, Linux and MacOS.",
   "groupIdentity": "Microsoft.Test.Playwright.MSTest",
   "precedence": "10000",
-  "identity": "Microsoft.Test.Playwright.MSTest.CSharp.7.0",
+  "identity": "Microsoft.Test.Playwright.MSTest.CSharp.8.0",
   "shortName": "mstest-playwright",
   "tags": {
     "language": "C#",
