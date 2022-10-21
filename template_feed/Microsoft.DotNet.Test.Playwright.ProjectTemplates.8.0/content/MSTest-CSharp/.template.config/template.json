@@ -1,14 +1,14 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Microsoft",
-  "classifications": ["Test", "MSTest"],
-  "name": "MSTest Test Project",
+  "classifications": ["Test", "MSTest", "Playwright"],
+  "name": "MSTest Playwright Test Project",
   "generatorVersions": "[1.0.0.0-*)",
-  "description": "A project that contains MSTest unit tests that can run on .NET on Windows, Linux and MacOS.",
-  "groupIdentity": "Microsoft.Test.MSTest",
+  "description": "A project that contains Playwright tests using MSTest test framwork, that can run on .NET on Windows, Linux and MacOS.",
+  "groupIdentity": "Microsoft.Test.Playwright.MSTest",
   "precedence": "10000",
-  "identity": "Microsoft.Test.MSTest.CSharp.7.0",
-  "shortName": "mstest",
+  "identity": "Microsoft.Test.Playwright.MSTest.CSharp.7.0",
+  "shortName": "mstest-playwright",
   "tags": {
     "language": "C#",
     "type": "project"
