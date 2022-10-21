@@ -7,9 +7,9 @@
     <UsingToolMicrosoftNetCompilers>true</UsingToolMicrosoftNetCompilers>
   </PropertyGroup>
   <PropertyGroup>
-    <VersionPrefix>1.0.2</VersionPrefix>
-    <VsixVersionPrefix>16.0.28417</VsixVersionPrefix>
-    <PreReleaseVersionLabel>beta4</PreReleaseVersionLabel>
+    <VersionPrefix>1.1.0</VersionPrefix>
+    <VsixVersionPrefix>17.3.2</VsixVersionPrefix>
+    <PreReleaseVersionLabel>rc</PreReleaseVersionLabel>
     <MSTestv2IntellitestFrameworkVersion>net472</MSTestv2IntellitestFrameworkVersion>
     <!-- Dependencies -->
     <MicrosoftVisualStudioCoreUtilityVersion>15.0.26201</MicrosoftVisualStudioCoreUtilityVersion>
