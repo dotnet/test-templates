@@ -66,6 +66,11 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
                 }
             }
 
+
+            // Net8 still not working.
+            // list.Add(new string[] { Path.Combine("template_feed", "Microsoft.DotNet.Test.Playwright.ProjectTemplates.8.0", "content", "MSTest-CSharp") });
+            // list.Add(new string[] { Path.Combine("template_feed", "Microsoft.DotNet.Test.Playwright.ProjectTemplates.8.0", "content", "NUnit-CSharp") });
+
             return list;
         }
     }
