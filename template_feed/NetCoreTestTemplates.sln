@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.Test.Proje
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.Test.ProjectTemplates.8.0", "Microsoft.DotNet.Test.ProjectTemplates.8.0\Microsoft.DotNet.Test.ProjectTemplates.8.0.csproj", "{15BE3D4B-2E66-47DA-988F-DA12BF37CBBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DotNet.Test.Playwright.ProjectTemplates.8.0", "Microsoft.DotNet.Test.Playwright.ProjectTemplates.8.0\Microsoft.DotNet.Test.Playwright.ProjectTemplates.8.0.csproj", "{44619505-5CA3-43B4-B821-B77BB85AA018}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{15BE3D4B-2E66-47DA-988F-DA12BF37CBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15BE3D4B-2E66-47DA-988F-DA12BF37CBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15BE3D4B-2E66-47DA-988F-DA12BF37CBBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44619505-5CA3-43B4-B821-B77BB85AA018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44619505-5CA3-43B4-B821-B77BB85AA018}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44619505-5CA3-43B4-B821-B77BB85AA018}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44619505-5CA3-43B4-B821-B77BB85AA018}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
