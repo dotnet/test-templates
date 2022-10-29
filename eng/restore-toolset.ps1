@@ -13,14 +13,18 @@ function InitializeCustomSDKToolset {
   $cli = InitializeDotnetCli -install:$true
   $dotnetRoot = $env:DOTNET_INSTALL_DIR
   $installScript = GetDotNetInstallScript $dotnetRoot
-  & $installScript -InstallDir $env:DOTNET_INSTALL_DIR -Version "5.0.100-preview.6.20310.4"
 
-  InstallDotNetSharedFramework "1.0.5"
-  InstallDotNetSharedFramework "1.1.2"
-  InstallDotNetSharedFramework "2.1.0"
-  InstallDotNetSharedFramework "2.2.1"
-  InstallDotNetSharedFramework "2.2.2"
-  InstallDotNetSharedFramework "3.1.0"
+  $versions = @(
+    "3.1.0"
+    "5.0.1"
+    "6.0.1"
+    "7.0.0-rc.1.22426.10"
+    # version from global.json (8.0.0) will be installed automatically
+  )
+
+  foreach ($version in $versions) {
+    InstallDotNetSharedFramework $version -DotnetRoot $dotnetRoot -InstallScript $installScript
+  }
 }
 
 function InstallDotNetSharedFramework([string]$version) {

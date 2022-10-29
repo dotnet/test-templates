@@ -5,7 +5,7 @@
   "name": "NUnit 3 Test Project",
   "defaultName": "NUnitTestProject",
   "generatorVersions": "[1.0.0.0-*)",
-  "description": "A project that contains NUnit tests that can run on .NET Core on Windows, Linux and macOS",
+  "description": "A project that contains NUnit tests that can run on .NET on Windows, Linux and macOS",
   "groupIdentity": "NUnit3.DotNetNew.Template",
   "precedence": "8000",
   "identity": "NUnit3.DotNetNew.Template.CSharp.6.0",
@@ -72,6 +72,7 @@
       "description": "Restore NuGet packages required by this project.",
       "manualInstructions": [{ "text": "Run 'dotnet restore'" }],
       "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "id": "restoreNugetPackages",
       "continueOnError": true
     },
     {
@@ -79,6 +80,7 @@
       "description": "Opens UnitTest1.cs in the editor",
       "manualInstructions": [ ],
       "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "id": "openInEditor",
       "args": {
         "files": "1"
       },

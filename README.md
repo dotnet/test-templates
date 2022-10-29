@@ -1,36 +1,29 @@
 # Overview
 
-This repository is the home for the .NET Core Test Templates. It also contains Classic .Net Framework and Universal Test templates for C# and VB. 
+This repository contains test templates that are consumed by `dotnet new`. The templates are C#, F# and VB languages; for MSTest, NUnit and XUnit testing frameworks. 
+It also contains classic .NET Framework and Universal Test templates for C# and VB. 
 
-# Creating new projects
+# Usage
 
-You can create new projects with `dotnet new`, this section will briefly describe that. For more info take a look at
-[Announcing .NET Core Tools Updates in VS 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2017/02/07/announcing-net-core-tools-updates-in-vs-2017-rc/).
+You can create new test project with `dotnet new mstest`, `dotnet new nunit`, or `dotnet new xunit`. Full documentation for `dotnet new` is [here](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new). And here is documentation for each template: [mstest or xunit](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new-sdk-templates#test), [nunit](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new-sdk-templates#nunit).
 
-Let's create a new test project named "NewMSTestProject" in the "src/MyTest" directory. 
+# Contributing
 
-```bash
-$ dotnet new mstest -n NewMSTestProject 
-The template "MSTest Test Project" was created successfully.
-```
+There are 2 main areas in this repository: 
+- `template_feed` contains the .NET templates that are inserted into dotnet/installer.
+- `Templates`, `WizardExtensions` contain "legacy" templates for .NET Framework test projects in VisualStudio.
 
-The project was successfully created on disk as expected in `src/MyTest`. From here, we can run normal `dotnet` commands like `dotnet restore` and `dotnet build`.
+`template_feed` contains all the templates from the oldest version of .NET to the newest. We build all of these templates, but might not ship all of them. If you are doing bigger changes please make them in bulk to all the templates. 
 
-We have a pretty good help system built in, including template specific help (_for example `dotnet new mstest --help`_). If you're not sure the syntax please try that,
-if you have any difficulties please file a new issue.
-
-# How to build, run & debug the latest
-
-If you're authoring templates, or interested in contributing to this repo, then you're likely interested in how to use the latest version of this experience.
-The steps required are outlined below.
 
 ## Acquire
 
 - Fork this repository.
 - Clone the forked repository to your local machine.
-  - **main** is a build branch and does not accept contributions directly.
-  - The default branch is the active development branch that accepts contributions and flows to main to produce packages.
-
+  - `main` is our default branch. It should be checked out for you automatically.
+  - Create topic branch to hold your change e.g. `git checkout -b "update-mstest"`.
+  - Make your changes, commit, and make PR that targets our `main` branch.
+  
 ## Build & Run
 
 - Open up a command prompt and navigation to the root of your source code.

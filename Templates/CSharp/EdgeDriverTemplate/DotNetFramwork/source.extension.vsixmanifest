@@ -4,7 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="EdgeDriverTest.0b43ac6b-e6ff-4afc-a5f6-286d41c046a6" Version="|%CurrentProject%;GetVsixVersion|" Language="en-US" Publisher="Microsoft" />
-        <DisplayName>Web Driver Test Template For Edge (.NET Framework)</DisplayName>
+        <DisplayName>WebDriver Test Template For Edge (.NET Framework)</DisplayName>
         <Description xml:space="preserve">Create an automatic UI test using Edge Driver.</Description>
         <PackageId>Microsoft.VisualStudio.Templates.CS.EdgeDriverTest</PackageId>
     </Metadata>
