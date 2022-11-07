@@ -5,8 +5,6 @@ variables:
   value: true
 - name: _DotNetArtifactsCategory
   value: .NETCore
-- name: CodeQL.Enabled
-  value: true
 
 # CI and PR triggers
 trigger:
@@ -65,6 +63,8 @@ stages:
                   /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
                   /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory)
                   /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
+          - name: CodeQL.Enabled
+            value: true
         strategy:
           matrix:
             Debug:
