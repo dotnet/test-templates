@@ -5,6 +5,8 @@ variables:
   value: true
 - name: _DotNetArtifactsCategory
   value: .NETCore
+- name: CodeQL.Enabled
+  value: true
 
 # CI and PR triggers
 trigger:
