@@ -8,7 +8,7 @@
   "groupIdentity": "Microsoft.Test.Playwright.NUnit",
   "precedence": "10000",
   "identity": "Microsoft.Test.Playwright.NUnit.CSharp.8.0",
-  "shortName": "NUnit-playwright",
+  "shortName": "nunit-playwright",
   "tags": {
     "language": "C#",
     "type": "project"
