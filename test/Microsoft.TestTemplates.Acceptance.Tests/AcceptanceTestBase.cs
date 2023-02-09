@@ -19,7 +19,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         private const string TestSummaryStatusMessageFormat = "Test Run Successful. Total tests: {0} Passed: {1} Total time:";
         private string standardTestOutput = string.Empty;
         protected string standardTestError = string.Empty;
-        private int runnerExitCode = -1;
+        protected int runnerExitCode = -1;
 
         private string arguments = string.Empty;
 
