@@ -54,6 +54,9 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
             InvokeDotnet("test  --no-build --framework net5.0 " + path, assertExecution: false);
 
             Assert.IsTrue(Regex.IsMatch(standardTestError, "The test source file.*provided was not found."));
+
+            // after we want to test the normal path to ensure we're not breaking it.
+            TemplateTest(path);
         }
 
         /// <summary>
