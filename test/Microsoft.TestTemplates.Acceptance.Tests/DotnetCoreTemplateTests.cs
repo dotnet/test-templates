@@ -50,7 +50,6 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         [DataTestMethod]
         [DynamicData(nameof(GetTestTemplatesPath), DynamicDataSourceType.Method)]
         public void TemplateTest_WrongTfmShouldFail(string path) {
-            // Invokes dotnet test <path>
             InvokeDotnet("build " + path);
             InvokeDotnet("test  --no-build --framework net5.0 " + path, assertExecution: false);
 
