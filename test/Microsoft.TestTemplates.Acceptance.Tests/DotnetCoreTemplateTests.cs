@@ -1,15 +1,14 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-namespace Microsoft.TestTemplates.Acceptance.Tests
-{
+namespace Microsoft.TestTemplates.Acceptance.Tests {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.IO;
+    using System.Text.RegularExpressions;
 
     [TestClass]
-    public class DotnetCoreTemplateTests : AcceptanceTestBase
-    {
+    public class DotnetCoreTemplateTests : AcceptanceTestBase {
         /// <summary>
         /// The net core versions for which templates are present
         /// </summary>
@@ -17,8 +16,6 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             // refer to https://dotnet.microsoft.com/download/dotnet-core
             // for a list of supported dotnet versions and only include the ones
             // that are not end-of-life
-            "3.1",
-            "5.0",
             "6.0",
             "7.0",
             "8.0"
@@ -41,8 +38,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
 
         [DataTestMethod]
         [DynamicData(nameof(GetTestTemplatesPath), DynamicDataSourceType.Method)]
-        public void TemplateTest(string path)
-        {
+        public void TemplateTest(string path) {
             // Invokes dotnet test <path>
             InvokeDotnetTest(path);
 
@@ -50,18 +46,26 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             ValidateSummaryStatus(1, 0, 0);
         }
 
+
+        [DataTestMethod]
+        [DynamicData(nameof(GetTestTemplatesPath), DynamicDataSourceType.Method)]
+        public void TemplateTest_WrongTfmShouldFail(string path) {
+            // Invokes dotnet test <path>
+            InvokeDotnet("build " + path);
+            InvokeDotnet("test  --no-build --framework net5.0 " + path, assertExecution: false);
+
+            Assert.IsTrue(Regex.IsMatch(standardTestError, "The test source file.*provided was not found."));
+        }
+
         /// <summary>
         /// Dynamic data source for the template test
         /// </summary>
         /// <returns>Paths to all possible the template projects</returns>
-        private static IEnumerable<object[]> GetTestTemplatesPath()
-        {
+        private static IEnumerable<object[]> GetTestTemplatesPath() {
             var list = new List<string[]>();
 
-            foreach (var netcoreVersion in netCoreVersions)
-            {
-                foreach (var templateType in templateTypes)
-                {
+            foreach (var netcoreVersion in netCoreVersions) {
+                foreach (var templateType in templateTypes) {
                     list.Add(new string[] { Path.Combine("template_feed", "Microsoft.DotNet.Test.ProjectTemplates." + netcoreVersion, "content", templateType) });
                 }
             }

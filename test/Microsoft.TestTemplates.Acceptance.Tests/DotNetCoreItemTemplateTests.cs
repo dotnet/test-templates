@@ -21,8 +21,6 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             // refer to https://dotnet.microsoft.com/download/dotnet-core
             // for a list of supported dotnet versions and only include the ones
             // that are not end-of-life
-             "3.1",
-             "5.0",
              "6.0",
              "7.0",
              "8.0"
