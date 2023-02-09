@@ -21,7 +21,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             "5.0",
             "6.0",
             "7.0",
-            // "8.0", TODO: not yet, enable when net8.0 sdk can target net8.0
+            "8.0"
         };
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         }
 
         /// <summary>
-        /// Dynamic data source for the template test 
+        /// Dynamic data source for the template test
         /// </summary>
         /// <returns>Paths to all possible the template projects</returns>
         private static IEnumerable<object[]> GetTestTemplatesPath()

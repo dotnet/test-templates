@@ -25,7 +25,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
              "5.0",
              "6.0",
              "7.0",
-             // "8.0", TODO: not yet, enable when net8.0 sdk can target net8.0
+             "8.0"
         };
 
         /// <summary>
