@@ -8,7 +8,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
     using System.Text.RegularExpressions;
 
     [TestClass]
-    public class DotnetCoreTemplateTests : AcceptanceTestBase
+    public class DotnetCoreTemplateTests : AcceptanceTestBase  
     {
         /// <summary>
         /// The net core versions for which templates are present
