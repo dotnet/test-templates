@@ -73,8 +73,10 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         {
             var list = new List<string[]>();
 
-            foreach (var netcoreVersion in netCoreVersions) {
-                foreach (var templateType in templateTypes) {
+            foreach (var netcoreVersion in netCoreVersions)
+            {
+                foreach (var templateType in templateTypes)
+                {
                     list.Add(new string[] { Path.Combine("template_feed", "Microsoft.DotNet.Test.ProjectTemplates." + netcoreVersion, "content", templateType) });
                 }
             }
