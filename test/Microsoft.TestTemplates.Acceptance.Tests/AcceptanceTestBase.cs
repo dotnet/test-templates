@@ -1,7 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-namespace Microsoft.TestTemplates.Acceptance.Tests {
+namespace Microsoft.TestTemplates.Acceptance.Tests
+{
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Diagnostics;
@@ -13,7 +14,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
     /// <summary>
     /// Base class for Acceptance tests.
     /// </summary>
-    public class AcceptanceTestBase {
+    public class AcceptanceTestBase
+    {
         // this output is specific to the version of TP included with the runtime you are using to run the tests
         // if you see all tests failed, chances are that the output changed after you upgraded to latest version of dotnet
         private const string TestSummaryStatusMessageFormat = "Test Run Successful. Total tests: {0} Passed: {1} Total time:";
@@ -27,7 +29,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// Invokes <c>dotnet</c> with specified arguments.
         /// </summary>
         /// <param name="arguments">Arguments provided to <c>dotnet</c>.exe</param>
-        public void InvokeDotnet(string arguments, bool assertExecution = true) {
+        public void InvokeDotnet(string arguments, bool assertExecution = true)
+        {
             this.Execute(arguments, assertExecution);
             this.standardTestError = Regex.Replace(this.standardTestError, @"\s+", " ");
             this.standardTestOutput = Regex.Replace(this.standardTestOutput, @"\s+", " ");
@@ -37,7 +40,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// Invokes <c>dotnet test</c> with specified arguments.
         /// </summary>
         /// <param name="arguments">Arguments provided to <c>dotnet</c>.exe</param>
-        public void InvokeDotnetTest(string arguments) {
+        public void InvokeDotnetTest(string arguments)
+        {
             this.Execute("test " + "--logger:Console;Verbosity=Detailed " + arguments);
             this.standardTestError = Regex.Replace(this.standardTestError, @"\s+", " ");
             this.standardTestOutput = Regex.Replace(this.standardTestOutput, @"\s+", " ");
@@ -47,7 +51,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// Invokes <c>dotnet new install</c> with specified arguments.
         /// </summary>
         /// <param name="arguments"></param>
-        public static void InvokeDotnetNewInstall(string arguments) {
+        public static void InvokeDotnetNewInstall(string arguments)
+        {
             var command = "new install " + arguments;
             ExecuteDotnetNew(command);
         }
@@ -56,7 +61,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// Invokes <c>dotnet new uninstall</c> with specified arguments.
         /// </summary>
         /// <param name="arguments"></param>
-        public static void InvokeDotnetNewUninstall(string arguments) {
+        public static void InvokeDotnetNewUninstall(string arguments)
+        {
             var command = "new uninstall " + arguments;
             ExecuteDotnetNew(command);
         }
@@ -69,7 +75,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// <param name="targetFramework">The target framework for the project</param>
         /// <param name="language">Filters templates based on language and specifies the language of the template to create.</param>
         /// <param name="outputDirectory">Location to place the generated output.</param>
-        public void InvokeDotnetNew(string templateName, string nameAs, string targetFramework = null, string language = null, string outputDirectory = null) {
+        public void InvokeDotnetNew(string templateName, string nameAs, string targetFramework = null, string language = null, string outputDirectory = null)
+        {
             var targetArgs = string.IsNullOrEmpty(targetFramework) ? "" : $" -f {targetFramework}";
             var languageArgs = string.IsNullOrEmpty(language) ? "" : $" -lang {language}";
             var outputArgs = string.IsNullOrEmpty(outputDirectory) ? "" : $" -o {outputDirectory}";
@@ -84,7 +91,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// <param name="passedTestsCount">Passed test count</param>
         /// <param name="failedTestsCount">Failed test count</param>
         /// <param name="skippedTestsCount">Skipped test count</param>
-        public void ValidateSummaryStatus(int passedTestsCount, int failedTestsCount, int skippedTestsCount) {
+        public void ValidateSummaryStatus(int passedTestsCount, int failedTestsCount, int skippedTestsCount)
+        {
             var totalTestCount = passedTestsCount + failedTestsCount + skippedTestsCount;
             if (totalTestCount == 0) {
                 // No test should be found/run
@@ -124,7 +132,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
             return "dotnet";
         }
 
-        private void Execute(string args, bool assertExecution = true) {
+        private void Execute(string args, bool assertExecution = true)
+        {
             this.arguments = args;
             Execute(args, out this.standardTestOutput, out this.standardTestError, out this.runnerExitCode);
             if (assertExecution) {
@@ -136,14 +145,16 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// Executes <c>dotnet new</c> with arguments
         /// </summary>
         /// <param name="command"></param>
-        private static void ExecuteDotnetNew(string command) {
+        private static void ExecuteDotnetNew(string command)
+        {
             Execute(command, out var stdOut, out var stdErr, out var runnerExitCode);
             if (runnerExitCode != 0) {
                 Assert.AreEqual(0, runnerExitCode, "'dotnet {0}' command failed, exit code: {1}, stdOut: {2}, stdErr: {3}", command, runnerExitCode, stdOut, stdErr);
             }
         }
 
-        private static void Execute(string args, out string stdOut, out string stdError, out int exitCode) {
+        private static void Execute(string args, out string stdOut, out string stdError, out int exitCode)
+        {
             using (Process dotnet = new Process()) {
                 Console.WriteLine("AcceptanceTestBase.Execute: Starting dotnet.exe");
                 dotnet.StartInfo.FileName = GetDotnetExePath();

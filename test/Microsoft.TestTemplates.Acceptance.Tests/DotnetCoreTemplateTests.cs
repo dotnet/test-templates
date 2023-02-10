@@ -8,11 +8,13 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
     using System.Text.RegularExpressions;
 
     [TestClass]
-    public class DotnetCoreTemplateTests : AcceptanceTestBase {
+    public class DotnetCoreTemplateTests : AcceptanceTestBase
+    {
         /// <summary>
         /// The net core versions for which templates are present
         /// </summary>
-        private static string[] netCoreVersions = {
+        private static string[] netCoreVersions =
+        {
             // refer to https://dotnet.microsoft.com/download/dotnet-core
             // for a list of supported dotnet versions and only include the ones
             // that are not end-of-life
@@ -24,7 +26,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// <summary>
         /// The type of the test template, combination of the test framework and language
         /// </summary>
-        private static string[] templateTypes = {
+        private static string[] templateTypes =
+        {
             "MSTest-CSharp",
             "MSTest-FSharp",
             "MSTest-VisualBasic",
@@ -38,7 +41,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
 
         [DataTestMethod]
         [DynamicData(nameof(GetTestTemplatesPath), DynamicDataSourceType.Method)]
-        public void TemplateTest(string path) {
+        public void TemplateTest(string path)
+        {
             // Invokes dotnet test <path>
             InvokeDotnetTest(path);
 
@@ -49,7 +53,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
 
         [DataTestMethod]
         [DynamicData(nameof(GetTestTemplatesPath), DynamicDataSourceType.Method)]
-        public void TemplateTest_WrongTfmShouldFail(string path) {
+        public void TemplateTest_WrongTfmShouldFail(string path)
+        {
             InvokeDotnet("build " + path);
             InvokeDotnet("test  --no-build --framework net5.0 " + path, assertExecution: false);
 
@@ -64,7 +69,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests {
         /// Dynamic data source for the template test
         /// </summary>
         /// <returns>Paths to all possible the template projects</returns>
-        private static IEnumerable<object[]> GetTestTemplatesPath() {
+        private static IEnumerable<object[]> GetTestTemplatesPath()
+        {
             var list = new List<string[]>();
 
             foreach (var netcoreVersion in netCoreVersions) {

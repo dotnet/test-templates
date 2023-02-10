@@ -17,7 +17,8 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         /// <summary>
         /// The net core versions for which templates are present
         /// </summary>
-        private static string[] netCoreVersions = {
+        private static string[] netCoreVersions =
+        {
             // refer to https://dotnet.microsoft.com/download/dotnet-core
             // for a list of supported dotnet versions and only include the ones
             // that are not end-of-life
