@@ -1,14 +1,15 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-namespace Microsoft.TestTemplates.Acceptance.Tests {
+namespace Microsoft.TestTemplates.Acceptance.Tests
+{
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.IO;
     using System.Text.RegularExpressions;
 
     [TestClass]
-    public class DotnetCoreTemplateTests : AcceptanceTestBase  
+    public class DotnetCoreTemplateTests : AcceptanceTestBase
     {
         /// <summary>
         /// The net core versions for which templates are present
