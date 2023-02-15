@@ -64,7 +64,7 @@ stages:
                   /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory)
                   /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
           - name: CodeQL.Enabled
-            value: true
+            value: false
         strategy:
           matrix:
             Debug:
