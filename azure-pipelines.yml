@@ -52,7 +52,7 @@ stages:
           - group: DotNet-VSTS-Infra-Access
           - group: DotNet-DevDiv-Insertion-Workflow-Variables
           - _VisualStudioDropName: Products/$(System.TeamProject)/$(Build.Repository.Name)/$(Build.SourceBranchName)/$(Build.BuildNumber)
-          - _OfficialBuildArgs: /p:DotNetSignType=$(_SignType) 
+          - _OfficialBuildArgs: /p:DotNetSignType=$(_SignType)
                   /p:TeamName=$(_TeamName)
                   /p:VisualStudioDropName=$(_VisualStudioDropName)
                   /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
@@ -64,7 +64,7 @@ stages:
                   /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory)
                   /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
           - name: CodeQL.Enabled
-            value: true
+            value: false
         strategy:
           matrix:
             Debug:
@@ -88,7 +88,7 @@ stages:
         - checkout: self
           clean: true
         - script: eng\common\cibuild.cmd
-            -configuration $(_BuildConfig) 
+            -configuration $(_BuildConfig)
             -prepareMachine
             $(_BuildArgs)
           displayName: Build and Publish
