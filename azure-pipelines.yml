@@ -9,9 +9,11 @@ variables:
 # CI and PR triggers
 trigger:
 - main
+- rel/*
 
 pr:
 - main
+- rel/*
 
 stages:
 - stage: build
@@ -33,11 +35,11 @@ stages:
           # For public or PR jobs, use the hosted pool.  For internal jobs use the internal pool.
           # Will eventually change this to two BYOC pools.
           ${{ if or(eq(variables['System.TeamProject'], 'public'), in(variables['Build.Reason'], 'PullRequest')) }}:
-            name: NetCore1ESPool-Svc-Public
-            demands: ImageOverride -equals build.windows.10.amd64.vs2019.pre.open
+            name: NetCore-Public
+            demands: ImageOverride -equals windows.vs2022.amd64.open
           ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
-            name: NetCore1ESPool-Svc-Internal
-            demands: ImageOverride -equals build.windows.10.amd64.vs2019.pre
+            name: NetCore1ESPool-Internal
+            demands: ImageOverride -equals Build.Windows.Amd64.VS2022
         variables:
         - _OfficialBuildArgs: ''
         # Only enable publishing in official builds.
