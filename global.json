@@ -1,8 +1,5 @@
 {
   "tools": {
-    "vs": {
-      "version": "15.9"
-    },
     "runtimes": {
       "dotnet/x64": [
         "5.0.12",
