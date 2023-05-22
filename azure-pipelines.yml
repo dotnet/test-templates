@@ -37,18 +37,20 @@ variables:
   # Group gives access to $dn-bot-devdiv-drop-rw-code-rw and dn-bot-dnceng-build-rw-code-rw
   - group: DotNet-VSTS-Infra-Access
   - group: DotNet-DevDiv-Insertion-Workflow-Variables
-  - _VisualStudioDropName: Products/$(System.TeamProject)/$(Build.Repository.Name)/$(Build.SourceBranchName)/$(Build.BuildNumber)
-  - _InternalBuildArgs: /p:DotNetSignType=$(_SignType)
-          /p:TeamName=$(_TeamName)
-          /p:VisualStudioDropName=$(_VisualStudioDropName)
-          /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
-          /p:DotNetSymbolServerTokenSymWeb=$(symweb-symbol-server-pat)
-          /p:DotNetPublishBlobFeedKey=$(dotnetfeed-storage-access-key-1)
-          /p:DotNetPublishBlobFeedUrl=https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json
-          /p:DotNetPublishToBlobFeed=$(_DotNetPublishToBlobFeed)
-          /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
-          /p:DotNetArtifactsCategory=.NETCore
-          /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
+  - name: _VisualStudioDropName
+    value: Products/$(System.TeamProject)/$(Build.Repository.Name)/$(Build.SourceBranchName)/$(Build.BuildNumber)
+  - name: _InternalBuildArgs
+    value: /p:DotNetSignType=$(_SignType)
+      /p:TeamName=$(_TeamName)
+      /p:VisualStudioDropName=$(_VisualStudioDropName)
+      /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
+      /p:DotNetSymbolServerTokenSymWeb=$(symweb-symbol-server-pat)
+      /p:DotNetPublishBlobFeedKey=$(dotnetfeed-storage-access-key-1)
+      /p:DotNetPublishBlobFeedUrl=https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json
+      /p:DotNetPublishToBlobFeed=$(_DotNetPublishToBlobFeed)
+      /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
+      /p:DotNetArtifactsCategory=.NETCore
+      /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
 
 stages:
 - stage: build
