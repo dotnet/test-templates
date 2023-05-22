@@ -54,7 +54,7 @@ variables:
       /p:DotNetPublishBlobFeedKey=$(dotnetfeed-storage-access-key-1)
       /p:DotNetPublishBlobFeedUrl=https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json
       /p:DotNetPublishToBlobFeed=true
-      /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
+      /p:DotNetPublishUsingPipelines=true
       /p:DotNetArtifactsCategory=.NETCore
       /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
 
