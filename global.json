@@ -6,6 +6,10 @@
         "7.0.2"
       ]
     },
+    "vs": {
+      "version": "17.0",
+      "allowPrerelease": false
+    },
     "dotnet": "8.0.100-preview.3.23178.7"
   },
   "msbuild-sdks": {

@@ -37,6 +37,12 @@ variables:
   # Group gives access to $dn-bot-devdiv-drop-rw-code-rw and dn-bot-dnceng-build-rw-code-rw
   - group: DotNet-VSTS-Infra-Access
   - group: DotNet-DevDiv-Insertion-Workflow-Variables
+  - name: _SignType
+    value: real
+  - name: _SignArgs
+    value: /p:DotNetSignType=$(_SignType) /p:TeamName=$(_TeamName) /p:Sign=$(_Sign)
+  - name: _Sign
+    value: True
   - name: _VisualStudioDropName
     value: Products/$(System.TeamProject)/$(Build.Repository.Name)/$(Build.SourceBranchName)/$(Build.BuildNumber)
   - name: _InternalBuildArgs
@@ -47,7 +53,7 @@ variables:
       /p:DotNetSymbolServerTokenSymWeb=$(symweb-symbol-server-pat)
       /p:DotNetPublishBlobFeedKey=$(dotnetfeed-storage-access-key-1)
       /p:DotNetPublishBlobFeedUrl=https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json
-      /p:DotNetPublishToBlobFeed=$(_DotNetPublishToBlobFeed)
+      /p:DotNetPublishToBlobFeed=true
       /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
       /p:DotNetArtifactsCategory=.NETCore
       /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
@@ -66,6 +72,7 @@ stages:
       enablePublishTestResults: true
       enableTelemetry: true
       enableSourceBuild: true
+      testResultsFormat: 'vstest'
       helixRepo: dotnet/test-templates
       jobs:
       - job: Windows
@@ -93,7 +100,13 @@ stages:
             -configuration $(_BuildConfig)
             -prepareMachine
             $(_InternalBuildArgs)
-          displayName: Build, Test and Publish
+          displayName: Build
+
+        - task: PublishBuildArtifacts@1
+          displayName: 'Publish VSSetup'
+          inputs:
+            PathtoPublish: '$(Build.SourcesDirectory)/artifacts/VSSetup/$(_BuildConfig)'
+            ArtifactName: VSSetupArtifacts
 
         - task: DotNetCoreCLI@2
           displayName: 'Acceptance tests'
