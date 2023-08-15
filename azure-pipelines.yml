@@ -57,6 +57,7 @@ variables:
       /p:DotNetPublishUsingPipelines=true
       /p:DotNetArtifactsCategory=.NETCore
       /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
+      /p:GenerateSbom=true
 
 stages:
 - stage: build
