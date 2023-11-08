@@ -6,7 +6,7 @@
   "generatorVersions": "[1.0.0.0-*)",
   "description": "A project that contains Playwright tests using MSTest test framwork, that can run on .NET on Windows, Linux and MacOS.",
   "groupIdentity": "Microsoft.Test.Playwright.MSTest",
-  "precedence": "10000",
+  "precedence": "11000",
   "identity": "Microsoft.Test.Playwright.MSTest.CSharp.9.0",
   "shortName": "mstest-playwright",
   "tags": {
