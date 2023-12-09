@@ -1,0 +1,83 @@
+<Project>
+  <Import Project="..\Directory.Build.targets" />
+
+  <PropertyGroup>
+    <PackageId>Microsoft.DotNet.Test.ProjectTemplates.$(ProjectTemplateMajorMinorVersion)</PackageId>
+    <Authors>Microsoft</Authors>
+    <Description>Test Templates for Microsoft Template Engine</Description>
+    <language>en-US</language>
+    <PackageProjectUrl>https://github.com/dotnet/test-templates</PackageProjectUrl>
+    <CopyrightMicrosoft>© Microsoft Corporation. All rights reserved.</CopyrightMicrosoft>
+    <CopyrightNetFoundation>© .NET Foundation and Contributors</CopyrightNetFoundation>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageType>Template</PackageType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/Directory.Build.props" OutputPath="content/Directory.Build.props" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/Directory.Build.targets" OutputPath="content/Directory.Build.targets" />
+  </ItemGroup>
+
+  <ItemGroup Label="MSTest-CSharp">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/MSTest-CSharp/Company.TestProject1.csproj.in" OutputPath="content/MSTest-CSharp/Company.TestProject1.csproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/MSTest-CSharp/UnitTest1.cs.in" OutputPath="content/MSTest-CSharp/UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup Label="MSTest-FSharp">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/MSTest-FSharp/Company.TestProject1.fsproj.in" OutputPath="content/MSTest-FSharp/Company.TestProject1.fsproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/MSTest-FSharp/Program.fs.in" OutputPath="content/MSTest-FSharp/Program.fs" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/MSTest-FSharp/Tests.fs.in" OutputPath="content/MSTest-FSharp/Tests.fs" />
+  </ItemGroup>
+
+  <ItemGroup Label="MSTest-VisualBasic">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/MSTest-VisualBasic/Company.TestProject1.vbproj.in" OutputPath="content/MSTest-VisualBasic/Company.TestProject1.vbproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/MSTest-VisualBasic/UnitTest1.vb.in" OutputPath="content/MSTest-VisualBasic/UnitTest1.vb" />
+  </ItemGroup>
+
+  <ItemGroup Label="NUnit-CSharp">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-CSharp/Company.TestProject1.csproj.in" OutputPath="content/NUnit-CSharp/Company.TestProject1.csproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-CSharp/UnitTest1.cs.in" OutputPath="content/NUnit-CSharp/UnitTest1.cs" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-CSharp-Item/UnitTest1.cs.in" OutputPath="content/NUnit-CSharp-Item/UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup Label="NUnit-FSharp">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-FSharp/Company.TestProject1.fsproj.in" OutputPath="content/NUnit-FSharp/Company.TestProject1.fsproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-FSharp/Program.fs.in" OutputPath="content/NUnit-FSharp/Program.fs" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-FSharp/UnitTest1.fs.in" OutputPath="content/NUnit-FSharp/UnitTest1.fs" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-FSharp-Item/UnitTest1.fs.in" OutputPath="content/NUnit-FSharp-Item/UnitTest1.fs" />
+  </ItemGroup>
+
+  <ItemGroup Label="NUnit-VisualBasic">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-VisualBasic/Company.TestProject1.vbproj.in" OutputPath="content/NUnit-VisualBasic/Company.TestProject1.vbproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-VisualBasic/UnitTest1.vb.in" OutputPath="content/NUnit-VisualBasic/UnitTest1.vb" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/NUnit-VisualBasic-Item/UnitTest1.vb.in" OutputPath="content/NUnit-VisualBasic-Item/UnitTest1.vb" />
+  </ItemGroup>
+
+  <ItemGroup Label="Playwright-MSTest-CSharp" Condition="'$(ProjectTemplateMajorMinorVersion)' > '7.0'">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/Playwright-MSTest-CSharp/Company.TestProject1.csproj.in" OutputPath="content/Playwright-MSTest-CSharp/Company.TestProject1.csproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/Playwright-MSTest-CSharp/UnitTest1.cs.in" OutputPath="content/Playwright-MSTest-CSharp/UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup Label="Playwright-NUnit-CSharp" Condition="'$(ProjectTemplateMajorMinorVersion)' > '7.0'">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/Playwright-NUnit-CSharp/Company.TestProject1.csproj.in" OutputPath="content/Playwright-NUnit-CSharp/Company.TestProject1.csproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/Playwright-NUnit-CSharp/UnitTest1.cs.in" OutputPath="content/Playwright-NUnit-CSharp/UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup Label="XUnit-CSharp">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/XUnit-CSharp/Company.TestProject1.csproj.in" OutputPath="content/XUnit-CSharp/Company.TestProject1.csproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/XUnit-CSharp/UnitTest1.cs.in" OutputPath="content/XUnit-CSharp/UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup Label="XUnit-FSharp">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/XUnit-FSharp/Company.TestProject1.fsproj.in" OutputPath="content/XUnit-FSharp/Company.TestProject1.fsproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/XUnit-FSharp/Program.fs.in" OutputPath="content/XUnit-FSharp/Program.fs" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/XUnit-FSharp/Tests.fs.in" OutputPath="content/XUnit-FSharp/Tests.fs" />
+  </ItemGroup>
+
+  <ItemGroup Label="XUnit-VisualBasic">
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/XUnit-VisualBasic/Company.TestProject1.vbproj.in" OutputPath="content/XUnit-VisualBasic/Company.TestProject1.vbproj" />
+    <GeneratedContent Include="../Microsoft.DotNet.Test.ProjectTemplates/XUnit-VisualBasic/UnitTest1.vb.in" OutputPath="content/XUnit-VisualBasic/UnitTest1.vb" />
+  </ItemGroup>
+
+  <Import Project="../eng/GenerateContent.targets" />
+</Project>

@@ -1,0 +1,24 @@
+<Project>
+  <Import Project="..\Directory.Build.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>False</IncludeBuildOutput>
+    <IncludeSource>False</IncludeSource>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputPath>$(TemplatesFolder)</OutputPath>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <IsPackable>true</IsPackable>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <NoWarn>2008;NU5125</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Remove="Microsoft.NETCore.App" />
+    <Compile Remove="$(GitInfoFile)" />
+    <Compile Remove="$(MSBuildThisFileDirectory)../../src/GitInfo.cs" />
+    <Content Include="content\*\**">
+      <PackagePath>content</PackagePath>
+    </Content>
+  </ItemGroup>
+</Project>

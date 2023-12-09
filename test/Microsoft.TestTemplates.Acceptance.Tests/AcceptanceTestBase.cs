@@ -156,6 +156,7 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
         private static void Execute(string args, out string stdOut, out string stdError, out int exitCode)
         {
             using (Process dotnet = new Process()) {
+                Console.OutputEncoding = Encoding.UTF8;
                 Console.WriteLine("AcceptanceTestBase.Execute: Starting dotnet.exe");
                 dotnet.StartInfo.FileName = GetDotnetExePath();
                 dotnet.StartInfo.Arguments = args;

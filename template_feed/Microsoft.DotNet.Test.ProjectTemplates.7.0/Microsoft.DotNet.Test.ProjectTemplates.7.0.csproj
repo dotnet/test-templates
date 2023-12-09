@@ -1,31 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <IncludeBuildOutput>False</IncludeBuildOutput>
-        <IncludeSource>False</IncludeSource>
-        <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-        <OutputPath>$(TemplatesFolder)</OutputPath>
-        <EnableDefaultItems>False</EnableDefaultItems>
-        <IsPackable>true</IsPackable>
-        <NoPackageAnalysis>true</NoPackageAnalysis>
-        <NoWarn>2008;NU5125</NoWarn>
 
-        <PackageId>Microsoft.DotNet.Test.ProjectTemplates.7.0</PackageId>
-        <Authors>Microsoft</Authors>
-        <Description>Test Templates for Microsoft Template Engine</Description>
-        <language>en-US</language>
-        <PackageProjectUrl>https://github.com/dotnet/test-templates</PackageProjectUrl>
-        <CopyrightMicrosoft>© Microsoft Corporation. All rights reserved.</CopyrightMicrosoft>
-        <CopyrightNetFoundation>© .NET Foundation and Contributors</CopyrightNetFoundation>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageType>Template</PackageType>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Remove="Microsoft.NETCore.App" />
-        <Compile Remove="$(GitInfoFile)" />
-        <Compile Remove="$(MSBuildThisFileDirectory)../../src/GitInfo.cs" />
-        <Content Include="content\**">
-            <PackagePath>content</PackagePath>
-        </Content>
-    </ItemGroup>
+  <PropertyGroup>
+    <ProjectTemplateMajorVersion>7</ProjectTemplateMajorVersion>
+    <ProjectTemplateMinorVersion>0</ProjectTemplateMinorVersion>
+    <ProjectTemplateMajorMinorVersion>$(ProjectTemplateMajorVersion).$(ProjectTemplateMinorVersion)</ProjectTemplateMajorMinorVersion>
+    <DefaultNetCoreTargetFramework>net$(ProjectTemplateMajorMinorVersion)</DefaultNetCoreTargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Lists the versions of dependencies not built in this repo. Packages produced from this repo should be listed as a PackageVersionVariableReference.  -->
+    <GeneratedContentProperties>
+      DefaultNetCoreTargetFramework=$(DefaultNetCoreTargetFramework);
+      CoverletCollectorVersion=$(CoverletCollectorNet70Version);
+      MicrosoftNetTestSdkVersion=$(MicrosoftNetTestSdkNet70Version);
+      MSTestAdapterVersion=$(MSTestAdapterNet70Version);
+      MSTestFrameworkVersion=$(MSTestFrameworkNet70Version);
+      NUnitVersion=$(NUnitNet70Version);
+      NUnitAnalyzersVersion=$(NUnitAnalyzersNet70Version);
+      NUnit3TestAdapterVersion=$(NUnit3TestAdapterNet70Version);
+      XunitVersion=$(XunitNet70Version);
+      XUnitRunnerVisualStudioVersion=$(XUnitRunnerVisualStudioNet70Version);
+    </GeneratedContentProperties>
+  </PropertyGroup>
+
 </Project>

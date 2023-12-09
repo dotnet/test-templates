@@ -11,6 +11,7 @@
     <UsingToolNetFrameworkReferenceAssemblies>true</UsingToolNetFrameworkReferenceAssemblies>
   </PropertyGroup>
   <PropertyGroup Label="Dependencies settings">
+    <MicrosoftDotNetBuildTasksTemplatingVersion>9.0.0-beta.23601.1</MicrosoftDotNetBuildTasksTemplatingVersion>
     <MicrosoftInternalCreateUnitTestVersion>17.0.0-preview-1-30928-1112</MicrosoftInternalCreateUnitTestVersion>
     <MicrosoftInternalIntelliTestVersion>17.3.0-beta.22215.7</MicrosoftInternalIntelliTestVersion>
     <MicrosoftVisualStudioComponentModelHostVersion>16.0.342-g758a0a97e0</MicrosoftVisualStudioComponentModelHostVersion>
@@ -18,5 +19,53 @@
     <MicrosoftVisualStudioInteropVersion>17.0.0-preview-1-31216-036</MicrosoftVisualStudioInteropVersion>
     <MicrosoftVSSDKBuildToolsVersion>17.4.2116</MicrosoftVSSDKBuildToolsVersion>
     <MSTestv2IntellitestFrameworkVersion>net472</MSTestv2IntellitestFrameworkVersion>
+
+    <!-- net6.0 dependencies -->
+    <CoverletCollectorNet60Version>3.2.0</CoverletCollectorNet60Version>
+    <MicrosoftNetTestSdkNet60Version>17.5.0</MicrosoftNetTestSdkNet60Version>
+    <MSTestAdapterNet60Version>2.2.10</MSTestAdapterNet60Version>
+    <MSTestFrameworkNet60Version>2.2.10</MSTestFrameworkNet60Version>
+    <NUnitNet60Version>3.13.3</NUnitNet60Version>
+    <NUnitAnalyzersNet60Version>3.6.1</NUnitAnalyzersNet60Version>
+    <NUnit3TestAdapterNet60Version>4.4.2</NUnit3TestAdapterNet60Version>
+    <XunitNet60Version>2.4.2</XunitNet60Version>
+    <XUnitRunnerVisualStudioNet60Version>2.4.5</XUnitRunnerVisualStudioNet60Version>
+
+    <!-- net7.0 dependencies -->
+    <CoverletCollectorNet70Version>3.2.0</CoverletCollectorNet70Version>
+    <MicrosoftNetTestSdkNet70Version>17.7.1</MicrosoftNetTestSdkNet70Version>
+    <MSTestAdapterNet70Version>2.2.10</MSTestAdapterNet70Version>
+    <MSTestFrameworkNet70Version>2.2.10</MSTestFrameworkNet70Version>
+    <NUnitNet70Version>3.13.3</NUnitNet70Version>
+    <NUnitAnalyzersNet70Version>3.6.1</NUnitAnalyzersNet70Version>
+    <NUnit3TestAdapterNet70Version>4.4.2</NUnit3TestAdapterNet70Version>
+    <XunitNet70Version>2.4.2</XunitNet70Version>
+    <XUnitRunnerVisualStudioNet70Version>2.4.5</XUnitRunnerVisualStudioNet70Version>
+
+    <!-- net8.0 dependencies -->
+    <CoverletCollectorNet80Version>6.0.0</CoverletCollectorNet80Version>
+    <MicrosoftNetTestSdkNet80Version>17.8.0</MicrosoftNetTestSdkNet80Version>
+    <MicrosoftPlaywrightMSTestNet80Version>1.27.1</MicrosoftPlaywrightMSTestNet80Version>
+    <MicrosoftPlaywrightNUnitNet80Version>1.27.1</MicrosoftPlaywrightNUnitNet80Version>
+    <MSTestAdapterNet80Version>3.1.1</MSTestAdapterNet80Version>
+    <MSTestFrameworkNet80Version>3.1.1</MSTestFrameworkNet80Version>
+    <NUnitNet80Version>3.14.0</NUnitNet80Version>
+    <NUnitAnalyzersNet80Version>3.9.0</NUnitAnalyzersNet80Version>
+    <NUnit3TestAdapterNet80Version>4.5.0</NUnit3TestAdapterNet80Version>
+    <XunitNet80Version>2.5.3</XunitNet80Version>
+    <XUnitRunnerVisualStudioNet80Version>2.5.3</XUnitRunnerVisualStudioNet80Version>
+
+    <!-- net9.0 dependencies -->
+    <CoverletCollectorNet90Version>6.0.0</CoverletCollectorNet90Version>
+    <MicrosoftNetTestSdkNet90Version>17.8.0</MicrosoftNetTestSdkNet90Version>
+    <MicrosoftPlaywrightMSTestNet90Version>1.27.1</MicrosoftPlaywrightMSTestNet90Version>
+    <MicrosoftPlaywrightNUnitNet90Version>1.27.1</MicrosoftPlaywrightNUnitNet90Version>
+    <MSTestAdapterNet90Version>3.1.1</MSTestAdapterNet90Version>
+    <MSTestFrameworkNet90Version>3.1.1</MSTestFrameworkNet90Version>
+    <NUnitNet90Version>3.14.0</NUnitNet90Version>
+    <NUnitAnalyzersNet90Version>3.9.0</NUnitAnalyzersNet90Version>
+    <NUnit3TestAdapterNet90Version>4.5.0</NUnit3TestAdapterNet90Version>
+    <XunitNet90Version>2.5.3</XunitNet90Version>
+    <XUnitRunnerVisualStudioNet90Version>2.5.3</XUnitRunnerVisualStudioNet90Version>
   </PropertyGroup>
 </Project>
