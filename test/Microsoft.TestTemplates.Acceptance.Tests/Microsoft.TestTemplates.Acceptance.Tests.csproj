@@ -10,11 +10,6 @@
     <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
-  </ItemGroup>
-
     <ItemGroup>
         <ItemsToCopy Include="..\..\template_feed\**\*.*" />
     </ItemGroup>
