@@ -10,10 +10,12 @@
     <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
 
-    <ItemGroup>
-        <ItemsToCopy Include="..\..\template_feed\**\*.*" />
-    </ItemGroup>
-    <Target Name="CopyTarget" AfterTargets="Build">
-        <Copy SourceFiles="@(ItemsToCopy)" DestinationFolder="$(OutputPath)\template_feed\%(RecursiveDir)" />
-    </Target>
+  <ItemGroup>
+    <ItemsToCopy Include="..\..\template_feed\**\*.*" />
+  </ItemGroup>
+
+  <Target Name="CopyTarget" AfterTargets="Build">
+    <Copy SourceFiles="@(ItemsToCopy)" DestinationFolder="$(OutputPath)\template_feed\%(RecursiveDir)" />
+  </Target>
+    
 </Project>
