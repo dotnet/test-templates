@@ -29,14 +29,16 @@ namespace Microsoft.TestTemplates.Acceptance.Tests
             "MSTest-CSharp",
             "MSTest-FSharp",
             "MSTest-VisualBasic",
-            "Playwright-MSTest-CSharp",
             "NUnit-CSharp",
             "NUnit-FSharp",
             "NUnit-VisualBasic",
-            "Playwright-NUnit-CSharp",
             "XUnit-CSharp",
             "XUnit-FSharp",
             "XUnit-VisualBasic",
+            // Playwright templates are disabled for now, as they require extra installations.
+            // This is in accordance with Playwright's owner's decision for the template design.
+            // "Playwright-MSTest-CSharp",
+            // "Playwright-NUnit-CSharp",
         ];
 
         [DataTestMethod]
