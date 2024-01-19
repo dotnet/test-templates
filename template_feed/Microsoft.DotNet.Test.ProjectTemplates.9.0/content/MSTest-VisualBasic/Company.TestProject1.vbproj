@@ -8,11 +8,14 @@
     <IsPackable Condition="'$(EnablePack)' == 'true'">true</IsPackable>
     <IsPackable Condition="'$(EnablePack)' != 'true'">false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <EnableMSTestRunner Condition="'$(EnableRunner)' == 'true'">true</EnableMSTestRunner>
+    <OutputType Condition="'$(EnableRunner)' == 'true'">Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="MSTest" Version="3.2.0" />
+    <PackageReference Condition="'$(EnableRunner)' != 'true'" Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Condition="'$(EnableRunner)' == 'true'" Include="Microsoft.Testing.Extensions.CodeCoverage" Version="17.10.1-preview.24069.1" />
   </ItemGroup>
 
 </Project>
