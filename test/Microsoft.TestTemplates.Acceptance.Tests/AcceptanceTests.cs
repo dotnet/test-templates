@@ -18,11 +18,13 @@ public sealed partial class AcceptanceTests
         ("nunit", "nunit-test", Languages.All),
     ];
 
-    private static readonly (string ProjectTemplateName, string[] Languages)[] AvailableProjectTemplates =
+    private static readonly (string ProjectTemplateName, string[] Languages, bool RunDotnetTest)[] AvailableProjectTemplates =
     [
-        ("mstest", Languages.All),
-        ("nunit", Languages.All),
-        ("xunit", Languages.All),
+        ("mstest", Languages.All, true),
+        ("nunit", Languages.All, true),
+        ("xunit", Languages.All, true),
+        ("mstest-playwright", [Languages.CSharp], false),
+        ("nunit-playwright", [Languages.CSharp], false),
     ];
 
     [AssemblyInitialize]
@@ -77,19 +79,22 @@ public sealed partial class AcceptanceTests
 
     [DataTestMethod]
     [DynamicData(nameof(GetTemplateProjectsToTest), DynamicDataSourceType.Method)]
-    public void ProjectTemplate_CanBeInstalledAndTestsArePassing(string targetFramework, string projectTemplate, string language)
+    public void ProjectTemplate_CanBeInstalledAndTestsArePassing(string targetFramework, string projectTemplate, string language, bool runDotnetTest)
     {
         var testProjectName = GenerateTestProjectName();
         string outputDirectory = Path.Combine(Constants.ArtifactsTempDirectory, testProjectName);
 
         // Create new test project: dotnet new <projectTemplate> -n <testProjectName> -f <targetFramework> -lang <language> -o <outputDirectory>
-        DotnetUtils.InvokeDotnetNew(projectTemplate, testProjectName, targetFramework, language, outputDirectory);        
+        DotnetUtils.InvokeDotnetNew(projectTemplate, testProjectName, targetFramework, language, outputDirectory);
 
-        // Run tests: dotnet test <path>
-        var result = DotnetUtils.InvokeDotnetTest(outputDirectory);
+        if (runDotnetTest)
+        {
+            // Run tests: dotnet test <path>
+            var result = DotnetUtils.InvokeDotnetTest(outputDirectory);
 
-        // Verify the tests run as expected.
-        result.ValidateSummaryStatus(1, 0, 0);
+            // Verify the tests run as expected.
+            result.ValidateSummaryStatus(1, 0, 0); 
+        }
 
         Directory.Delete(outputDirectory, true);
     }
@@ -112,11 +117,11 @@ public sealed partial class AcceptanceTests
     {
         foreach (var targetFramework in SupportedTargetFrameworks)
         {
-            foreach (var (projectTemplate, languages) in AvailableProjectTemplates)
+            foreach (var (projectTemplate, languages, runDotnetTest) in AvailableProjectTemplates)
             {
                 foreach (var language in languages)
                 {
-                    yield return new string[] { targetFramework, projectTemplate, language };
+                    yield return new object[] { targetFramework, projectTemplate, language, runDotnetTest };
                 }
             }
         }
