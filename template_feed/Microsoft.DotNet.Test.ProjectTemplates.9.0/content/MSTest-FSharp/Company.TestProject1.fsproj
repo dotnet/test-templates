@@ -7,7 +7,6 @@
 
     <IsPackable Condition="'$(EnablePack)' == 'true'">true</IsPackable>
     <IsPackable Condition="'$(EnablePack)' != 'true'">false</IsPackable>
-    <GenerateProgramFile Condition="'$(DisableRunner)' == 'true'">false</GenerateProgramFile>
     <IsTestProject>true</IsTestProject>
     <EnableMSTestRunner Condition="'$(DisableRunner)' != 'true'">true</EnableMSTestRunner>
     <OutputType Condition="'$(DisableRunner)' != 'true'">Exe</OutputType>
@@ -16,7 +15,6 @@
   <ItemGroup>
     <Compile Include="MSTestSettings.fs" />
     <Compile Include="Tests.fs" />
-    <Compile Condition="'$(DisableRunner)' == 'true'" Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
