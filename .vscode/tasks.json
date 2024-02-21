@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build repository",
+      "type": "shell",
+      "command": "./build.sh",
+      "windows": {
+        "command": ".\\build.cmd"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+  ]
+}
