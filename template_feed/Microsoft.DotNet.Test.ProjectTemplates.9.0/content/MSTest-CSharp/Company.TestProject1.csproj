@@ -15,8 +15,4 @@
     <UseVSTest Condition=" '$(UseVSTest)' == 'true' ">true</UseVSTest>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
-  </ItemGroup>
-
 </Project>
