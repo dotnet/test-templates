@@ -6,6 +6,7 @@
     <NoWarn>$(NoWarn);CS0105</NoWarn>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UseVSTestRunner>true</UseVSTestRunner>
   </PropertyGroup>
 
   <ItemGroup>
