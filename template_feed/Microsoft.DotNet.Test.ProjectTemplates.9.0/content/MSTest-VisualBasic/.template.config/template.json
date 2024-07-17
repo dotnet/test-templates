@@ -82,7 +82,7 @@
         "jsonFileName": ".\\global.json",
         "parentPropertyPath": "msbuild-sdks",
         "newJsonPropertyName": "MSTest.Sdk",
-        "newJsonPropertyValue": "3.4.3",
+        "newJsonPropertyValue": "3.5.0",
         "allowFileCreation": true,
         "allowPathCreation": true
       },
