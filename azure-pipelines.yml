@@ -71,3 +71,10 @@ stages:
           inputs:
             command: test
             projects: 'test\Microsoft.TestTemplates.Acceptance.Tests.sln'
+
+        - task: PublishBuildArtifacts@1
+          displayName: 'Publish Test Results folders'
+          inputs:
+            PathtoPublish: '$(Build.SourcesDirectory)/artifacts/TestResults/$(_BuildConfig)'
+            ArtifactName: TestResults
+          condition: failed()
