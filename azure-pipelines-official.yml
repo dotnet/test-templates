@@ -110,10 +110,10 @@ extends:
                 projects: 'test\Microsoft.TestTemplates.Acceptance.Tests.sln'
 
             - task: 1ES.PublishBuildArtifacts@1
-              displayName: 'Publish Test Results folders'
+              displayName: 'Publish acceptance tests logs'
               inputs:
-                PathtoPublish: '$(Build.SourcesDirectory)/artifacts/TestResults/$(_BuildConfig)'
-                ArtifactName: TestResults
+                PathtoPublish: '$(Build.SourcesDirectory)/artifacts/bin/Microsoft.TestTemplates.Acceptance.Tests/$(_BuildConfig)/**/*.log'
+                ArtifactName: AcceptanceTestsLogs
               condition: failed()
 
             - script: dir /S artifacts\VSSetup\$(_BuildConfig)\Insertion
