@@ -75,6 +75,6 @@ stages:
         - task: PublishBuildArtifacts@1
           displayName: 'Publish acceptance tests logs'
           inputs:
-            PathtoPublish: '$(Build.SourcesDirectory)/artifacts/bin/Microsoft.TestTemplates.Acceptance.Tests/**/*.log'
+            PathtoPublish: '$(Build.SourcesDirectory)/artifacts/bin/Microsoft.TestTemplates.Acceptance.Tests/Debug/net9.0/TestResults/Microsoft.TestTemplates.Acceptance.Tests_net9.0_x64.log'
             ArtifactName: AcceptanceTestsLogs
           condition: failed()
