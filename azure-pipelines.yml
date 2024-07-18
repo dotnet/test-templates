@@ -71,6 +71,7 @@ stages:
           inputs:
             command: test
             projects: 'test\Microsoft.TestTemplates.Acceptance.Tests.sln'
+            publishTestResults: false
             arguments: '--configuration $(_BuildConfig) --logger trx --results-directory $(Build.SourcesDirectory)/artifacts/TestResults/$(_BuildConfig)'
 
         - task: PublishBuildArtifacts@1
