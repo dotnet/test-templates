@@ -70,6 +70,7 @@ stages:
           displayName: 'Acceptance tests'
           inputs:
             command: test
+            nobuild: true
             projects: 'test\Microsoft.TestTemplates.Acceptance.Tests.sln'
 
         - task: PublishBuildArtifacts@1
