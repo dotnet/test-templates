@@ -112,7 +112,7 @@ extends:
             - task: 1ES.PublishBuildArtifacts@1
               displayName: 'Publish acceptance tests logs'
               inputs:
-                PathtoPublish: '$(Build.SourcesDirectory)/artifacts/bin/Microsoft.TestTemplates.Acceptance.Tests/$(_BuildConfig)/**/*.log'
+                PathtoPublish: '$(Build.SourcesDirectory)/artifacts/bin/Microsoft.TestTemplates.Acceptance.Tests/**/*.log'
                 ArtifactName: AcceptanceTestsLogs
               condition: failed()
 
