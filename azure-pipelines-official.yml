@@ -91,9 +91,6 @@ extends:
             - checkout: self
               clean: true
 
-            # Restore internal tools required for SBOM generation
-            - template: /eng/restore-internal-tools.yml
-
             - script: eng\common\cibuild.cmd
                 -configuration $(_BuildConfig)
                 -prepareMachine
