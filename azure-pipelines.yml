@@ -55,12 +55,10 @@ stages:
         - checkout: self
           clean: true
 
-        - task: NuGetAuthenticate@1
-          displayName: 'NuGet Authenticate to internal feed'
-
         - script: eng\common\cibuild.cmd
             -configuration $(_BuildConfig)
             -prepareMachine
+            /p:Test=false
           displayName: Build
 
         - task: PublishBuildArtifacts@1
