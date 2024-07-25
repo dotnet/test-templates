@@ -17,10 +17,6 @@ variables:
   value: False
 - name: _RunAsPublic
   value: True
-- name: _SignType
-  value: test
-- name: _Sign
-  value: False
 
 stages:
 - stage: build
@@ -56,7 +52,7 @@ stages:
         - script: eng\common\cibuild.cmd
             -configuration $(_BuildConfig)
             -prepareMachine
-            /p:DotNetSignType=$(_SignType)
+            /p:DotNetSignType=test
             /p:Sign=$(_Sign)
             /p:Test=false
           displayName: Build

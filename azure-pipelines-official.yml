@@ -25,10 +25,6 @@ variables:
 # Group gives access to $dn-bot-devdiv-drop-rw-code-rw and dn-bot-dnceng-build-rw-code-rw
 - group: DotNet-VSTS-Infra-Access
 - group: DotNet-DevDiv-Insertion-Workflow-Variables
-- name: _SignType
-  value: real
-- name: _Sign
-  value: True
 - name: VisualStudioDropName
   value: Products/$(System.TeamProject)/$(Build.Repository.Name)/$(Build.SourceBranchName)/$(Build.BuildNumber)
 - name: _BuildConfig
@@ -82,8 +78,8 @@ extends:
             - script: eng\common\cibuild.cmd
                 -configuration $(_BuildConfig)
                 -prepareMachine
-                /p:DotNetSignType=$(_SignType)
-                /p:Sign=$(_Sign)
+                /p:DotNetSignType=real
+                /p:Sign=True
                 /p:TeamName=$(_TeamName)
                 /p:VisualStudioDropName=$(VisualStudioDropName)
                 /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
@@ -121,7 +117,7 @@ extends:
             - task: 1ES.MicroBuildVstsDrop@1
               displayName: Upload Azure DevOps Drop
               inputs:
-                dropName: $(_VisualStudioDropName)
+                dropName: $(VisualStudioDropName)
                 dropFolder: 'artifacts\VSSetup\$(_BuildConfig)\Insertion'
                 accessToken: $(dn-bot-devdiv-drop-rw-code-rw)
               condition: succeeded()
