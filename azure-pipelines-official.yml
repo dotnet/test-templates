@@ -78,8 +78,6 @@ extends:
             - script: eng\common\cibuild.cmd
                 -configuration $(_BuildConfig)
                 -prepareMachine
-                /p:DotNetSignType=real
-                /p:Sign=True
                 /p:TeamName=$(_TeamName)
                 /p:VisualStudioDropName=$(VisualStudioDropName)
                 /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
