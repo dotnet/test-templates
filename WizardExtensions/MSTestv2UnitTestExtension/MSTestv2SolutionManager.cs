@@ -46,13 +46,10 @@ namespace MSTestv2UnitTestExtension
             {
                 throw new ArgumentNullException("unitTestProject");
             }
-
-            TraceLogger.LogInfo("MSTestv2SolutionManager.OnUnitTestProjectCreated: Adding reference to MSTestv2 assemblies through nuget.");
-
+            
             base.OnUnitTestProjectCreated(unitTestProject, sourceMethod);
 
-            this.EnsureNuGetReference(unitTestProject, "MSTest.TestAdapter", "2.2.10");
-            this.EnsureNuGetReference(unitTestProject, "MSTest.TestFramework", "2.2.10");
+            // Note: we don't add the test framework reference since it is already included in the test project template
 
             VSProject2 vsp = unitTestProject.Object as VSProject2;
             if (vsp != null)
