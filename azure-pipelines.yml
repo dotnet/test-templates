@@ -17,12 +17,6 @@ variables:
   value: False
 - name: _RunAsPublic
   value: True
-- name: _SignType
-  value: test
-- name: _SignArgs
-  value: ''
-- name: _Sign
-  value: False
 
 stages:
 - stage: build
@@ -58,6 +52,7 @@ stages:
         - script: eng\common\cibuild.cmd
             -configuration $(_BuildConfig)
             -prepareMachine
+            /p:Test=false
           displayName: Build
 
         - task: PublishBuildArtifacts@1
