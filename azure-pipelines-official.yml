@@ -127,7 +127,7 @@ extends:
             - task: 1ES.MicroBuildVstsDrop@1
               displayName: Upload Azure DevOps Drop
               inputs:
-                dropName: $(_VisualStudioDropName)
+                dropName: $(VisualStudioDropName)
                 dropFolder: 'artifacts\VSSetup\$(_BuildConfig)\Insertion'
                 accessToken: $(dn-bot-devdiv-drop-rw-code-rw)
               condition: succeeded()
