@@ -17,6 +17,11 @@ variables:
   value: True
 - name: _RunAsPublic
   value: False
+# _SignType and _Sign are required for signing even if not used directly here
+- name: _SignType
+  value: real
+- name: _Sign
+  value: True
 
 # Group gives access to $microsoft-symbol-server-pat and $symweb-symbol-server-pat
 - group: DotNet-Symbol-Server-Pats
@@ -74,6 +79,11 @@ extends:
             steps:
             - checkout: self
               clean: true
+
+            - task: NuGetAuthenticate@1
+              inputs:
+                nuGetServiceConnections: 'devdiv/dotnet-core-internal-tooling'
+                forceReinstallCredentialProvider: true
 
             - script: eng\common\cibuild.cmd
                 -configuration $(_BuildConfig)
