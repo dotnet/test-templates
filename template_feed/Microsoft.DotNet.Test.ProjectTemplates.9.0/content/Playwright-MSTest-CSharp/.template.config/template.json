@@ -36,6 +36,32 @@
       "replaces": "net9.0",
       "defaultValue": "net9.0"
     },
+    "UseVSTest": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Use VSTest platform instead of MSTest runner. More information at https://aka.ms/mstest/sdk/runner"
+    },
+    "ExtensionsProfile": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Default",
+          "description": "Default extensions profile (recommended)"
+        },
+        {
+          "choice": "None",
+          "description": "No extensions are enabled"
+        },
+        {
+          "choice": "AllMicrosoft",
+          "description": "Enable all extensions shipped by Microsoft (including extensions with a restrictive license)"
+        }
+      ],
+      "defaultValue": "Default",
+      "description": "Select the SDK extensions profile. More information at https://aka.ms/mstest/sdk/extensions-profile"
+    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "host:HostIdentifier"

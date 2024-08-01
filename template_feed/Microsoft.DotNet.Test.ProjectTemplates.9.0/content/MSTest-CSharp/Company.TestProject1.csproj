@@ -13,6 +13,7 @@
       -->
     <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
     <UseVSTest Condition=" '$(UseVSTest)' == 'true' ">true</UseVSTest>
+    <TestingExtensionsProfile Condition=" '$(ExtensionsProfile)' != 'Default' ">$(ExtensionsProfile)</TestingExtensionsProfile>
   </PropertyGroup>
 
 </Project>
