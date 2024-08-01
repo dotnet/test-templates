@@ -12,6 +12,14 @@
     "skipRestore": {
       "longName": "no-restore",
       "shortName": ""
+    },
+    "UseVSTest": {
+      "shortName": "",
+      "longName": "use-vstest"
+    },
+    "ExtensionsProfile": {
+      "shortName": "",
+      "longName": "extensions-profile"
     }
   },
   "usageExamples": [

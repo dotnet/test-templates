@@ -5,6 +5,10 @@
       "id": "UseVSTest",
       "isVisible": true,
       "persistenceScope": "shared"
+    },
+    {
+      "id": "ExtensionsProfile",
+      "isVisible": true
     }
   ]
 }
