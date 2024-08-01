@@ -42,6 +42,22 @@
       "defaultValue": "false",
       "description": "Use VSTest platform instead of MSTest runner. More information at https://aka.ms/mstest/sdk/runner"
     },
+    "CoverageTool": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Microsoft.CodeCoverage",
+          "description": "Microsoft Code Coverage"
+        },
+        {
+          "choice": "coverlet",
+          "description": "coverlet"
+        }
+      ],
+      "defaultValue": "Microsoft.CodeCoverage",
+      "description": "The coverage tool to use for the project."
+    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "host:HostIdentifier"

@@ -13,6 +13,10 @@
       "shortName": "",
       "longName": "use-vstest"
     },
+    "CoverageTool": {
+      "shortName": "",
+      "longName": "coverage-tool"
+    },
     "skipRestore": {
       "longName": "no-restore",
       "shortName": ""

@@ -5,6 +5,11 @@
       "id": "UseVSTest",
       "isVisible": true,
       "persistenceScope": "shared"
+    },
+    {
+      "id": "CoverageTool",
+      "isVisible": true,
+      "persistenceScope": "shared"
     }
   ]
 }

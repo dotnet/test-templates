@@ -36,6 +36,22 @@
       "replaces": "net9.0",
       "defaultValue": "net9.0"
     },
+    "CoverageTool": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Microsoft.CodeCoverage",
+          "description": "Microsoft Code Coverage"
+        },
+        {
+          "choice": "coverlet",
+          "description": "coverlet"
+        }
+      ],
+      "defaultValue": "Microsoft.CodeCoverage",
+      "description": "The coverage tool to use for the project."
+    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "host:HostIdentifier"
