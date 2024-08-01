@@ -20,6 +20,10 @@
     "skipRestore": {
       "longName": "no-restore",
       "shortName": ""
+    },
+    "ExtensionsProfile": {
+      "shortName": "",
+      "longName": "extensions-profile"
     }
   },
   "usageExamples": [

@@ -13,6 +13,7 @@
       -->
     <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
     <UseVSTest Condition=" '$(UseVSTest)' == 'true' ">true</UseVSTest>
+    <TestingExtensionsProfile Condition=" '$(ExtensionsProfile)' != 'Default' ">$(ExtensionsProfile)</TestingExtensionsProfile>
   </PropertyGroup>
   <ItemGroup Condition=" '$(UseVSTest)' == 'true' AND '$(CoverageTool)' == 'coverlet' ">
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
