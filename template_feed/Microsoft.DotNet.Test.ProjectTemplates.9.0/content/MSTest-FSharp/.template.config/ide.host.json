@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/ide.host",
+  "symbolInfo": [
+    {
+      "id": "UseVSTest",
+      "isVisible": true,
+      "persistenceScope": "shared"
+    }
+  ]
+}
