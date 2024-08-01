@@ -9,6 +9,10 @@
     "Framework": {
       "longName": "framework"
     },
+    "CoverageTool": {
+      "shortName": "",
+      "longName": "coverage-tool"
+    },
     "skipRestore": {
       "longName": "no-restore",
       "shortName": ""

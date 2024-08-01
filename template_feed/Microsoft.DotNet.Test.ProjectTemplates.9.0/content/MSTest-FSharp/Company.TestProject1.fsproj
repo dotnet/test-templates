@@ -18,5 +18,8 @@
     <Compile Include="MSTestSettings.fs" />
     <Compile Include="Tests.fs" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(UseVSTest)' == 'true' AND '$(CoverageTool)' == 'coverlet' ">
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+  </ItemGroup>
 
 </Project>

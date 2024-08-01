@@ -9,6 +9,11 @@
     {
       "id": "ExtensionsProfile",
       "isVisible": true
+    },
+    {
+      "id": "CoverageTool",
+      "isVisible": true,
+      "persistenceScope": "shared"
     }
   ]
 }

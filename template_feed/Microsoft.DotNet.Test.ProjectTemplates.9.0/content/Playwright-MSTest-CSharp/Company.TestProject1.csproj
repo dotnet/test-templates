@@ -21,5 +21,8 @@
     <Using Include="System.Text.RegularExpressions" />
     <Using Include="System.Threading.Tasks" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(UseVSTest)' == 'true' AND '$(CoverageTool)' == 'coverlet' ">
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+  </ItemGroup>
 
 </Project>
