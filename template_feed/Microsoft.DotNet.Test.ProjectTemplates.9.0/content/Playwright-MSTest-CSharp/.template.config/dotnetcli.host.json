@@ -24,6 +24,10 @@
     "ExtensionsProfile": {
       "shortName": "",
       "longName": "extensions-profile"
+    },
+    "Fixture" : {
+      "shortName": "",
+      "longName": "fixture"
     }
   },
   "usageExamples": [

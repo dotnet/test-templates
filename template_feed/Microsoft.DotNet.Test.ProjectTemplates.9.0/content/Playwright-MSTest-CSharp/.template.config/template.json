@@ -163,6 +163,40 @@
           "description": "Enable all extensions shipped by Microsoft (including extensions with a restrictive license)"
         }
       ]
+    },
+    "Fixture": {
+      "type": "parameter",
+      "datatype": "choice",
+      "description": "Select the fixture kinds to include in the project.",
+      "allowMultipleValues": true,
+      "enableQuotelessLiterals": true,
+      "defaultValue": "",
+      "choices": [
+        {
+          "choice": "AssemblyInitialize",
+          "description": "AssemblyInitialize fixture method"
+        },
+        {
+          "choice": "AssemblyCleanup",
+          "description": "AssemblyCleanup fixture method"
+        },
+        {
+          "choice": "ClassInitialize",
+          "description": "ClassInitialize fixture method"
+        },
+        {
+          "choice": "ClassCleanup",
+          "description": "ClassCleanup fixture method"
+        },
+        {
+          "choice": "TestInitialize",
+          "description": "TestInitialize fixture method"
+        },
+        {
+          "choice": "TestCleanup",
+          "description": "TestCleanup fixture method"
+        }
+      ]
     }
   },
   "primaryOutputs": [
