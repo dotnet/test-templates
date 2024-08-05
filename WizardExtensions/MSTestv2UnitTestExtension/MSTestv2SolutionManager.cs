@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 namespace MSTestv2UnitTestExtension
@@ -50,17 +50,6 @@ namespace MSTestv2UnitTestExtension
             base.OnUnitTestProjectCreated(unitTestProject, sourceMethod);
 
             // Note: we don't add the test framework reference since it is already included in the test project template
-
-            VSProject2 vsp = unitTestProject.Object as VSProject2;
-            if (vsp != null)
-            {
-                Reference reference = vsp.References.Find(GlobalConstants.MSTestAssemblyName);
-                if (reference != null)
-                {
-                    TraceLogger.LogInfo("MSTestv2SolutionManager.OnUnitTestProjectCreated: Removing reference to {0}", reference.Name);
-                    reference.Remove();
-                }
-            }
         }
     }
 }
