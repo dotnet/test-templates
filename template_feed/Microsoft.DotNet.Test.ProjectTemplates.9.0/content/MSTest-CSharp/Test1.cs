@@ -1,7 +1,7 @@
 ﻿namespace Company.TestProject1;
 
 [TestClass]
-public class UnitTest1
+public class Test1
 {
     [TestMethod]
     public void TestMethod1()

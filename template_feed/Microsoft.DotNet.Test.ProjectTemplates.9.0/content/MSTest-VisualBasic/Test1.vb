@@ -2,7 +2,7 @@
 
 Namespace Company.TestProject1
     <TestClass>
-    Public Class UnitTest1
+    Public Class Test1
         <TestMethod>
         Sub TestSub()
 

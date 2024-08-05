@@ -92,48 +92,6 @@
       "replaces": "net9.0",
       "defaultValue": "net9.0"
     },
-    "UseVSTest": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false",
-      "description": "Use VSTest platform instead of MSTest runner. More information at https://aka.ms/mstest/sdk/runner"
-    },
-    "ExtensionsProfile": {
-      "type": "parameter",
-      "datatype": "choice",
-      "choices": [
-        {
-          "choice": "Default",
-          "description": "Default extensions profile (recommended)"
-        },
-        {
-          "choice": "None",
-          "description": "No extensions are enabled"
-        },
-        {
-          "choice": "AllMicrosoft",
-          "description": "Enable all extensions shipped by Microsoft (including extensions with a restrictive license)"
-        }
-      ],
-      "defaultValue": "Default",
-      "description": "Select the SDK extensions profile. More information at https://aka.ms/mstest/sdk/extensions-profile"
-    },
-    "CoverageTool": {
-      "type": "parameter",
-      "datatype": "choice",
-      "choices": [
-        {
-          "choice": "Microsoft.CodeCoverage",
-          "description": "Microsoft Code Coverage"
-        },
-        {
-          "choice": "coverlet",
-          "description": "coverlet"
-        }
-      ],
-      "defaultValue": "Microsoft.CodeCoverage",
-      "description": "The coverage tool to use for the project."
-    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "host:HostIdentifier"
@@ -151,13 +109,67 @@
       "defaultValue": "latest",
       "replaces": "$(ProjectLanguageVersion)",
       "displayName": "Language version"
+    },
+    "TestRunner": {
+      "type": "parameter",
+      "datatype": "choice",
+      "enableQuotelessLiterals": true,
+      "description": "Select the runner/platform. More information at https://aka.ms/mstest/sdk/extensions-profile",
+      "defaultValue": "MSTest",
+      "choices": [
+        {
+          "choice": "MSTest",
+          "description": "Use MSTest Runner (Microsoft.Testing.Platform)"
+        },
+        {
+          "choice": "VSTest",
+          "description": "Use VSTest platform"
+        }
+      ]
+    },
+    "CoverageTool": {
+      "type": "parameter",
+      "datatype": "choice",
+      "description": "The coverage tool to use for the project.",
+      "defaultValue": "Microsoft.CodeCoverage",
+      "choices": [
+        {
+          "choice": "Microsoft.CodeCoverage",
+          "description": "Microsoft Code Coverage"
+        },
+        {
+          "choice": "coverlet",
+          "description": "coverlet"
+        }
+      ]
+    },
+    "ExtensionsProfile": {
+      "type": "parameter",
+      "datatype": "choice",
+      "description": "Select the SDK extensions profile when using MSTest Runner. More information at https://aka.ms/mstest/sdk/extensions-profile",
+      "isEnabled": "TestRunner == MSTest",
+      "defaultValue": "Default",
+      "choices": [
+        {
+          "choice": "Default",
+          "description": "Default extensions profile (recommended)"
+        },
+        {
+          "choice": "None",
+          "description": "No extensions are enabled"
+        },
+        {
+          "choice": "AllMicrosoft",
+          "description": "Enable all extensions shipped by Microsoft (including extensions with a restrictive license)"
+        }
+      ]
     }
   },
   "primaryOutputs": [
     { "path": "Company.TestProject1.vbproj" },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "UnitTest1.vb"
+      "path": "Test1.vb"
     },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
@@ -190,7 +202,7 @@
     },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "description": "Opens Class1.cs in the editor",
+      "description": "Opens Test1.vb in the editor",
       "manualInstructions": [],
       "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
       "id": "openInEditor",
