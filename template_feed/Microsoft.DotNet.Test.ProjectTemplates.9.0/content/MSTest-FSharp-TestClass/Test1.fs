@@ -1,58 +1,53 @@
-﻿namespace Company.TestProject1;
+namespace Company.TestProject1
 
-[TestClass]
-public sealed class Test1
-{
+open System
+open Microsoft.VisualStudio.TestTools.UnitTesting
+
+[<TestClass>]
+type Test1 () =
+
 #if (Fixture == AssemblyInitialize)
-    [AssemblyInitialize]
-    public static void AssemblyInit(TestContext context)
-    {
+    [<AssemblyInitialize>]
+    static member AssemblyInit (context: TestContext) =
         // This method is called once for the test assembly, before any tests are run.
-    }
+        ()
 
 #endif
 #if (Fixture == AssemblyCleanup)
-    [AssemblyCleanup]
-    public static void AssemblyCleanup()
-    {
+    [<AssemblyCleanup>]
+    static member AssemblyCleanup () =
         // This method is called once for the test assembly, after all tests are run.
-    }
+        ()
 
 #endif
 #if (Fixture == ClassInitialize)
-    [ClassInitialize]
-    public static void ClassInit(TestContext context)
-    {
+    [<ClassInitialize>]
+    member this.ClassInit (context: TestContext) =
         // This method is called once for the test class, before any tests of the class are run.
-    }
+        ()
 
 #endif
 #if (Fixture == ClassCleanup)
-    [ClassCleanup]
-    public static void ClassCleanup()
-    {
+    [<ClassCleanup>]
+    member this.ClassCleanup () =
         // This method is called once for the test class, after all tests of the class are run.
-    }
+        ()
 
 #endif
 #if (Fixture == TestInitialize)
-    [TestInitialize]
-    public void TestInit()
-    {
+    [<TestInitialize>]
+    member this.TestInit () =
         // This method is called before each test method.
-    }
+        ()
 
 #endif
 #if (Fixture == TestCleanup)
-    [TestCleanup]
-    public void TestCleanup()
-    {
+    [<TestCleanup>]
+    member this.TestCleanup () =
         // This method is called after each test method.
-    }
+        ()
 
 #endif
-    [TestMethod]
-    public void TestMethod1()
-    {
-    }
-}
+    [<TestMethod>]
+    member this.TestMethod1 () =
+        Assert.IsTrue(true);

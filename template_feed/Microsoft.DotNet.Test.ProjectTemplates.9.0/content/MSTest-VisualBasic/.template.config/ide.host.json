@@ -23,6 +23,10 @@
       },
       "isVisible": true,
       "persistenceScope": "shared"
+    },
+    {
+      "id": "Fixture",
+      "isVisible": true
     }
   ]
 }
