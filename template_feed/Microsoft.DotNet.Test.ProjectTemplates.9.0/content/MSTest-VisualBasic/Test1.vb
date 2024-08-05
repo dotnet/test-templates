@@ -3,48 +3,48 @@
 Namespace Company.TestProject1
     <TestClass>
     Public Class Test1
-#if (Fixture == AssemblyInitialize)
+#If (Fixture == AssemblyInitialize)
         <AssemblyInitialize>
         Public Shared Sub AssemblyInit(ByVal testContext As TestContext)
             ' This method is called once for the test assembly, before any tests are run.
         End Sub
 
-#endif
-#if (Fixture == AssemblyCleanup)
+#End If
+#If (Fixture == AssemblyCleanup)
         <AssemblyCleanup>
         Public Shared Sub AssemblyCleanup()
             ' This method is called once for the test assembly, after all tests are run.
         End Sub
 
-#endif
-#if (Fixture == ClassInitialize)
+#End If
+#If (Fixture == ClassInitialize)
         <ClassInitialize>
         Public Shared Sub ClassInit(ByVal testContext As TestContext)
             ' This method is called once for the test class, before any tests of the class are run.
         End Sub
 
-#endif
-#if (Fixture == ClassCleanup)
+#End If
+#If (Fixture == ClassCleanup)
         <ClassCleanup>
         Public Shared Sub ClassCleanup()
             ' This method is called once for the test class, after all tests of the class are run.
         End Sub
 
-#endif
-#if (Fixture == TestInitialize)
+#End If
+#If (Fixture == TestInitialize)
         <TestInitialize>
         Public Sub TestInit()
             ' This method is called before each test method.
         End Sub
 
-#endif
-#if (Fixture == TestCleanup)
+#End If
+#If (Fixture == TestCleanup)
         <TestCleanup>
         Public Sub TestCleanup()
             ' This method is called after each test method.
         End Sub
 
-#endif
+#End If
         <TestMethod>
         Sub TestSub()
 
