@@ -9,17 +9,17 @@
     "Framework": {
       "longName": "framework"
     },
-    "UseVSTest": {
+    "skipRestore": {
+      "longName": "no-restore",
+      "shortName": ""
+    },
+    "TestRunner": {
       "shortName": "",
-      "longName": "use-vstest"
+      "longName": "test-runner"
     },
     "CoverageTool": {
       "shortName": "",
       "longName": "coverage-tool"
-    },
-    "skipRestore": {
-      "longName": "no-restore",
-      "shortName": ""
     },
     "ExtensionsProfile": {
       "shortName": "",

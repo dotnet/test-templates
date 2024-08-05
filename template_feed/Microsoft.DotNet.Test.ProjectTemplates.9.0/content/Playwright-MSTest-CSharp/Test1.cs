@@ -1,10 +1,10 @@
 ﻿namespace Company.TestProject1;
 
 [TestClass]
-public class UnitTest1 : PageTest
+public class Test1 : PageTest
 {
     [TestMethod]
-    public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingtoTheIntroPage()
+    public async Task HomepageHasPlaywrightInTitleAndGetStartedLinkLinkingToTheIntroPage()
     {
         await Page.GotoAsync("https://playwright.dev");
 
