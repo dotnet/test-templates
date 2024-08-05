@@ -23,3 +23,5 @@
     <TestingExtensionsProfile Condition=" '$(ExtensionsProfile)' != 'Default' ">$(ExtensionsProfile)</TestingExtensionsProfile>
   </PropertyGroup>
 <!--#endif-->
+
+</Project>
