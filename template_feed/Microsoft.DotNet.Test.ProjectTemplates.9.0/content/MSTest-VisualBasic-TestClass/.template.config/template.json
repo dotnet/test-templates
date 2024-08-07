@@ -31,8 +31,12 @@
       "description": "Select the fixture kinds to include in the project.",
       "allowMultipleValues": true,
       "enableQuotelessLiterals": true,
-      "defaultValue": "",
+      "defaultValue": "None",
       "choices": [
+        {
+          "choice": "None",
+          "description": "No fixture methods"
+        },
         {
           "choice": "AssemblyInitialize",
           "description": "AssemblyInitialize fixture method"
