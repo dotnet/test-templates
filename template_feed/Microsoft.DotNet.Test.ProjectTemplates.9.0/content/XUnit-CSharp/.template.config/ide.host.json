@@ -1,11 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/ide.host",
   "icon": "ide/icon.ico",
-  "itemHierarchyPaths": ["Test"],
-  "symbolInfo": [
+  "tags": [
     {
-      "id": "Fixture",
-      "isVisible": true
+      "type": "platform",
+      "add": [ "Linux", "macOS", "Windows" ]
     }
   ]
 }
