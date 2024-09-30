@@ -22,6 +22,7 @@
   "symbols/skipRestore/description": "If specified, skips the automatic restore of the project on create.",
   "symbols/langVersion/description": "Sets the LangVersion property in the created project file",
   "symbols/langVersion/displayName": "Language version",
+  "symbols/UseMSTestSdk/description": "Use MSTest.Sdk project style. More information at https://aka.ms/mstest/sdk",
   "symbols/TestRunner/description": "Select the runner/platform. More information at https://aka.ms/mstest/sdk/extensions-profile",
   "symbols/TestRunner/choices/MSTest/description": "Use MSTest Runner (Microsoft.Testing.Platform)",
   "symbols/TestRunner/choices/VSTest/description": "Use VSTest platform",
