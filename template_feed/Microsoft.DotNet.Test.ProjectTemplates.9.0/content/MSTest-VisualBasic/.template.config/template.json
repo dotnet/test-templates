@@ -110,6 +110,12 @@
       "replaces": "$(ProjectLanguageVersion)",
       "displayName": "Language version"
     },
+    "UseMSTestSdk": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "Use MSTest.Sdk project style. More information at https://aka.ms/mstest/sdk",
+      "defaultValue": "False"
+    },
     "TestRunner": {
       "type": "parameter",
       "datatype": "choice",
@@ -147,7 +153,7 @@
       "type": "parameter",
       "datatype": "choice",
       "description": "Select the SDK extensions profile when using MSTest Runner. More information at https://aka.ms/mstest/sdk/extensions-profile",
-      "isEnabled": "TestRunner == MSTest",
+      "isEnabled": "(ProjectKind == MSTest.Sdk) && (TestRunner == MSTest)",
       "defaultValue": "Default",
       "replaces": "$(ExtensionsProfile)",
       "choices": [
@@ -208,11 +214,11 @@
     { "path": "Company.TestProject1.vbproj" },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "Test1.vb"
+      "path": "MSTestSettings.vb"
     },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "MSTestSettings.vb"
+      "path": "Test1.vb"
     }
   ],
   "defaultName": "TestProject1",
