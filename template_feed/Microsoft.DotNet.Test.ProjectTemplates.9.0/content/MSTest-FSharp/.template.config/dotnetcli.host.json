@@ -15,7 +15,7 @@
     },
     "UseMSTestSdk": {
       "shortName": "",
-      "longName": "--sdk"
+      "longName": "sdk"
     },
     "TestRunner": {
       "shortName": "",
