@@ -123,7 +123,7 @@
       "enableQuotelessLiterals": true,
       "description": "Select the runner/platform. More information at https://aka.ms/mstest/sdk/extensions-profile",
       "displayName": "Test runner",
-      "defaultValue": "MSTest",
+      "defaultValue": "VSTest",
       "choices": [
         {
           "choice": "MSTest",
@@ -188,7 +188,7 @@
         {
           "choice": "None",
           "description": "No fixture methods",
-          "displayName": "Default"
+          "displayName": "None"
         },
         {
           "choice": "AssemblyInitialize",
