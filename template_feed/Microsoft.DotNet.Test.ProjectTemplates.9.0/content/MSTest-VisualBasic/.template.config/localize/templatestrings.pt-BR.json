@@ -40,6 +40,7 @@
   "symbols/ExtensionsProfile/choices/None/displayName": "Nenhum",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Habilitar todas as extensões enviadas pela Microsoft (incluindo extensões com uma licença restritiva)",
   "symbols/Fixture/description": "Selecione os tipos de acessório a serem incluídos no projeto.",
+  "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "Nenhum método de acessório",
   "symbols/Fixture/choices/None/displayName": "Nenhum",
   "symbols/Fixture/choices/AssemblyInitialize/description": "Método acessório AssemblyInitialize",

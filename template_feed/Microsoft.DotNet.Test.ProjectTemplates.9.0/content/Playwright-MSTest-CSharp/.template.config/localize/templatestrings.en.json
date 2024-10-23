@@ -40,6 +40,7 @@
   "symbols/ExtensionsProfile/choices/None/displayName": "None",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Enable all extensions shipped by Microsoft (including extensions with a restrictive license)",
   "symbols/Fixture/description": "Select the fixture kinds to include in the project.",
+  "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "No fixture methods",
   "symbols/Fixture/choices/None/displayName": "None",
   "symbols/Fixture/choices/AssemblyInitialize/description": "AssemblyInitialize fixture method",

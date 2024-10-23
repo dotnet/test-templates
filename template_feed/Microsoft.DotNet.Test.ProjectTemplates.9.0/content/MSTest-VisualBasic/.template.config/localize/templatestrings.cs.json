@@ -40,6 +40,7 @@
   "symbols/ExtensionsProfile/choices/None/displayName": "Žádné",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Povolit všechna rozšíření odeslaná Microsoftem (včetně rozšíření s omezující licencí)",
   "symbols/Fixture/description": "Vyberte typy testovacích součástí, které se mají zahrnout do projektu.",
+  "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "Žádné metody testovacího přípravku",
   "symbols/Fixture/choices/None/displayName": "Žádné",
   "symbols/Fixture/choices/AssemblyInitialize/description": "Metoda testovacího přípravku AssemblyInitialize",
