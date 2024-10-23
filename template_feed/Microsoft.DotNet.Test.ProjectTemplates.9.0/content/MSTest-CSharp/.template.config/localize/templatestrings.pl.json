@@ -42,6 +42,7 @@
   "symbols/ExtensionsProfile/choices/None/description": "Nie włączono rozszerzeń",
   "symbols/ExtensionsProfile/choices/None/displayName": "Brak",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Włącz wszystkie rozszerzenia dostarczane przez firmę Microsoft (w tym rozszerzenia z restrykcyjną licencją)",
+  "symbols/ExtensionsProfile/choices/AllMicrosoft/displayName": "AllMicrosoft",
   "symbols/Fixture/description": "Wybierz rodzaje warunków początkowych do uwzględnienia w projekcie.",
   "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "Brak metod początkowych",

@@ -42,6 +42,7 @@
   "symbols/ExtensionsProfile/choices/None/description": "Nejsou povolená žádná rozšíření.",
   "symbols/ExtensionsProfile/choices/None/displayName": "Žádné",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Povolit všechna rozšíření odeslaná Microsoftem (včetně rozšíření s omezující licencí)",
+  "symbols/ExtensionsProfile/choices/AllMicrosoft/displayName": "AllMicrosoft",
   "symbols/Fixture/description": "Vyberte typy testovacích součástí, které se mají zahrnout do projektu.",
   "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "Žádné metody testovacího přípravku",

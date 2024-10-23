@@ -42,6 +42,7 @@
   "symbols/ExtensionsProfile/choices/None/description": "No hay extensiones habilitadas",
   "symbols/ExtensionsProfile/choices/None/displayName": "Ninguno",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Habilitar todas las extensiones enviadas por Microsoft (incluidas las extensiones con una licencia restrictiva)",
+  "symbols/ExtensionsProfile/choices/AllMicrosoft/displayName": "AllMicrosoft",
   "symbols/Fixture/description": "Seleccione los tipos de accesorio que desea incluir en el proyecto.",
   "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "No hay métodos de accesorio",

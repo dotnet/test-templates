@@ -176,7 +176,8 @@
         },
         {
           "choice": "AllMicrosoft",
-          "description": "Enable all extensions shipped by Microsoft (including extensions with a restrictive license)"
+          "description": "Enable all extensions shipped by Microsoft (including extensions with a restrictive license)",
+          "displayName": "AllMicrosoft"
         }
       ]
     },

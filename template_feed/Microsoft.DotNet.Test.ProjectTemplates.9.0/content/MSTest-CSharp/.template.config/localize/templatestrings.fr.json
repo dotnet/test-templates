@@ -42,6 +42,7 @@
   "symbols/ExtensionsProfile/choices/None/description": "Aucune extension n’est activée",
   "symbols/ExtensionsProfile/choices/None/displayName": "Aucun",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Activez toutes les extensions fournies par Microsoft (y compris les extensions avec une licence restrictive)",
+  "symbols/ExtensionsProfile/choices/AllMicrosoft/displayName": "AllMicrosoft",
   "symbols/Fixture/description": "Sélectionnez les types de fixtures à inclure dans le projet.",
   "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "Aucune méthode de fixture",

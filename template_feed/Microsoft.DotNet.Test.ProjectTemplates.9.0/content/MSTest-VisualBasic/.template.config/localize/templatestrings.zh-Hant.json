@@ -42,6 +42,7 @@
   "symbols/ExtensionsProfile/choices/None/description": "未啟用任何延伸模組",
   "symbols/ExtensionsProfile/choices/None/displayName": "無",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "啟用由 Microsoft 提供的所有延伸模組 (包括具有有限制授權的延伸模組)",
+  "symbols/ExtensionsProfile/choices/AllMicrosoft/displayName": "AllMicrosoft",
   "symbols/Fixture/description": "選取要併入專案中的固件類型。",
   "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "沒有固件方法",

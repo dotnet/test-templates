@@ -42,6 +42,7 @@
   "symbols/ExtensionsProfile/choices/None/description": "Расширения не включены.",
   "symbols/ExtensionsProfile/choices/None/displayName": "Отсутствует",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Включить все расширения, поставляемые Майкрософт (включая расширения с ограничительной лицензией)",
+  "symbols/ExtensionsProfile/choices/AllMicrosoft/displayName": "AllMicrosoft",
   "symbols/Fixture/description": "Выберите типы средств, которые необходимо включить в проект.",
   "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "Нет методов работы со средствами",

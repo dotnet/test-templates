@@ -42,6 +42,7 @@
   "symbols/ExtensionsProfile/choices/None/description": "Nessuna estensione abilitata",
   "symbols/ExtensionsProfile/choices/None/displayName": "Nessuno",
   "symbols/ExtensionsProfile/choices/AllMicrosoft/description": "Abilita tutte le estensioni spedite da Microsoft (incluse le estensioni con una licenza restrittiva)",
+  "symbols/ExtensionsProfile/choices/AllMicrosoft/displayName": "AllMicrosoft",
   "symbols/Fixture/description": "Selezionare i tipi di fixture da includere nel progetto.",
   "symbols/Fixture/displayName": "Fixture",
   "symbols/Fixture/choices/None/description": "Nessun metodo di fixture",
