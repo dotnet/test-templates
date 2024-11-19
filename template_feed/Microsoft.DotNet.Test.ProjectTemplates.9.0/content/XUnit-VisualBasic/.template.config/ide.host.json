@@ -4,7 +4,7 @@
   "tags": [
     {
       "type": "platform",
-      "add": [ "Linux", "macOS", "Windows", "Desktop", "Web" ]
+      "add": [ "Linux", "macOS", "Windows" ]
     }
   ]
 }
