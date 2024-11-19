@@ -29,7 +29,7 @@
   "tags": [
     {
       "type": "platform",
-      "add": [ "Linux", "macOS", "Windows" ]
+      "add": [ "Linux", "macOS", "Windows", "Desktop", "Web" ]
     }
   ]
 }
