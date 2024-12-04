@@ -39,4 +39,4 @@ There are 2 main areas in this repository:
 
 
 ## Note
-Please note the templates inside template_feed folder were moved into the dotnet sdk and they are kept here only for potential fixes of 9.0.1XXX.
+Please note the templates inside template_feed folder were moved into the dotnet sdk and they are kept here only for potential fixes of 9.0.1XXX .net version.
