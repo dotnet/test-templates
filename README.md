@@ -37,6 +37,6 @@ There are 2 main areas in this repository:
 - Users can test the dotnet core templates that reside in the templates_feed folder by running the test script [test.cmd](https://github.com/dotnet/test-templates/blob/main/test.cmd)
 - Note: Please make sure you have run the build script before you run the test script.
 
-
 ## Note
-Please note the templates inside template_feed folder were moved into the dotnet sdk and they are kept here only for potential fixes of 9.0.1XXX .net version.
+
+Please note the templates inside the `template_feed` folder were moved into the [dotnet/sdk](https://github.com/dotnet/sdk) and they are kept here only for potential fixes of .NET 9.0.1XXX.
