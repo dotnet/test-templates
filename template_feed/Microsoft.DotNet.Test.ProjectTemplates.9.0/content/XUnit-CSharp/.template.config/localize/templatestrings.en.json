@@ -1,7 +1,7 @@
 {
   "author": "Microsoft",
   "name": "xUnit Test Project",
-  "description": "A project that contains xUnit.net tests that can run on .NET on Windows, Linux and macOS",
+  "description": "Build and run .NET app tests with the lightweight xUnit framework",
   "symbols/TargetFrameworkOverride/description": "Overrides the target framework",
   "symbols/TargetFrameworkOverride/displayName": "Target framework override",
   "symbols/Framework/description": "The target framework for the project.",
