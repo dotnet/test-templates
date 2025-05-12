@@ -32,11 +32,6 @@ There are 2 main areas in this repository:
 - The build produces the template NuGet packages currently has a dependency on **nuget.exe**. 
 - Because of this, those that wish to `install` using the **template NuGet packages** will need to be on Windows in order to produce the appropriate assets. 
 
-## Test
-
-- Users can test the dotnet core templates that reside in the templates_feed folder by running the test script [test.cmd](https://github.com/dotnet/test-templates/blob/main/test.cmd)
-- Note: Please make sure you have run the build script before you run the test script.
-
 ## Note
 
-Please note the templates inside the `template_feed` folder were moved into the [dotnet/sdk](https://github.com/dotnet/sdk) and they are kept here only for potential fixes of .NET 9.0.1XXX.
+Please note the templates inside the `template_feed` folder were moved into the [dotnet/sdk](https://github.com/dotnet/sdk).
