@@ -9,11 +9,8 @@ You can create new test project with `dotnet new mstest`, `dotnet new nunit`, or
 
 # Contributing
 
-There are 2 main areas in this repository: 
-- `template_feed` contains the .NET templates that are inserted into dotnet/installer.
-- `Templates`, `WizardExtensions` contain "legacy" templates for .NET Framework test projects in VisualStudio.
-
-`template_feed` contains all the templates from the oldest version of .NET to the newest. We build all of these templates, but might not ship all of them. If you are doing bigger changes please make them in bulk to all the templates. 
+This repository consists of:
+- `Templates` folder contains "legacy" templates for .NET Framework test projects in VisualStudio.
 
 ## Acquire
 
