@@ -4,7 +4,7 @@
   "classifications": ["Test", "xUnit", "Desktop", "Web"],
   "name": "xUnit Test Project",
   "generatorVersions": "[1.0.0.0-*)",
-  "description": "A project that contains xUnit.net tests that can run on .NET on Windows, Linux and macOS",
+  "description": "Build and run .NET app tests with the lightweight xUnit framework",
   "groupIdentity": "Microsoft.Test.xUnit",
   "precedence": "11000",
   "identity": "Microsoft.Test.xUnit.FSharp.9.0",
