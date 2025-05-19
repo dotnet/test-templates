@@ -10,5 +10,6 @@
   </PropertyGroup>
   <PropertyGroup Label="Dependencies settings">
     <MicrosoftVisualStudioCoreUtilityVersion>15.0.26201</MicrosoftVisualStudioCoreUtilityVersion>
+    <MicrosoftVSSDKBuildToolsVersion>17.4.2116</MicrosoftVSSDKBuildToolsVersion>
   </PropertyGroup>
 </Project>
