@@ -31,7 +31,7 @@ stages:
       enablePublishUsingPipelines: true
       enablePublishTestResults: true
       enableTelemetry: true
-      enableSourceBuild: true
+      enableSourceBuild: false
       testResultsFormat: 'vstest'
       helixRepo: dotnet/test-templates
       jobs:
