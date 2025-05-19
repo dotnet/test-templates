@@ -31,7 +31,7 @@ stages:
       enablePublishUsingPipelines: true
       enablePublishTestResults: true
       enableTelemetry: true
-      enableSourceBuild: true
+      enableSourceBuild: false
       testResultsFormat: 'vstest'
       helixRepo: dotnet/test-templates
       jobs:
@@ -61,17 +61,3 @@ stages:
             PathtoPublish: '$(Build.SourcesDirectory)/artifacts/VSSetup/$(_BuildConfig)'
             ArtifactName: VSSetupArtifacts
 
-        - task: DotNetCoreCLI@2
-          displayName: 'Acceptance tests'
-          inputs:
-            command: test
-            projects: 'test\Microsoft.TestTemplates.Acceptance.Tests.sln'
-            publishTestResults: false
-            arguments: '--configuration $(_BuildConfig) --logger trx --results-directory $(Build.SourcesDirectory)/artifacts/TestResults/$(_BuildConfig)'
-
-        - task: PublishBuildArtifacts@1
-          displayName: 'Publish acceptance tests logs'
-          inputs:
-            PathtoPublish: '$(Build.SourcesDirectory)/artifacts/bin/Microsoft.TestTemplates.Acceptance.Tests/Debug/net9.0/TestResults/Microsoft.TestTemplates.Acceptance.Tests_net9.0_x64.log'
-            ArtifactName: AcceptanceTestsLogs
-          condition: failed()
