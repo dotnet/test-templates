@@ -21,6 +21,8 @@
     <TestRunnerName>MSTest</TestRunnerName>
     <UseMSTestSdk>true</UseMSTestSdk>
     <UseMSTestRunner>true</UseMSTestRunner>
+    <EnableMSTestRunner>true</EnableMSTestRunner>
+
     <!-- We use MSTest.Sdk so we don't need arcade to add the Microsoft.NET.Test.Sdk package -->
     <ExcludeMicrosoftNetTestSdk>true</ExcludeMicrosoftNetTestSdk>
   </PropertyGroup>
