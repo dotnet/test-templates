@@ -95,7 +95,7 @@ extends:
                 -sign
                 -build
                 -restore
-                -ci,
+                -ci
                 -configuration $(_BuildConfig)
                 -prepareMachine
                 /p:TeamName=$(_TeamName)
