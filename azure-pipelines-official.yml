@@ -68,7 +68,6 @@ extends:
           enableMicrobuild: true
           enablePublishBuildArtifacts: true
           enablePublishBuildAssets: true
-          enablePublishUsingPipelines: true
           enablePublishTestResults: true
           enableTelemetry: true
           enableSourceBuild: false
@@ -102,7 +101,6 @@ extends:
                 /p:VisualStudioDropName=$(VisualStudioDropName)
                 /p:DotNetSymbolServerTokenMsdl=$(microsoft-symbol-server-pat)
                 /p:DotNetSymbolServerTokenSymWeb=$(symweb-symbol-server-pat)
-                /p:DotNetPublishUsingPipelines=true
                 /p:DotNetArtifactsCategory=.NETCore
                 /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
                 /p:GenerateSbom=true
