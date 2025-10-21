@@ -123,10 +123,10 @@ extends:
                 accessToken: $(dn-bot-devdiv-drop-rw-code-rw)
               condition: succeeded()
               
-    - template: \eng\common\templates-official\post-build\post-build.yml@self
-      parameters:
-        publishingInfraVersion: 3
-        enableSourceLinkValidation: false
-        # Disable NuGet validation and Signing validation as we don't publish compatible packages
-        enableNugetValidation: false
-        enableSigningValidation: false
+    # - template: \eng\common\templates-official\post-build\post-build.yml@self
+    #   parameters:
+    #     publishingInfraVersion: 3
+    #     enableSourceLinkValidation: false
+    #     # Disable NuGet validation and Signing validation as we don't publish compatible packages
+    #     enableNugetValidation: false
+    #     enableSigningValidation: false
