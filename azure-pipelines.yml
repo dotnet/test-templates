@@ -27,8 +27,8 @@ stages:
     parameters:
       enableMicrobuild: true
       enablePublishBuildArtifacts: true
-      enablePublishBuildAssets: true
-      enablePublishUsingPipelines: true
+      enablePublishBuildAssets: false
+      enablePublishUsingPipelines: false
       enablePublishTestResults: true
       enableTelemetry: true
       enableSourceBuild: false
@@ -49,7 +49,12 @@ stages:
         - checkout: self
           clean: true
 
-        - script: eng\common\cibuild.cmd
+        - script: eng\common\build.cmd
+            -pack
+            -sign
+            -build
+            -restore
+            -ci
             -configuration $(_BuildConfig)
             -prepareMachine
             /p:Test=false
