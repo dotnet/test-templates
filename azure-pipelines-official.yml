@@ -67,7 +67,7 @@ extends:
         parameters:
           enableMicrobuild: true
           enablePublishBuildArtifacts: true
-          enablePublishBuildAssets: true
+          enablePublishBuildAssets: false
           enablePublishTestResults: true
           enableTelemetry: true
           enableSourceBuild: false
