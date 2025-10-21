@@ -90,7 +90,12 @@ extends:
                 nuGetServiceConnections: 'devdiv/dotnet-core-internal-tooling'
                 forceReinstallCredentialProvider: true
 
-            - script: eng\common\cibuild.cmd
+            - script: eng\common\build.cmd
+                -pack
+                -sign
+                -build
+                -restore
+                -ci,
                 -configuration $(_BuildConfig)
                 -prepareMachine
                 /p:TeamName=$(_TeamName)
