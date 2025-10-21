@@ -68,6 +68,7 @@ extends:
           enableMicrobuild: true
           enablePublishBuildArtifacts: true
           enablePublishBuildAssets: false
+          enablePublishUsingPipelines: false
           enablePublishTestResults: true
           enableTelemetry: true
           enableSourceBuild: false
