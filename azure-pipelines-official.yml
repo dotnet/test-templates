@@ -116,10 +116,20 @@ extends:
             - script: dir /S artifacts\VSSetup\$(_BuildConfig)\Insertion
               displayName: 'List Insertion files to upload'
 
+            - task: AzureCLI@2
+              displayName: 'Get DevDiv drop token (WIF)'
+              inputs:
+                azureSubscription: 'dnceng-devdiv-drop-rw-code-rw-wif'
+                scriptType: pscore
+                scriptLocation: inlineScript
+                inlineScript: |
+                  $token = az account get-access-token --resource 499b84ac-1321-427f-aa17-267ca6975798 --query accessToken -o tsv
+                  Write-Host "##vso[task.setvariable variable=DevDivDropAccessToken;issecret=true]$token"
+
             - task: 1ES.MicroBuildVstsDrop@1
               displayName: Upload Azure DevOps Drop
               inputs:
                 dropName: $(VisualStudioDropName)
                 dropFolder: 'artifacts\VSSetup\$(_BuildConfig)\Insertion'
-                accessToken: $(dn-bot-devdiv-drop-rw-code-rw)
+                accessToken: $(DevDivDropAccessToken)
               condition: succeeded()
